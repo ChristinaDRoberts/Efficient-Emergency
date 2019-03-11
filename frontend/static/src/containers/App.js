@@ -34,7 +34,8 @@ class App extends Component {
 
     addImageToArray(image) {
         //adds image to the state of imageCollection Array
-        let imageCollection = [...this.state.imageCollection];
+        // let imageCollection = [...this.state.imageCollection];
+         let imageCollection = this.state.imageCollection;
         imageCollection.push(image);
         this.setState({imageCollection});
         console.log(this.state.imageCollection)
@@ -44,11 +45,13 @@ class App extends Component {
         e.preventDefault();
          const conf = {
                 method: "POST",
-                body: "application/json",
+                body: JSON.stringify(),
+                headers: new Headers({"Content-Type": "application/json"})
 
             };
 
 
+        //this is sending a null object to the API for image
         fetch('/api/scene/', conf).then((response) => {
             return response.json();
         }).then((json) => {
@@ -56,10 +59,10 @@ class App extends Component {
             console.log("added")
 
 
-        }).then((data)=> {
-            console.log("data", data);
-            this.setState({imageCollection: data});
-            console.log(this.state.imageCollection)
+        // }).then((json)=> {
+        //     console.log("data", json);
+        //     this.setState({imageCollection: json});
+        //     console.log(this.state.imageCollection)
          });
 
 
@@ -79,7 +82,7 @@ class App extends Component {
           <input className="input" type="file" onChange={this.handleImage} name="image"/>
 
 
-             <Button className="addIngredientButton" type="submit" variant="secondary">Submit This Image !</Button>
+             <Button className="submitImageButton" type="submit" variant="secondary">Submit This Image !</Button>
         </Container>
 
      </Form>

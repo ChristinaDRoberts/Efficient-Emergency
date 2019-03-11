@@ -43,10 +43,21 @@ class App extends Component {
 
     submitImage(e) {
         e.preventDefault();
+
+        // form data needs to be set in here
+         let formData = new FormData();
+          formData.append("image", this.state.image);
+          formData.append("image_Preview", this.state.image_preview);
+          formData.append("imageCollection", this.state.imageCollection);
+
+          formData.forEach((value, key) => {
+            console.log("key %s: value %s", key, value);
+        });
+
          const conf = {
                 method: "POST",
-                body: JSON.stringify(),
-                headers: new Headers({"Content-Type": "application/json"})
+                body: formData,
+                // headers: new Headers({"Content-Type": "application/json"})
 
             };
 
@@ -59,13 +70,11 @@ class App extends Component {
             console.log("added")
 
 
-        // }).then((json)=> {
-        //     console.log("data", json);
-        //     this.setState({imageCollection: json});
-        //     console.log(this.state.imageCollection)
          });
 
-
+        let images = this.state.imageCollection;
+        images.push(this.state.image_preview);
+        this.setState({imageCollection: images});
 
     }
 
@@ -78,7 +87,7 @@ class App extends Component {
 
      <Form onSubmit={this.submitImage}>
         <Container>
-          <img src={this.state.image_preview}/>
+          <img src={this.state.image_preview} alt="..."/>
           <input className="input" type="file" onChange={this.handleImage} name="image"/>
 
 
@@ -86,6 +95,14 @@ class App extends Component {
         </Container>
 
      </Form>
+
+            <ul>
+                {/*{this.state.imageCollection.map(image, index)}*/}
+                {/*<li key={index}>*/}
+                <li>
+                     <img src={this.state.image_preview} alt="..."/>
+                </li>
+            </ul>
 
         </div>
     )

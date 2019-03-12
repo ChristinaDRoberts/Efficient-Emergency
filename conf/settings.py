@@ -30,9 +30,9 @@ STATICFILES_FINDERS = [
 ]
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
 
 # UPLOAD FILE CONFIG
 # SEE : https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
@@ -76,7 +76,7 @@ INSTALLED_APPS = [
     'accounts',
     "sms",
     'storages',
-    
+
 
 ]
 
@@ -128,7 +128,7 @@ else:
         'NAME': '911',
         'USER': '911',
         'PASSWORD': '',
-        'HOST': '',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }

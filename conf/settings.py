@@ -76,7 +76,7 @@ INSTALLED_APPS = [
     'accounts',
     "sms",
     'storages',
-    'corsheaders',
+    
 
 ]
 

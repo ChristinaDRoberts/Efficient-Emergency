@@ -15,7 +15,7 @@ django-storages = "*"
 boto3 = "*"
 aws-shell = "*"
 twilio = "*"
-uwsgi = "*"
+
 
 whitenoise = "*"
 dj-database-url = "*"

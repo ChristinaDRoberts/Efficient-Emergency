@@ -1,7 +1,7 @@
 from rest_framework import viewsets
-from .serializers import ClientSerializer
+from .serializers import ClientSerializer, DispatchSerializer
 
-from frontend.models import Client
+from dispatchCalls.models import Client, DispatchCall
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 
 
@@ -11,10 +11,19 @@ class CsrfExemptSessionAuthentication(SessionAuthentication):
         return  # To not perform the csrf check previously happening
 
 
-class ApiViewSet(viewsets.ModelViewSet):
+class ClientImageViewSet(viewsets.ModelViewSet):
     authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
     serializer_class = ClientSerializer
-    queryset = Client.objects.all().order_by('-id')[:25]
+    queryset = Client.objects.all()
 
     # def perform_create(self, serializer):
     # serializer.save(user=self.request.user)
+
+
+class DispatchViewSet(viewsets.ModelViewSet):
+    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
+    serializer_class = DispatchSerializer
+    queryset = DispatchCall.objects.all()
+
+
+    # 8.4 huber for value capturing

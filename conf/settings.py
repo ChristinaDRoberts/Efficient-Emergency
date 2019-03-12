@@ -28,11 +28,11 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
-
+#
 # Extra places for collectstatic to find static files.
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'frontend/static/build/static'),
+)
 
 # UPLOAD FILE CONFIG
 # SEE : https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
@@ -74,10 +74,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'accounts',
-    "sms",
+    "dispatchCalls",
     'storages',
-
-
+    'phone_field'
 ]
 
 MIDDLEWARE = [
@@ -123,15 +122,17 @@ if os.environ.get('DATABASE_URL'):
    }
 else:
     DATABASES = {
-     {
+    'default': {
+
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': '911',
         'USER': '911',
         'PASSWORD': '',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
-}
+    }
+
 
 
 # Password validation
@@ -179,3 +180,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/static/media')
 MEDIA_URL = '/media/'
 
 
+LOGIN_REDIRECT_URL = '/scene/'
+LOGOUT_REDIRECT_URL = '/login/'

@@ -14,7 +14,11 @@ class DispatchCurrentCallContainer extends Component {
     render() {
         return (
             <div>
+
                 <h2>Testing Dispatch Current Call Page</h2>
+
+                <Form>
+                </Form>
 
             </div>
 

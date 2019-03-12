@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class EmergencyConfig(AppConfig):
-    name = 'sms'
+    name = 'dispatchCalls'

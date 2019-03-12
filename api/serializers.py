@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
 # from rest_framework import serializers
-from frontend.models import Client
+from dispatchCalls.models import Client, DispatchCall
 
 
 
@@ -15,4 +15,8 @@ class ClientSerializer(serializers.ModelSerializer):
 
 
 
-
+class DispatchSerializer (serializers.ModelSerializer):
+    class Meta:
+        model = DispatchCall
+        fields = "__all__'"
+        depth = 1

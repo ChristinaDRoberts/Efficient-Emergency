@@ -15,10 +15,9 @@ django-storages = "*"
 boto3 = "*"
 aws-shell = "*"
 twilio = "*"
-
-
 whitenoise = "*"
 dj-database-url = "*"
+django-phone-field = "*"
 
 [requires]
 python_version = "3.7"

@@ -6,7 +6,7 @@
   <form method="post">
     {% csrf_token %}
        {{ form.as_p }}
-
+     <a href="{% url 'frontend:index' %}">Click To Go To </a>
     <button  type="submit">Login</button>
   </form>
 {% endblock %}

@@ -23,7 +23,7 @@ urlpatterns = [
     path('', include('frontend.urls')),
     path('api/', include('api.urls')),
     path('', include('accounts.urls')),
-    path('', include('sms.urls')),
+    # path('', include('dispatchCalls.urls')),
 
 ]
 

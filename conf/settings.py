@@ -116,12 +116,13 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
+
 if os.environ.get('DATABASE_URL'):
    DATABASES = {
        'default': dj_database_url.config(default=os.environ['DATABASE_URL']),
    }
 else:
+    DATABASES = {
      {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': '911',

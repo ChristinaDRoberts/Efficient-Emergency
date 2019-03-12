@@ -8,8 +8,8 @@ class ClientContainer extends Component{
 
     };
 
-    this.handleImage = this.handleImage.bind(this);
-    this.addImageToArray = this.addImageToArray.bind(this);
+    this.handleImage=this.handleImage.bind(this);
+    this.addImageToArray=this.addImageToArray.bind(this);
 }
 
 
@@ -91,7 +91,7 @@ render(){
                 {/*{this.state.imageCollection.map(image, index)}*/}
                 {/*<li key={index}>*/}
                 <li>
-                     <img src={this.state.image_preview} alt="..."/>
+                     <img src={this.props.image_preview} alt="..."/>
                 </li>
             </ul>
 

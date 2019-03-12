@@ -8,7 +8,7 @@ verify_ssl = true
 [packages]
 django = "*"
 djangorestframework = "*"
-whitenoise = "*"
+
 gunicorn = "*"
 psycopg2 = "*"
 pillow = "*"

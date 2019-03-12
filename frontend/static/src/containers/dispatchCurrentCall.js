@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {divWithClassName} from "react-bootstrap/es/utils/divWithClassName";
 
 
-class DisaptchCurrentCallContainer extends Component {
+class DispatchCurrentCallContainer extends Component {
     constructor(props){
         super(props)
 
@@ -24,4 +24,4 @@ render(){
     )
 }
 
-export default DisaptchCurrentCallContainer;
+export default DispatchCurrentCallContainer;

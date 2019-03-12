@@ -16,8 +16,9 @@ boto3 = "*"
 aws-shell = "*"
 twilio = "*"
 uwsgi = "*"
-django-cors-headers = "*"
+
 whitenoise = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.7"

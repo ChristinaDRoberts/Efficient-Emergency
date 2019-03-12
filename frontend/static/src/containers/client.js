@@ -67,7 +67,7 @@ class ClientContainer extends Component {
         this.setState({imageCollection: images});
 
     }
-}
+
 
 
 
@@ -99,6 +99,7 @@ render(){
 
 
     };
+}
 
 
 export default ClientContainer;

@@ -7,6 +7,11 @@ from dispatchCalls.models import Client, DispatchCall
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.response import Response
 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import authentication, permissions
+from django.contrib.auth.models import User
+
 
 class CsrfExemptSessionAuthentication(SessionAuthentication):
 
@@ -23,27 +28,41 @@ class ClientImageViewSet(viewsets.ModelViewSet):
     # unauthenticated user. This corresponds to the IsAuthenticated
     # permission_classes = (IsAuthenticated)
 
-    # def perform_create(self, serializer):
-    # serializer.save(user=self.request.user)
-
-
-
     #Authentication is the mechanism of associating an incoming request with a set of identifying credentials,
     # such as the user the request came from
-    def post(self, request):
-        content = {
 
-        }
-        return Response(content)
-
-    def data(self, request, format=None):
-        return Response(data)
 
 
 class DispatchViewSet(viewsets.ModelViewSet):
-    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
-    serializer_class = DispatchSerializer
-    queryset = DispatchCall.objects.all()
+        authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
+        serializer_class = DispatchSerializer
+        # queryset = DispatchCall.objects.all()
 
+        def get_queryset(self):
+            return DispatchCall.objects.filter(user=self.request.user)
+
+
+# not sure which type of view i need, or if i need (APIView)
+
+# @api_view(['GET', 'POST'])
+# def call_list(request):
+#     """
+#     List all code snippets, or create a new snippet.
+#     """
+#     if request.method == 'GET':
+#         callList = DispatchCall.objects.all()
+#         serializer = DispatchSerializer(callList, many=True)
+#         return Response(serializer.data)
+#
+#     elif request.method == 'POST':
+#         serializer = ClientSerializer(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data, status=status.HTTP_201_CREATED)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     # 8.4 huber for value capturing
+
+
+    # def perform_create(self, serializer):
+    # serializer.save(user=self.request.user)

@@ -14,12 +14,10 @@ class App extends Component {
         super(props);
 
         this.state = {
-            client: {
-                image_preview: "",
-                image: "",
-                imageCollection: [],
-            },
-            currentScreen:"callDetail",
+            image_preview: "",
+            imageCollection: [],
+            image: "",
+            currentScreen:"callList",
 
 
     };
@@ -59,7 +57,7 @@ class App extends Component {
         // form data needs to be set in here
         let formData = new FormData();
         formData.append("image", this.state.image);
-        formData.append("image_Preview", this.state.image_preview);
+        // formData.append("image_Preview", this.state.image_preview);
         formData.append("imageCollection", JSON.stringify(this.state.imageCollection));
 
         formData.forEach((value, key) => {
@@ -83,10 +81,10 @@ class App extends Component {
 
         });
 
-        let images = this.state.imageCollection;
-        // console.log(images); currently this is undefined
-        images.push(this.state.image_preview);
-        this.setState({imageCollection: images});
+
+        let {imageCollection} = this.state;
+        imageCollection.push(this.state.image_preview);
+        this.setState({imageCollection});
 
     }
 
@@ -94,7 +92,6 @@ class App extends Component {
 
 
      route = (currentScreen) => {
-
         this.setState({currentScreen});
 
     };

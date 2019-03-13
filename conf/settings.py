@@ -125,8 +125,8 @@ else:
     'default': {
 
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '911',
-        'USER': '911',
+        'NAME': '9112',
+        'USER': '9112',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '5432',
@@ -182,3 +182,10 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = '/scene/'
 LOGOUT_REDIRECT_URL = '/login/'
+
+#https://www.django-rest-framework.org/api-guide/permissions/
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.IsAuthenticated',
+#     )
+# }

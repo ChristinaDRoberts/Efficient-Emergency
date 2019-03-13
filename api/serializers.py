@@ -18,5 +18,5 @@ class ClientSerializer(serializers.ModelSerializer):
 class DispatchSerializer (serializers.ModelSerializer):
     class Meta:
         model = DispatchCall
-        fields = "__all__'"
+        fields = '__all__'
         depth = 1

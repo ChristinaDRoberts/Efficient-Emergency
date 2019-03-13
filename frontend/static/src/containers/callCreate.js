@@ -5,7 +5,13 @@ import React, { Component } from 'react';
 
 class DispatchCurrentCallContainer extends Component {
     constructor(props) {
-        super(props)
+        super(props);
+
+        this.state ={
+            user: '',
+            phone: '',
+            date: ''
+        };
 
 
     };

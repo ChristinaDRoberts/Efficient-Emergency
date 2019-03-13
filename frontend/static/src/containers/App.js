@@ -14,10 +14,14 @@ class App extends Component {
         super(props);
 
         this.state = {
-            image_preview: "",
-            image: "",
-            imageCollection: [],
-            currentScreen:"callDetail"
+            client: {
+                image_preview: "",
+                image: "",
+                imageCollection: [],
+            },
+            currentScreen:"callDetail",
+
+
     };
      this.handleImage = this.handleImage.bind(this);
      this.addImageToArray = this.addImageToArray.bind(this);
@@ -44,6 +48,11 @@ class App extends Component {
         console.log(this.state.imageCollection)
     }
 
+    // componentDidMount() {
+    //      fetch('/api/dispatchcall/').then((response) => {
+    //         return response.json();
+    //  }).then(data => this.setState({ :  }));
+
     submitImage(e) {
         e.preventDefault();
 
@@ -51,7 +60,7 @@ class App extends Component {
         let formData = new FormData();
         formData.append("image", this.state.image);
         formData.append("image_Preview", this.state.image_preview);
-        formData.append("imageCollection", this.state.imageCollection);
+        formData.append("imageCollection", JSON.stringify(this.state.imageCollection));
 
         formData.forEach((value, key) => {
             console.log("key %s: value %s", key, value);
@@ -75,6 +84,7 @@ class App extends Component {
         });
 
         let images = this.state.imageCollection;
+        // console.log(images); currently this is undefined
         images.push(this.state.image_preview);
         this.setState({imageCollection: images});
 

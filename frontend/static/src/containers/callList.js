@@ -24,7 +24,7 @@ class DispatchCallLogContainer extends Component {
                 </div>
 
                 <div>
-                    write map function that lists out all the call dat ain dispatchcall api
+                    write map function that lists out all the call data in dispatchcall api
                 </div>
             </div>
 

@@ -44,17 +44,8 @@ class DispatchCurrentCallContainer extends Component {
     handlePhoneNumber(e) {
         console.log(e.target.name, e.target.value);
         this.setState({[e.target.name]: e.target.value});
-        // console.log("phone change", this.state.phone)
-  };
+    };
 
-
-        // phoneNumber.preventDefault();
-        // let phone = this.state.phone;
-        // // phone.push(phoneNumber); this is not an array so dont push
-        // this.setState({phone});
-        // console.log( this.state.phone)
-
-    // }
 
     //api request to constantly check for image collection to scene
 
@@ -63,7 +54,7 @@ class DispatchCurrentCallContainer extends Component {
 
             <div>
 
-                <h2>Testing Dispatch Current Call Page</h2>
+                <h2>TDispatch Current Call Page</h2>
 
                 <Form onSubmit={this.createCall}>
 
@@ -80,11 +71,17 @@ class DispatchCurrentCallContainer extends Component {
                            onChange={this.handlePhoneNumber}/>
 
                     <span className="note">Format: 123-456-7890</span>
+                    <br/>
 
 
                     <Button className="createCallButton" type="submit" variant="secondary">
                         Create This Call Record</Button>
                 </Form>
+
+                <div>
+                <Button className="sendText" type="submit" variant="secondary">
+                    SEND LINK THROUGH TEXT</Button>
+                </div>
             </div>
 
 

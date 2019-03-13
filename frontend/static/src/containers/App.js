@@ -17,12 +17,10 @@ class App extends Component {
             image_preview: "",
             imageCollection: [],
             image: "",
-            currentScreen:"callList",
+            currentScreen:"callDetail",
+        };
 
-
-    };
      this.handleImage = this.handleImage.bind(this);
-     this.addImageToArray = this.addImageToArray.bind(this);
      this.submitImage=this.submitImage.bind(this);
     }
 
@@ -35,21 +33,9 @@ class App extends Component {
         fileReader.onloadend = () => this.setState({image_preview: fileReader.result});
         fileReader.readAsDataURL(file);
         this.setState({image: file});
+
     }
 
-     addImageToArray(image) {
-        //adds image to the state of imageCollection Array
-        // let imageCollection = [...this.state.imageCollection];
-        let imageCollection = this.state.imageCollection;
-        imageCollection.push(image);
-        this.setState({imageCollection});
-        console.log(this.state.imageCollection)
-    }
-
-    // componentDidMount() {
-    //      fetch('/api/dispatchcall/').then((response) => {
-    //         return response.json();
-    //  }).then(data => this.setState({ :  }));
 
     submitImage(e) {
         e.preventDefault();
@@ -75,16 +61,22 @@ class App extends Component {
         fetch('/api/scene/', conf).then((response) => {
             return response.json();
         }).then((json) => {
-            this.addImageToArray(json);
-            console.log("added")
+
+             let imageCollection = [...this.state.imageCollection];
+             imageCollection.push(json);
+
+             // both of these have error
+            this.setState({imageCollection});
+            this.setState({image_preview: ""});
+
+             console.log('added', imageCollection);
 
 
         });
 
 
-        let {imageCollection} = this.state;
-        imageCollection.push(this.state.image_preview);
-        this.setState({imageCollection});
+
+
 
     }
 
@@ -110,11 +102,10 @@ class App extends Component {
                                     case 'callCreate':
                                         return <DispatchCurrentCallContainer route={this.route}
                                                                              imageCollection={this.state.imageCollection}
-                                                                                image_preview={this.state.image_preview}/>;
+                                                                             image_preview={this.state.image_preview}/>;
                                     case 'callDetail':
                                         return <ClientContainer route={this.route} handleImage={this.handleImage}
                                                                       imageCollection={this.state.imageCollection}
-                                                                        addImageToArray={this.addImageToArray}
                                                                         submitImage={this.submitImage}
                                                                         image={this.state.image}
                                                                         image_preview={this.state.image_preview}/>;

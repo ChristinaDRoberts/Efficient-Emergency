@@ -12,3 +12,11 @@ img{
   text-align: center;
   margin-left: 75%;
 }
+.imagesFromClient{
+  border: greenyellow solid 2px;
+  margin: 50px 30px;
+
+}
+ button{
+   margin:10px;
+ }

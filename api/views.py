@@ -36,11 +36,19 @@ class ClientImageViewSet(viewsets.ModelViewSet):
 class DispatchViewSet(viewsets.ModelViewSet):
         authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
         serializer_class = DispatchSerializer
-        # queryset = DispatchCall.objects.all()
+        queryset = DispatchCall.objects.all()
 
-        def get_queryset(self):
-            return DispatchCall.objects.filter(user=self.request.user)
-
+        # def get_queryset(self):
+        #     return DispatchCall.objects.filter(user=self.request.user)
+        #
+        #
+        # def get_context_data(self, **kwargs):
+        #     ctx = super().get_context_data(**kwargs)
+        #
+        #     if self.request.user.is_authenticated:
+        #         ctx['calls'] = DispatchCall.objects.filter(user=self.request.user)
+        #
+        #     return ctx
 
 # not sure which type of view i need, or if i need (APIView)
 

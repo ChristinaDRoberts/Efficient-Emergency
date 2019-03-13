@@ -8,7 +8,6 @@ class DispatchCurrentCallContainer extends Component {
 
         this.state = {
             phone: '',
-
         };
 
         this.handlePhoneNumber = this.handlePhoneNumber.bind(this);
@@ -54,7 +53,7 @@ class DispatchCurrentCallContainer extends Component {
 
             <div>
 
-                <h2>TDispatch Current Call Page</h2>
+                <h2>Dispatch Current Create Call Page</h2>
 
                 <Form onSubmit={this.createCall}>
 
@@ -78,10 +77,19 @@ class DispatchCurrentCallContainer extends Component {
                         Create This Call Record</Button>
                 </Form>
 
-                <div>
+
                 <Button className="sendText" type="submit" variant="secondary">
                     SEND LINK THROUGH TEXT</Button>
+
+                <div className="imagesFromClient">
+                    div of images being uploaded from client will populate through method that
+                    has constant Api checks for new info coming in
                 </div>
+
+                <Button className="endCall"  onClick={(e) => {
+                                    this.props.route("callList")
+                }}>End Call</Button>
+
             </div>
 
 

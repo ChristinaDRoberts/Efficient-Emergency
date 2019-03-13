@@ -1,8 +1,9 @@
 import {Button, Form} from "react-bootstrap";
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import divWithClassName from "react-bootstrap/es/utils/divWithClassName";
 
 
- // this is going to be the screen the client is pn when submitting images
+// this is going to be the screen the client is pn when submitting images
 
 
 class ClientContainer extends Component {
@@ -12,33 +13,49 @@ class ClientContainer extends Component {
 
     };
 
+    componentDidMount() {
+
+    }
 
 
-render(){
-    return(
+    render() {
+        console.log('here', this.props.imageCollection);
 
-    <div>
-          <h1>Testing Image </h1>
+        let images = this.props.imageCollection.map(image=>{
+            return(
+                <li key={image.id}><img src={image.image} alt=""/></li>
+            )
+        })
+        // let images = this.props.imageCollection.map((image) => {
+        //                 return (
+        //                     <li key={image.id}>
+        //                         {image}
+        //                     </li>
+        // )})
+        return (
 
-         <Form onSubmit={this.props.submitImage}>
+            <div>
+                <h1>Testing Image </h1>
 
-              <img src={this.props.image_preview} alt="..."/>
-              <input className="input" type="file" onChange={this.props.handleImage} name="image"/>
+                <Form onSubmit={this.props.submitImage}>
+
+                    <img src={this.props.image_preview} alt="..."/>
+                    <input className="input" type="file" onChange={this.props.handleImage} name="image"/>
 
 
-                 <Button className="submitImageButton" type="submit" variant="secondary">Submit This Image !</Button>
-          </Form>
+                    <Button className="submitImageButton" type="submit" variant="secondary">Submit This Image !</Button>
+                </Form>
 
-            <ul>
-                {/*{this.state.imageCollection.map(image, index)}*/}
-                {/*<li key={index}>*/}
-                <li>
-                     <img src={this.props.image_preview} alt="..."/>
-                </li>
-            </ul>
+            <div>
+                <ul>
 
-        </div>)
+                    {images}
+                </ul>
 
+            </div>
+                {/*<img src={this.props.image_preview} alt="..."/>*/}
+
+            </div>)
 
 
     };

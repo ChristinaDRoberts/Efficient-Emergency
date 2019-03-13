@@ -19,5 +19,5 @@ class DispatchCall(models.Model):
 class Client(models.Model):
     #image client upload
     image = models.ImageField(blank=True, upload_to='media/')
-    #links it to the call record that dipatch created
-    dispatchCall = models.ForeignKey('DispatchCall',  on_delete=models.CASCADE, null=True)
+    #links it to the call record that dipatch created - not going through properly
+    dispatchCall = models.ForeignKey(DispatchCall,  on_delete=models.CASCADE, null=True)

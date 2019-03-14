@@ -36,7 +36,10 @@ class ClientImageViewSet(viewsets.ModelViewSet):
 class DispatchViewSet(viewsets.ModelViewSet):
         authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
         serializer_class = DispatchSerializer
-        queryset = DispatchCall.objects.all()
+        # queryset = DispatchCall.objects.all()
+
+        def get_queryset(self):
+            return DispatchCall.objects.filter(user=self.request.user)
 
 
         def perform_create(self, serializer):

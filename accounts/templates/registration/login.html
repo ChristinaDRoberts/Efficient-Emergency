@@ -6,7 +6,7 @@
   <form method="post">
     {% csrf_token %}
        {{ form.as_p }}
-     <a href="{% url 'frontend:index' %}"></a>
+{#     <a href="{% url 'frontend:index' %}"></a>#}
 
     <button  type="submit"><a href="{% url 'frontend:index' %}"></a>CLick To Login</button>
      <a href="{% url 'accounts:signup' %}">Click To Signup </a>

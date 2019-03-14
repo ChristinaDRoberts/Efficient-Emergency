@@ -15,7 +15,7 @@ class App extends Component {
 
         this.state = {
             //after loggin in i am taken to error screen bc its not following urls correctly
-            currentScreen: "callList",
+            currentScreen: window.location,
         };
 
     }
@@ -29,20 +29,22 @@ class App extends Component {
 
 
   render(){
+      console.log(this.state.currentScreen);
+
     return(
 
         <div>
              <Container className="MainCont">
                             {(() => {
-                                switch (this.state.currentScreen) {
+                                switch (this.state.currentScreen.pathname) {
                                     case 'callList':
                                         return <DispatchCallLogContainer route={this.route}
                                                                     imageCollection={this.state.imageCollection} />;
-                                    case 'callCreate':
+                                    case 'dispatchcall/':
                                         return <DispatchCurrentCallContainer route={this.route}
                                                                              imageCollection={this.state.imageCollection}
                                                                              image_preview={this.state.image_preview}/>;
-                                    case 'callDetail':
+                                    default :
                                         return <ClientContainer route={this.route} handleImage={this.handleImage}
                                                                       imageCollection={this.state.imageCollection}
                                                                         submitImage={this.submitImage}

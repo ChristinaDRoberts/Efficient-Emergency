@@ -14,7 +14,7 @@ class IndexView(View):
     run build`).
     """
 
-    def get(self, request):
+    def get(self, request, *args, **kwargs):
         try:
             with open(os.path.join(settings.REACT_APP_DIR, 'build', 'index.html')) as f:
                 return HttpResponse(f.read())

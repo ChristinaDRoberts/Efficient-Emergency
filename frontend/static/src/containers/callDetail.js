@@ -39,6 +39,7 @@ class ClientContainer extends Component {
         formData.append("image", this.state.image);
         // formData.append("image_Preview", this.state.image_preview);
         formData.append("imageCollection", JSON.stringify(this.state.imageCollection));
+        formData.append("dispatchCall", JSON.stringify(this.props.dispatchCallId));
 
         formData.forEach((value, key) => {
             console.log("key %s: value %s", key, value);
@@ -66,9 +67,7 @@ class ClientContainer extends Component {
         });
     };
 
-    componentDidMount() {
 
-    }
 
 
     render() {

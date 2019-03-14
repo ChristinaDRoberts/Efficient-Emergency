@@ -9,7 +9,7 @@ class ClientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
         fields = '__all__'
-        depth = 1
+
 
 
 

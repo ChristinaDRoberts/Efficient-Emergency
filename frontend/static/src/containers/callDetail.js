@@ -25,17 +25,12 @@ class ClientContainer extends Component {
             return(
                 <li key={image.id}><img src={image.image} alt=""/></li>
             )
-        })
-        // let images = this.props.imageCollection.map((image) => {
-        //                 return (
-        //                     <li key={image.id}>
-        //                         {image}
-        //                     </li>
-        // )})
+        });
+
         return (
 
             <div>
-                <h1>Testing Image </h1>
+                <h1>Please Submit A Photo To Emergency Services</h1>
 
                 <Form onSubmit={this.props.submitImage}>
 
@@ -46,15 +41,11 @@ class ClientContainer extends Component {
                     <Button className="submitImageButton" type="submit" variant="secondary">Submit This Image !</Button>
                 </Form>
 
-            <div>
-                <ul>
-
-                    {images}
-                </ul>
-
-            </div>
-                {/*<img src={this.props.image_preview} alt="..."/>*/}
-
+                <div>
+                    <ul>
+                        {images}
+                    </ul>
+                </div>
             </div>)
 
 

@@ -38,39 +38,8 @@ class DispatchViewSet(viewsets.ModelViewSet):
         serializer_class = DispatchSerializer
         queryset = DispatchCall.objects.all()
 
-        # def get_queryset(self):
-        #     return DispatchCall.objects.filter(user=self.request.user)
-        #
-        #
-        # def get_context_data(self, **kwargs):
-        #     ctx = super().get_context_data(**kwargs)
-        #
-        #     if self.request.user.is_authenticated:
-        #         ctx['calls'] = DispatchCall.objects.filter(user=self.request.user)
-        #
-        #     return ctx
 
-# not sure which type of view i need, or if i need (APIView)
-
-# @api_view(['GET', 'POST'])
-# def call_list(request):
-#     """
-#     List all code snippets, or create a new snippet.
-#     """
-#     if request.method == 'GET':
-#         callList = DispatchCall.objects.all()
-#         serializer = DispatchSerializer(callList, many=True)
-#         return Response(serializer.data)
-#
-#     elif request.method == 'POST':
-#         serializer = ClientSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    # 8.4 huber for value capturing
+        def perform_create(self, serializer):
+            serializer.save(user=self.request.user)
 
 
-    # def perform_create(self, serializer):
-    # serializer.save(user=self.request.user)

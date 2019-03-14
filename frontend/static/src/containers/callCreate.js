@@ -11,15 +11,19 @@ class DispatchCurrentCallContainer extends Component {
         };
 
         this.handlePhoneNumber = this.handlePhoneNumber.bind(this);
-        this.createCall = this.createCall.bind(this)
+        this.createCall = this.createCall.bind(this);
+        this.updateDispatchImages = this.updateDispatchImages.bind(this);
 
+    }
+
+    updateDispatchImages() {
+        console.log('update images');
     }
 
 
     createCall = (event) => {
         event.preventDefault();
 
-        // console.log('phone', this.state.phone);
         let phone = {phone: this.state.phone};
 
         const conf = {
@@ -36,6 +40,7 @@ class DispatchCurrentCallContainer extends Component {
             return response.json();
         }).then(json => {
             console.log('json', json);
+            this.updateDispatchImages();
         });
     };
 
@@ -86,8 +91,8 @@ class DispatchCurrentCallContainer extends Component {
                     has constant Api checks for new info coming in
                 </div>
 
-                <Button className="endCall"  onClick={(e) => {
-                                    this.props.route("callList")
+                <Button className="endCall" onClick={(e) => {
+                    this.props.route("callList")
                 }}>End Call</Button>
 
             </div>

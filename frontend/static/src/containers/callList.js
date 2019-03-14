@@ -31,7 +31,7 @@ class DispatchCallLogContainer extends Component {
                         {this.props.imageCollection.map((image) => {
                             return (
                                 <li key={image.id}>
-                                    {image}
+                                    {image.image}
                                 </li>
                             );
                         })}

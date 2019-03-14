@@ -17,7 +17,7 @@ class App extends Component {
             image_preview: "",
             imageCollection: [],
             image: "",
-            currentScreen:"callDetail",
+            currentScreen:"callCreate",
         };
 
      this.handleImage = this.handleImage.bind(this);

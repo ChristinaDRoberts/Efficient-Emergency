@@ -8,17 +8,34 @@ class DispatchCurrentCallContainer extends Component {
 
         this.state = {
             phone: '',
+            disapatchID: ''
         };
 
         this.handlePhoneNumber = this.handlePhoneNumber.bind(this);
         this.createCall = this.createCall.bind(this);
         this.updateDispatchImages = this.updateDispatchImages.bind(this);
+        this.handleCreateLink = this.handleCreateLink.bind(this);
 
     }
 
-    updateDispatchImages() {
+    updateDispatchImages(event) {
+
         console.log('update images');
-    }
+        // const conf = {
+        //     method: "GET",
+        //     headers: new Headers({"Content-Type": "application/json"})
+        // };
+
+        fetch('/api/scene/').then((response) => {
+            if (response.status !== 200) {
+                console.log("problem")
+            }
+//write a queryset to get only images associated with this dispatch call primary key
+            return response.json();
+        }).then(json => {
+            console.log('json', json);
+        });
+    };
 
 
     createCall = (event) => {
@@ -40,7 +57,10 @@ class DispatchCurrentCallContainer extends Component {
             return response.json();
         }).then(json => {
             console.log('json', json);
+            //set state to id tis.setState (json.id)
+            setTimeout(() => this.updateDispatchImages, 2000);
             this.updateDispatchImages();
+
         });
     };
 
@@ -50,8 +70,16 @@ class DispatchCurrentCallContainer extends Component {
         this.setState({[e.target.name]: e.target.value});
     };
 
+    handleCreateLink = (e) => {
+        e.preventDefault();
 
-    //api request to constantly check for image collection to scene
+        //use reverse to make string concatenation , request dispatch call id out
+        // call this as event on "Send Link Through Text" button
+
+    };
+
+
+
 
     render() {
         return (
@@ -83,7 +111,7 @@ class DispatchCurrentCallContainer extends Component {
                 </Form>
 
 
-                <Button className="sendText" type="submit" variant="secondary">
+                <Button className="sendText" type="submit" variant="secondary" onClick={this.handleCreateLink}>
                     SEND LINK THROUGH TEXT</Button>
 
                 <div className="imagesFromClient">

@@ -19,7 +19,7 @@ class ClientContainer extends Component {
 
 
     render() {
-        console.log('here', this.props.imageCollection);
+
 
         let images = this.props.imageCollection.map(image=>{
             return(

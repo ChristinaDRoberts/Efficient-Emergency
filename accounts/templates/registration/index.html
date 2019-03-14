@@ -1,6 +1,22 @@
-{#{%  extends "../dispatchCalls/templates/base.html" %}#}
-{##}
-{#{%  block content %}#}
-{#    <h1> love my app </h1>#}
-{##}
-{#{% endblock %}#}
+{% extends "registration/base.html" %}
+
+{% block content %}
+
+
+<div class="brochure">
+    <h1>Welcome To Efficent Emergency! </h1>
+
+
+    <h3>We make getting critical lifesaving information quickly and accurately a reality.</h3>
+    <p> Cut out mis information from callers by directing them to a unique text - link to upload images of victims at
+        the scene.</p>
+    <p> This makes getting critical information about injury severity and location efficient and easy, while still
+        maintaining
+        verbal contact with the caller. </p>
+
+    <button><a href="{% url 'accounts:signup' %}">Click Here to Signup! </a></button>
+    <button><a href="{% url 'accounts:login' %}">Login Here! </a></button>
+</div>
+
+
+{% endblock content %}

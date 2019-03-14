@@ -180,7 +180,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/static/media')
 MEDIA_URL = '/media/'
 
 
-LOGIN_REDIRECT_URL = '/dispatchcall/'
+LOGIN_REDIRECT_URL = '/dispatchcall'
 LOGOUT_REDIRECT_URL = '/login/'
 
 #https://www.django-rest-framework.org/api-guide/permissions/

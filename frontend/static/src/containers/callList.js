@@ -6,8 +6,28 @@ class DispatchCallLogContainer extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            callList: []
+        }
+
 
     };
+
+
+    componentDidMount() {
+        fetch('/api/dispatchcall/').then((response) => {
+            if (response.status !== 200) {
+                console.log("problem")
+            }
+
+            return response.json();
+        }).then(json => {
+            this.setState({callList: json});
+            console.log('json', json);
+
+        });
+
+    }
 
     // list of the previous calls., api request filtered by user - get request
     //include images
@@ -16,8 +36,8 @@ class DispatchCallLogContainer extends Component {
         return (
             <div>
                 <div className="topDispatch">
-                    <h2>Testing Dispatch Call Log Page</h2>
-                    {/*button to start call*/}
+                    <h2>Welcome Dispatcher ! Create A New Call, Or Revisit Previous Calls</h2>
+
                     <Button variant="danger" className="switch" onClick={(e) => {
                         this.props.route("callCreate")
                     }}>Start A Call</Button>
@@ -25,13 +45,13 @@ class DispatchCallLogContainer extends Component {
                 </div>
 
                 <div>
-                    write map function that lists out all the call data in dispatchcall api
+
                     <ul>
 
-                        {this.props.imageCollection.map((image) => {
+                        {this.state.callList.map((call) => {
                             return (
-                                <li key={image.id}>
-                                    {image.image}
+                                <li key={call.id}><a href="#" >
+                                    {call.phone}</a>
                                 </li>
                             );
                         })}

@@ -74,6 +74,8 @@ class DispatchCurrentCallContainer extends Component {
     handleCreateLink = (e) => {
         e.preventDefault();
 
+        ""
+
         //use reverse to make string concatenation , request dispatch call id out
         // call this as event on "Send Link Through Text" button
 

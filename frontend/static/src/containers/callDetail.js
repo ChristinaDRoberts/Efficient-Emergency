@@ -58,7 +58,7 @@ class ClientContainer extends Component {
             let imageCollection = [...this.state.imageCollection];
             imageCollection.push(json);
 
-            // both of these have error
+
             this.setState({imageCollection});
             this.setState({image_preview: ""});
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Form, Button} from 'react-bootstrap';
+import { Button} from 'react-bootstrap';
 
 
 class DispatchCallLogContainer extends Component {
@@ -30,7 +30,7 @@ class DispatchCallLogContainer extends Component {
     }
 
     // list of the previous calls., api request filtered by user - get request
-    //include images
+
 
     render() {
         return (
@@ -50,8 +50,9 @@ class DispatchCallLogContainer extends Component {
 
                         {this.state.callList.map((call) => {
                             return (
-                                <li key={call.id}><a href="#" >
-                                    {call.phone}</a>
+                                //add redirect to the call detail page
+                                <li key={call.id}><a href="{% url frontend: callList %}">
+                                   Phone = {call.phone},    Call# = {call.id},    {call.date}</a>
                                 </li>
                             );
                         })}

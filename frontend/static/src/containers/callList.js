@@ -51,7 +51,7 @@ class DispatchCallLogContainer extends Component {
                         {this.state.callList.map((call) => {
                             return (
                                 //add redirect to the call detail page
-                                <li key={call.id}><a href="{% url frontend: callList %}">
+                                <li key={call.id}><a href="#">
                                    Phone = {call.phone},    Call# = {call.id},    {call.date}</a>
                                 </li>
                             );

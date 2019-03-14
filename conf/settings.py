@@ -58,7 +58,7 @@ SECRET_KEY = 'l%9!5x2l5gq8!ensi=$5p%61gtar(@kc=6+6!!su!p(i82w(*k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['efficient-emergency.herokuapp.com']
+ALLOWED_HOSTS = ['efficient-emergency.herokuapp.com', 'localhost']
 
 
 # Application definition

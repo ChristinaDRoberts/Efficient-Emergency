@@ -14,6 +14,7 @@ class App extends Component {
         super(props);
 
         this.state = {
+            //after loggin in i am taken to error screen bc its not following urls correctly
             currentScreen: "callList",
         };
 

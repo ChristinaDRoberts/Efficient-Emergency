@@ -8,7 +8,8 @@ class DispatchCurrentCallContainer extends Component {
 
         this.state = {
             phone: '',
-            disapatchID: ''
+            disapatchInfo: {},
+            imageCollection : []
         };
 
         this.handlePhoneNumber = this.handlePhoneNumber.bind(this);
@@ -21,10 +22,6 @@ class DispatchCurrentCallContainer extends Component {
     updateDispatchImages(event) {
 
         console.log('update images');
-        // const conf = {
-        //     method: "GET",
-        //     headers: new Headers({"Content-Type": "application/json"})
-        // };
 
         fetch('/api/scene/').then((response) => {
             if (response.status !== 200) {
@@ -33,7 +30,9 @@ class DispatchCurrentCallContainer extends Component {
 //write a queryset to get only images associated with this dispatch call primary key
             return response.json();
         }).then(json => {
+            this.setState({imageCollection: json});
             console.log('json', json);
+
         });
     };
 
@@ -57,9 +56,11 @@ class DispatchCurrentCallContainer extends Component {
             return response.json();
         }).then(json => {
             console.log('json', json);
-            //set state to id tis.setState (json.id)
-            setTimeout(() => this.updateDispatchImages, 2000);
+            this.setState({dispatchInfo: json});
+
+            setInterval(() => this.updateDispatchImages(), 10000);
             this.updateDispatchImages();
+
 
         });
     };
@@ -82,7 +83,15 @@ class DispatchCurrentCallContainer extends Component {
 
 
     render() {
+
+        let images = this.state.imageCollection.map(image=>{
+            return(
+                <li key={image.id}><img src={image.image} alt=""/></li>
+            )
+        });
+
         return (
+
 
             <div>
 
@@ -115,8 +124,11 @@ class DispatchCurrentCallContainer extends Component {
                     SEND LINK THROUGH TEXT</Button>
 
                 <div className="imagesFromClient">
-                    div of images being uploaded from client will populate through method that
-                    has constant Api checks for new info coming in
+                    <ul>
+                        {images}
+                    </ul>
+                    {/*div of images being uploaded from client will populate through method that*/}
+                    {/*has constant Api checks for new info coming in*/}
                 </div>
 
                 <Button className="endCall" onClick={(e) => {

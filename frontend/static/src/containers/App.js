@@ -4,7 +4,7 @@ import ClientContainer from "./callDetail"
 import DispatchCurrentCallContainer from "./callCreate"
 
 import '../App.css';
-import {Container, Form, Button} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 
 
 
@@ -14,72 +14,10 @@ class App extends Component {
         super(props);
 
         this.state = {
-            image_preview: "",
-            imageCollection: [],
-            image: "",
-            currentScreen:"callCreate",
+            currentScreen: "callDetail",
         };
 
-     this.handleImage = this.handleImage.bind(this);
-     this.submitImage=this.submitImage.bind(this);
     }
-
-    handleImage(event) {
-        //sets the preview box of image in react element
-        event.preventDefault();
-
-        let file = event.target.files[0];
-        let fileReader = new FileReader();
-        fileReader.onloadend = () => this.setState({image_preview: fileReader.result});
-        fileReader.readAsDataURL(file);
-        this.setState({image: file});
-
-    }
-
-
-    submitImage(e) {
-        e.preventDefault();
-
-        // form data needs to be set in here
-        let formData = new FormData();
-        formData.append("image", this.state.image);
-        // formData.append("image_Preview", this.state.image_preview);
-        formData.append("imageCollection", JSON.stringify(this.state.imageCollection));
-
-        formData.forEach((value, key) => {
-            console.log("key %s: value %s", key, value);
-        });
-
-        const conf = {
-            method: "POST",
-            body: formData,
-            // headers: new Headers({"Content-Type": "application/json"})
-
-        };
-
-
-        fetch('/api/scene/', conf).then((response) => {
-            return response.json();
-        }).then((json) => {
-
-             let imageCollection = [...this.state.imageCollection];
-             imageCollection.push(json);
-
-             // both of these have error
-            this.setState({imageCollection});
-            this.setState({image_preview: ""});
-
-             console.log('added', imageCollection);
-
-
-        });
-
-
-
-
-
-    }
-
 
 
 

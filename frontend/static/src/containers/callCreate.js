@@ -8,7 +8,7 @@ class DispatchCurrentCallContainer extends Component {
 
         this.state = {
             phone: '',
-            disapatchInfo: {id: 1},
+            dispatchInfo: {id:""},
             imageCollection : []
         };
 
@@ -30,7 +30,7 @@ class DispatchCurrentCallContainer extends Component {
             return;
         }
 
-        fetch(`/api/dispatchCall/${this.state.dispatchInfo.id}/scene/`).then((response) => {
+        fetch(`/api/dispatchcall/${this.state.dispatchInfo.id}/scene/`).then((response) => {
             if (response.status !== 200) {
                 console.log("problem")
             }
@@ -81,9 +81,10 @@ class DispatchCurrentCallContainer extends Component {
     handleCreateLink = (e) => {
         e.preventDefault();
 
-
-        //use reverse to make string concatenation , request dispatch call id out
-        // call this as event on "Send Link Through Text" button
+        let id = this.state.dispatchInfo.id;
+        let link =  (`localhost:8000/dispatchcalls/ $(id) /scene`) ;
+        console.log("link", link);
+        // send link to twilio file
 
     };
 

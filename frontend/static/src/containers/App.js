@@ -15,7 +15,6 @@ class App extends Component {
         super(props);
 
         this.state = {
-            //after loggin in i am taken to error screen bc its not following urls correctly
             currentScreen: window.location,
 
         };
@@ -43,6 +42,7 @@ class App extends Component {
                                         return <DispatchCallLogContainer route={this.route}/>;
 
                                     case 'dispatcherCallsDetail':
+                                        // let specificCall = props
                                         return <DispatcherCallsDetailContainer route={this.route}/>;
 
                                     case '/dispatchcall/':

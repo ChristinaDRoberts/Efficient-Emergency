@@ -51,8 +51,11 @@ class DispatchCallLogContainer extends Component {
                         {this.state.callList.map((call) => {
                             return (
                                 //add redirect to the call detail page
-                                <li key={call.id}><a href="#">
-                                   Phone = {call.phone},    Call# = {call.id},    {call.date}</a>
+                                <li key={call.id}><a href="#" onClick={(e) => {
+                                this.props.route("dispatchCallsDetail")
+                                    }}>
+                                   Phone = {call.phone},    Call# = {call.id},    {call.date} {call.scene_images}</a>
+                                    {/*write an event handler for on click display images*/}
                                 </li>
                             );
                         })}

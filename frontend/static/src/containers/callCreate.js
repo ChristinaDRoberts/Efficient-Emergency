@@ -8,7 +8,7 @@ class DispatchCurrentCallContainer extends Component {
 
         this.state = {
             phone: '',
-            disapatchInfo: {},
+            disapatchInfo: {id: 1},
             imageCollection : []
         };
 
@@ -17,17 +17,24 @@ class DispatchCurrentCallContainer extends Component {
         this.updateDispatchImages = this.updateDispatchImages.bind(this);
         this.handleCreateLink = this.handleCreateLink.bind(this);
 
+
     }
+
+
 
     updateDispatchImages(event) {
 
         console.log('update images');
+        // return early to avoid nested mess
+        if (!this.state.dispatchInfo.id){
+            return;
+        }
 
-        fetch('/api/scene/').then((response) => {
+        fetch(`/api/dispatchCall/${this.state.dispatchInfo.id}/scene/`).then((response) => {
             if (response.status !== 200) {
                 console.log("problem")
             }
-//write a queryset to get only images associated with this dispatch call primary key
+
             return response.json();
         }).then(json => {
             this.setState({imageCollection: json});
@@ -120,6 +127,8 @@ class DispatchCurrentCallContainer extends Component {
                         Create This Call Record</Button>
                 </Form>
 
+                <p> print the call log # here</p>
+
 
                 <Button className="sendText" type="submit" variant="secondary" onClick={this.handleCreateLink}>
                     SEND LINK THROUGH TEXT</Button>
@@ -128,8 +137,7 @@ class DispatchCurrentCallContainer extends Component {
                     <ul>
                         {images}
                     </ul>
-                    {/*div of images being uploaded from client will populate through method that*/}
-                    {/*has constant Api checks for new info coming in*/}
+
                 </div>
 
                 <Button className="endCall" onClick={(e) => {

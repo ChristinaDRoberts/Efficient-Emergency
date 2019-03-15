@@ -22,6 +22,10 @@ class ClientImageViewSet(viewsets.ModelViewSet):
     serializer_class = ClientSerializer
     queryset = Client.objects.all()
 
+    #change this query set to get only items for this scene #
+    def get_queryset(self):
+        return Client.objects.filter(dispatchCall_id = self.kwargs.get("dispatch_call_id") )
+
 
     #Authentication is the mechanism of associating an incoming request with a set of identifying credentials,
     # such as the user the request came from

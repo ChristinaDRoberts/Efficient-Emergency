@@ -38,8 +38,7 @@ class App extends Component {
                             {(() => {
                                 switch (this.state.currentScreen.pathname) {
                                     case 'callList':
-                                        return <DispatchCallLogContainer route={this.route}
-                                                                    imageCollection={this.state.imageCollection} />;
+                                        return <DispatchCallLogContainer route={this.route}/>;
                                     case '/dispatchcall/':
                                         return <DispatchCurrentCallContainer route={this.route}
                                                                              imageCollection={this.state.imageCollection}
@@ -59,7 +58,7 @@ class App extends Component {
                                                                         image={this.state.image}
                                                                         image_preview={this.state.image_preview}
                                                                         dispatchCallId={dispatchCallId} />;
-                                   // how do i link sign up screens if these are all react screens
+
                                 }
                             })()}
 

@@ -18,5 +18,6 @@ class ClientSerializer(serializers.ModelSerializer):
 class DispatchSerializer (serializers.ModelSerializer):
     class Meta:
         model = DispatchCall
-        fields = '__all__'
+        # fields = '__all__'
+        fields = ["id", "phone", "date", "user", "scene_images"]
         depth = 1

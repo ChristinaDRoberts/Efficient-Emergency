@@ -10,7 +10,7 @@ urlpatterns = [
  # since we are looking for json data from our api we need to have our message route
  # use the
   path('scene/', ClientImageViewSet.as_view({'get': 'list', 'post': 'create'})),
-  path('dispatchCall/<int:dispatch_call_id>/scene/', ClientImageViewSet.as_view({'get': 'list'})),
+  path('dispatchcall/<int:dispatch_call_id>/scene/', ClientImageViewSet.as_view({'get': 'list'})),
   path('dispatchcall/', DispatchViewSet.as_view({'get': 'list', 'post': 'create'})),
 ]
 

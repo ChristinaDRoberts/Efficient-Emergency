@@ -20,4 +20,4 @@ class Client(models.Model):
     #image client upload
     image = models.ImageField(blank=True, upload_to='media/')
     #should have been underscore
-    dispatchCall = models.ForeignKey(DispatchCall,  on_delete=models.CASCADE, null=True)
+    dispatchCall = models.ForeignKey(DispatchCall,  on_delete=models.CASCADE, null=True, related_name="scene_images")

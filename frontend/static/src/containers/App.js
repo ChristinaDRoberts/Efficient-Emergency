@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import DispatchCallLogContainer from "./callList"
 import ClientContainer from "./callDetail"
 import DispatchCurrentCallContainer from "./callCreate"
-import DispatcherCallsDetailContainer from "./dispatcherCallsDetail.js"
+// import DispatcherCallsDetailContainer from "./dispatcherCallsDetail.js"
 
 import '../App.css';
 import {Container} from 'react-bootstrap';
@@ -41,9 +41,9 @@ class App extends Component {
                                     case 'callList':
                                         return <DispatchCallLogContainer route={this.route}/>;
 
-                                    case 'dispatcherCallsDetail':
-                                        // let specificCall = props
-                                        return <DispatcherCallsDetailContainer route={this.route}/>;
+                                    // case 'dispatcherCallsDetail':
+                                    //     // let specificCall = props
+                                    //     return <DispatcherCallsDetailContainer route={this.route}/>;
 
                                     case '/dispatchcall/':
                                         return <DispatchCurrentCallContainer route={this.route}

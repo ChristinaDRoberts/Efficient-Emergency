@@ -20,7 +20,7 @@ class CsrfExemptSessionAuthentication(SessionAuthentication):
 class ClientImageViewSet(viewsets.ModelViewSet):
     authentication_classes = (CsrfExemptSessionAuthentication, SessionAuthentication, BasicAuthentication)
     serializer_class = ClientSerializer
-    queryset = Client.objects.all()
+    # queryset = Client.objects.all()
 
     #change this query set to get only items for this scene #
     def get_queryset(self):

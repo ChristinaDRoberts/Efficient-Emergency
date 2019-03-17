@@ -183,6 +183,13 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = '/dispatchcall/'
 LOGOUT_REDIRECT_URL = '/login/'
 
+
+#if parser needed
+# REST_FRAMEWORK = {
+#     'FORM_METHOD_OVERRIDE': None,
+#     'FORM_CONTENT_OVERRIDE': None,
+# }
+
 #https://www.django-rest-framework.org/api-guide/permissions/
 # REST_FRAMEWORK = {
 #     'DEFAULT_PERMISSION_CLASSES': (

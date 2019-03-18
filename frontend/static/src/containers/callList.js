@@ -69,11 +69,11 @@ class OpenImagesOnCallList extends Component{
                 <p>Phone:{call.phone}</p>
                 <p>Date:{call.date}</p>
                 <Button onClick={this.handleToggle}>Show Images</Button>
-                <ul className='d-none'>
-                    Show Images
+                <ul className=' d-none'>
+
                     <li>
                     {call.scene_images.map((image, index) =>
-                             <img key={index} src={image.image}/>
+                             <img className="list_image" key={index} src={image.image}/>
 
 
                     )}
@@ -94,7 +94,7 @@ class OpenImagesOnCallList extends Component{
 
                 <div>
 
-                    <ul>
+                    <ul className="image-toggle">
                         {calls}
                     </ul>
 

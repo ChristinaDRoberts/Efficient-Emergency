@@ -60,4 +60,16 @@ li {
     text-align: center;
 }
 
+.image-toggle{
+    /*display: flex;*/
+    /*align-items: start;*/
+    /*margin:0;*/
+    /*margin:0 auto;*/
+}
+
+.list-image{
+    /*width:100%;*/
+    /*height:100%;*/
+}
+
 /*correct path /static/ ///*/

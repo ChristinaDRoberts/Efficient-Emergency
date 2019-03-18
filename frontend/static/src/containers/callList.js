@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Button} from 'react-bootstrap';
+import divWithClassName from "react-bootstrap/es/utils/divWithClassName";
 
 
 class DispatchCallLogContainer extends Component {
@@ -31,11 +32,11 @@ class DispatchCallLogContainer extends Component {
         });
 
     }
-    
+
     render() {
 
         return (
-            <OpenImagesOnCallList callList={this.state.callList}/>
+            <OpenImagesOnCallList callList={this.state.callList} route={this.props.route}/>
 
 
         )
@@ -53,19 +54,31 @@ class OpenImagesOnCallList extends Component{
            }
     }
 
+    handleToggle = (e) => {
+        // https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling
+        //this removes the class name of "d-none" off of the images
+        e.target.nextSibling.classList.toggle('d-none');
+    };
+
     render(){
+
         let calls = this.props.callList.map((call) =>
             <li key={call.id}><img src={call.image} alt=""/>
 
                 <p>Call #:{call.id}</p>
                 <p>Phone:{call.phone}</p>
                 <p>Date:{call.date}</p>
-                <p className="d-none">
-                    {/*button user that will set state write a method for this, which should be diplayed, toggle to remove display*/}
+                <Button onClick={this.handleToggle}>Show Images</Button>
+                <ul className='d-none'>
+                    Show Images
+                    <li>
                     {call.scene_images.map((image, index) =>
-                        <img key={index} src={image.image}/>
+                             <img key={index} src={image.image}/>
+
+
                     )}
-                </p>
+                    </li>
+                </ul>
             </li>
         );
         return(

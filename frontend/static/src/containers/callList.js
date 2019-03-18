@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 
 class DispatchCallLogContainer extends Component {
@@ -22,8 +22,11 @@ class DispatchCallLogContainer extends Component {
 
             return response.json();
         }).then(json => {
-            this.setState({callList: json});
+            let callList = [...this.state.callList];
+            callList.push(json);
             console.log('json', json);
+            this.setState({callList: json});
+
 
         });
 
@@ -33,6 +36,21 @@ class DispatchCallLogContainer extends Component {
 
 
     render() {
+
+        let calls = this.state.callList.map((call) =>
+            <li key={call.id}><img src={call.image} alt=""/>
+                <p>I am a call</p>
+                <p>{call.id}</p>
+                <p>{call.phone}</p>
+                <p>{call.date}</p>
+                <p className="d-none">
+                    {/*button user that will set state write a method for this, which should be diplayed, toggle to remove display none*/}
+                    {call.scene_images.map((image, index) =>
+                        <img key={index} src={image.image}/>
+                    )}
+                </p>
+            </li>
+        );
         return (
             <div>
                 <div className="topDispatch">
@@ -48,17 +66,7 @@ class DispatchCallLogContainer extends Component {
 
                     <ul>
 
-                        {this.state.callList.map((call) => {
-                            return (
-                                //add redirect to the call detail page
-                                <li key={call.id}><a href="#" onClick={(e) => {
-                                this.props.route("dispatchCallsDetail")
-                                    }}>
-                                   Phone = {call.phone},    Call# = {call.id},    {call.date} {call.scene_images}</a>
-                                    {/*write an event handler for on click display images*/}
-                                </li>
-                            );
-                        })}
+                        {calls}
                     </ul>
 
                 </div>

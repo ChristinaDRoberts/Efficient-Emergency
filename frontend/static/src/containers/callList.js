@@ -31,27 +31,44 @@ class DispatchCallLogContainer extends Component {
         });
 
     }
-
-    // list of the previous calls., api request filtered by user - get request
-
-
+    
     render() {
 
-        let calls = this.state.callList.map((call) =>
+        return (
+            <OpenImagesOnCallList callList={this.state.callList}/>
+
+
+        )
+    }
+}
+
+export default DispatchCallLogContainer;
+
+
+class OpenImagesOnCallList extends Component{
+    constructor(props){
+        super(props);
+           this.state = {
+               active: false
+           }
+    }
+
+    render(){
+        let calls = this.props.callList.map((call) =>
             <li key={call.id}><img src={call.image} alt=""/>
-                <p>I am a call</p>
-                <p>{call.id}</p>
-                <p>{call.phone}</p>
-                <p>{call.date}</p>
+
+                <p>Call #:{call.id}</p>
+                <p>Phone:{call.phone}</p>
+                <p>Date:{call.date}</p>
                 <p className="d-none">
-                    {/*button user that will set state write a method for this, which should be diplayed, toggle to remove display none*/}
+                    {/*button user that will set state write a method for this, which should be diplayed, toggle to remove display*/}
                     {call.scene_images.map((image, index) =>
                         <img key={index} src={image.image}/>
                     )}
                 </p>
             </li>
         );
-        return (
+        return(
             <div>
                 <div className="topDispatch">
                     <h2>Welcome Dispatcher ! Create A New Call, Or Revisit Previous Calls</h2>
@@ -65,7 +82,6 @@ class DispatchCallLogContainer extends Component {
                 <div>
 
                     <ul>
-
                         {calls}
                     </ul>
 
@@ -76,6 +92,5 @@ class DispatchCallLogContainer extends Component {
 
         )
     }
-}
 
-export default DispatchCallLogContainer;
+}

@@ -18,19 +18,21 @@ class App extends Component {
             currentScreen: window.location,
 
         };
-
     }
 
 
 
      route = (currentScreen) => {
-        this.setState({currentScreen});
+        console.log("is it setting", currentScreen);
+        //setting it tp oan object instead of string
+        this.setState({currentScreen: {pathname: currentScreen}});
+        // console.log("is it setting", currentScreen)
 
     };
 
 
   render(){
-      console.log(this.state.currentScreen.pathname);
+      console.log("TESTING", this.state.currentScreen.pathname);
 
     return(
 
@@ -38,14 +40,14 @@ class App extends Component {
              <Container className="MainCont">
                             {(() => {
                                 switch (this.state.currentScreen.pathname) {
-                                    case 'callList':
+                                    case '/dispatchcall/':
                                         return <DispatchCallLogContainer route={this.route}/>;
 
                                     // case 'dispatcherCallsDetail':
                                     //     // let specificCall = props
                                     //     return <DispatcherCallsDetailContainer route={this.route}/>;
 
-                                    case '/dispatchcall/':
+                                    case 'callCreate':
                                         return <DispatchCurrentCallContainer route={this.route}
                                                                              imageCollection={this.state.imageCollection}
                                                                              image_preview={this.state.image_preview}/>;

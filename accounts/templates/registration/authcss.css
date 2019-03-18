@@ -1,0 +1,15 @@
+ .brochure{
+     text-align: center;
+     margin: 0 auto;
+     background-image: linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5)),
+     url('https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwit8uuwu4rhAhUiSN8KHZ4ZDEcQjRx6BAgBEAU&url=https%3A%2F%2Fwww.parasol.edu.au%2Fcanberra-first_aid%2F&psig=AOvVaw3_STTLI-iK_tJfZN_EP_fC&ust=1552956294567767');
+
+ }
+
+ .index{
+     text-align: center;
+ }
+
+ body{
+     color: red;
+ }

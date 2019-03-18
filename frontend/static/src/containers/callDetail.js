@@ -75,26 +75,26 @@ class ClientContainer extends Component {
 
         let images = this.state.imageCollection.map(image => {
             return (
-                <li key={image.id}><img src={image.image} alt=""/></li>
+                <li className="scene-photo-li" key={image.id}><img src={image.image} alt=""/></li>
             )
         });
 
         return (
 
-            <div>
-                <h1>Please Submit A Photo To Emergency Services</h1>
+            <div className="scene-div">
+                <h1 className="please-submit-photo">Please Submit A Photo To Emergency Services</h1>
 
                 <Form onSubmit={this.submitImage}>
 
-                    <img src={this.state.image_preview} alt="..."/>
-                    <input className="input" type="file" onChange={this.handleImage} name="image"/>
+                    <img className="scene-photos" src={this.state.image_preview} alt="..."/>
+                    <input className="scene-input" type="file" onChange={this.handleImage} name="image"/>
 
 
-                    <Button className="submitImageButton" type="submit" variant="secondary">Submit This Image !</Button>
+                    <Button className="submitImageButtonScene" type="submit" variant="secondary">Submit This Image !</Button>
                 </Form>
 
                 <div>
-                    <ul>
+                    <ul className="scene-photo-ul">
                         {images}
                     </ul>
                 </div>

@@ -141,8 +141,8 @@ class DispatchCurrentCallContainer extends Component {
 
                 </div>
 
-                <Button className="endCall" onClick={(e) => {
-                    this.props.route("callList")
+                <Button className="endCall" onClick={(e) =>{
+                    this.props.route("/dispatchcall/")
                 }}>End Call</Button>
 
             </div>

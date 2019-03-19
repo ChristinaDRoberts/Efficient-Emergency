@@ -16,7 +16,7 @@ class DispatchCurrentCallContainer extends Component {
         this.handlePhoneNumber = this.handlePhoneNumber.bind(this);
         this.createCall = this.createCall.bind(this);
         this.updateDispatchImages = this.updateDispatchImages.bind(this);
-        // this.handleCreateLink = this.handleCreateLink.bind(this);
+
 
 
     }
@@ -67,6 +67,8 @@ class DispatchCurrentCallContainer extends Component {
             this.setState({dispatchInfo: json});
 
            let link =  `${this.state.baseURL + json.id}/scene`;
+           //calling the method to sent the link inside this method since i now have the dispatch id in json object and
+            // can use iot to make link
            this.sendTextMessage(link);
            console.log('link', link);
 

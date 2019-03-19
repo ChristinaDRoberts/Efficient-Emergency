@@ -128,7 +128,8 @@ class DispatchCurrentCallContainer extends Component {
                         Create This Call Record</Button>
                 </Form>
 
-                <p> print the call log # here</p>
+                <p> {this.state.phone}</p>
+                <a href="#"> https://dashboard.heroku.com/apps/efficient-emergency/{this.state.dispatchInfo.id}/scene</a>
 
 
                 <Button className="sendText" type="submit" variant="secondary" onClick={this.handleCreateLink}>

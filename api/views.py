@@ -71,7 +71,7 @@ class SendTextView(View):
             body=URL + reverse("frontend:scene", kwargs={"dispatch_call_id": call_id}),
             from_='+18646893583',
             #changed equal to plus
-            to="+"+phone_number
+            to=phone_number
         )
 
         print(message.sid)

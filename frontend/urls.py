@@ -10,5 +10,6 @@ app_name='frontend'
 urlpatterns = [
 
     path('dispatchcall/', DispatcherView.as_view(), name='dispatchcall'),
-    path('dispatchcall/<int:pk>/scene/', IndexView.as_view(), name='scene'),
+    # path('dispatchcall/<int:pk>/scene/', IndexView.as_view(), name='scene'),
+    path('dispatchcall/<int:dispatch_call_id>/scene/', IndexView.as_view(), name='scene'),
 ]

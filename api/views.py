@@ -68,7 +68,7 @@ class SendTextView(View):
         # populate in here. use requests for api.
         # format phone number to +8884446666
         message = client.messages.create(
-            body=URL + reverse("api:urlToSend", kwargs={"dispatch_call_id": call_id}),
+            body=URL + reverse("frontend:scene", kwargs={"dispatch_call_id": call_id}),
             from_='+18646893583',
             to="=" + phone_number
         )

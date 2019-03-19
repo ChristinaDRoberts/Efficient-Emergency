@@ -16,6 +16,8 @@ message = client.messages \
                         # I have the call id in my api for each call record,
                         # I need to extract the call record id number and concatenate into a link to
                         # populate in here. use requests for api.
+
+                        # format phone number to +8884446666
                      body="Twillow API Test",
                      from_='+18646893583',
                      to='+18438021417'

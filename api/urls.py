@@ -1,6 +1,6 @@
 from django.urls import path
-from api.views import DispatchViewSet, ClientImageViewSet
-#
+from api.views import DispatchViewSet, ClientImageViewSet, SendTextView
+from django.views.decorators.csrf import csrf_exempt
 
 
 app_name="api"
@@ -12,7 +12,6 @@ urlpatterns = [
   path('scene/', ClientImageViewSet.as_view({'get': 'list', 'post': 'create'})),
   path('dispatchcall/<int:dispatch_call_id>/scene/', ClientImageViewSet.as_view({'get': 'list'})),
   path('dispatchcall/', DispatchViewSet.as_view({'get': 'list', 'post': 'create'})),
+  path('sendtext/<int:dispatch_call_id>/', csrf_exempt(SendTextView.as_view())),
 ]
 
-# queryset for scenes with filter for ony scenes matched to the call
-# api/calls/10/scene/(get)

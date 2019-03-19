@@ -66,12 +66,6 @@ class DispatchCurrentCallContainer extends Component {
             console.log('json', json);
             this.setState({dispatchInfo: json});
 
-           let link =  `${this.state.baseURL + json.id}/scene`;
-           //calling the method to sent the link inside this method since i now have the dispatch id in json object and
-            // can use iot to make link
-           // this.sendTextMessage(link);
-           console.log('link', link);
-
             setInterval(() => this.updateDispatchImages(), 10000);
             this.updateDispatchImages();
 
@@ -79,9 +73,53 @@ class DispatchCurrentCallContainer extends Component {
         });
     };
 
-    // sendTextMessage = (link) => {
-    //     // send to twilio in this method
-    // }
+    sendTextMessage = (e) => {
+        // send to twilio in this method
+        e.preventDefault();
+        //this just sets a variable only used here so i can console log it and verify
+        // let link = `${this.state.baseURL + this.state.dispatchInfo.id}/scene`;
+        // console.log('link', link);
+
+        var formData = new FormData();
+        formData.append('phone', this.state.phone);
+
+        const conf = {
+            method: "POST",
+            body: formData,
+        };
+
+        fetch(`/api/sendtext/${this.state.dispatchInfo.id}/`, conf)
+            .then(response => {
+                return response.text();
+            }).then(function(response){
+                console.log(response);
+        });
+    };
+
+
+        // const conf = {
+        //     method: "POST",
+        //     // this does not need to be json bc it is going to regular django view not viewset
+        //     //https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data
+        //     body: text({ "phone" : this.state.phone}),
+        //     // headers: new Headers({"Content-Type": "application/json"})
+        // };
+
+        // fetch(`/api/sendtext/${this.state.dispatchInfo.id}/`, conf).then((response) => {
+        //     if (response.status !== 201) {
+        //         console.log("problem")
+        //     }
+        //     return response.text();
+        //     // console.log("response", response)
+
+
+
+
+
+
+
+
+
 
     handlePhoneNumber(e) {
         console.log(e.target.name, e.target.value);
@@ -133,8 +171,8 @@ class DispatchCurrentCallContainer extends Component {
                 <a href="#"> https://dashboard.heroku.com/apps/efficient-emergency/dispatchcall/{this.state.dispatchInfo.id}/scene</a>
 
 
-                {/*<Button className="sendText" type="submit" variant="secondary" onClick={this.sendTextMessage}>*/}
-                    {/*SEND LINK THROUGH TEXT</Button>*/}
+                <Button className="sendText" type="submit" variant="secondary" onClick={this.sendTextMessage}>
+                    SEND LINK THROUGH TEXT</Button>
 
                 <div className="imagesFromClient">
                     <ul>

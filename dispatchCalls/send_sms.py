@@ -9,7 +9,7 @@ import os
 
 URL = "http://maps.googleapis.com/maps/api/geocode/json"
 # Your Account Sid and Auth Token from twilio.com/console
-account_sid = 'AC272c1ff97f2912de6f4e9191d3807c6a'
+account_sid = os.environ['TWILIO_ACCOUNT_SID']
 auth_token = os.environ['TWILIO_AUTH_TOKEN']
 client = Client(account_sid, auth_token)
 

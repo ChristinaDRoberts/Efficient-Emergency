@@ -9,13 +9,14 @@ class DispatchCurrentCallContainer extends Component {
         this.state = {
             phone: '',
             dispatchInfo: {id:""},
-            imageCollection : []
+            imageCollection : [],
+            baseURL: 'https://dashboard.heroku.com/apps/efficient-emergency/dispatchcall/'
         };
 
         this.handlePhoneNumber = this.handlePhoneNumber.bind(this);
         this.createCall = this.createCall.bind(this);
         this.updateDispatchImages = this.updateDispatchImages.bind(this);
-        this.handleCreateLink = this.handleCreateLink.bind(this);
+        // this.handleCreateLink = this.handleCreateLink.bind(this);
 
 
     }
@@ -65,6 +66,10 @@ class DispatchCurrentCallContainer extends Component {
             console.log('json', json);
             this.setState({dispatchInfo: json});
 
+           let link =  `${this.state.baseURL + json.id}/scene`;
+           this.sendTextMessage(link);
+           console.log('link', link);
+
             setInterval(() => this.updateDispatchImages(), 10000);
             this.updateDispatchImages();
 
@@ -72,21 +77,15 @@ class DispatchCurrentCallContainer extends Component {
         });
     };
 
+    sendTextMessage = (link) => {
+        // send to twilio in this method
+    }
 
     handlePhoneNumber(e) {
         console.log(e.target.name, e.target.value);
         this.setState({[e.target.name]: e.target.value});
     };
 
-    handleCreateLink = (e) => {
-        e.preventDefault();
-
-        let id = this.state.dispatchInfo.id;
-        let link =  (`localhost:8000/dispatchcalls/ $(id) /scene`) ;
-        console.log("link", link);
-        // send link to twilio file
-
-    };
 
 
 
@@ -129,11 +128,11 @@ class DispatchCurrentCallContainer extends Component {
                 </Form>
 
                 <p> {this.state.phone}</p>
-                <a href="#"> https://dashboard.heroku.com/apps/efficient-emergency/{this.state.dispatchInfo.id}/scene</a>
+                <a href="#"> https://dashboard.heroku.com/apps/efficient-emergency/dispatchcall/{this.state.dispatchInfo.id}/scene</a>
 
 
-                <Button className="sendText" type="submit" variant="secondary" onClick={this.handleCreateLink}>
-                    SEND LINK THROUGH TEXT</Button>
+                {/*<Button className="sendText" type="submit" variant="secondary" onClick={this.sendTextMessage}>*/}
+                    {/*SEND LINK THROUGH TEXT</Button>*/}
 
                 <div className="imagesFromClient">
                     <ul>

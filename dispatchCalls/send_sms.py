@@ -9,9 +9,9 @@ client = Client(account_sid, auth_token)
 
 message = client.messages \
                 .create(
+                        # link var
                      body="Twillow API Test",
                      from_='+18646893583',
-                    # write code here to insert the phone number of call to send to
                      to='+18438021417'
                  )
 

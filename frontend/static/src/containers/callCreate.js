@@ -97,28 +97,6 @@ class DispatchCurrentCallContainer extends Component {
     };
 
 
-        // const conf = {
-        //     method: "POST",
-        //     // this does not need to be json bc it is going to regular django view not viewset
-        //     //https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data
-        //     body: text({ "phone" : this.state.phone}),
-        //     // headers: new Headers({"Content-Type": "application/json"})
-        // };
-
-        // fetch(`/api/sendtext/${this.state.dispatchInfo.id}/`, conf).then((response) => {
-        //     if (response.status !== 201) {
-        //         console.log("problem")
-        //     }
-        //     return response.text();
-        //     // console.log("response", response)
-
-
-
-
-
-
-
-
 
 
     handlePhoneNumber(e) {

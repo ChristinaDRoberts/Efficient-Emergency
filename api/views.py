@@ -1,5 +1,8 @@
 # https://www.django-rest-framework.org/tutorial/6-viewsets-and-routers/
-
+from twilio.rest import Client as TwilioClient
+from django.urls import reverse
+import requests
+import os
 from django.http import HttpResponse
 from django.views import View
 from rest_framework import viewsets
@@ -18,58 +21,71 @@ class CsrfExemptSessionAuthentication(SessionAuthentication):
 class ClientImageViewSet(viewsets.ModelViewSet):
     authentication_classes = (CsrfExemptSessionAuthentication, SessionAuthentication, BasicAuthentication)
     serializer_class = ClientSerializer
+
     # queryset = Client.objects.all()
 
-    #change this query set to get only items for this scene #
+    # change this query set to get only items for this scene #
     def get_queryset(self):
-        return Client.objects.filter(dispatchCall_id = self.kwargs.get("dispatch_call_id") )
+        return Client.objects.filter(dispatchCall_id=self.kwargs.get("dispatch_call_id"))
 
-
-    #Authentication is the mechanism of associating an incoming request with a set of identifying credentials,
+    # Authentication is the mechanism of associating an incoming request with a set of identifying credentials,
     # such as the user the request came from
 
 
+class DispatchViewSet(viewsets.ModelViewSet, mixins.RetrieveModelMixin, ):
+    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
+    serializer_class = DispatchSerializer
 
-class DispatchViewSet(viewsets.ModelViewSet, mixins.RetrieveModelMixin,):
-        authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
-        serializer_class = DispatchSerializer
+    def retrieve(self, request, *args, **kwargs):
+        pass
 
-        def retrieve(self, request,  *args, **kwargs):
-            pass
+    def get_queryset(self):
+        return DispatchCall.objects.filter(user=self.request.user)
 
-        def get_queryset(self):
-            return DispatchCall.objects.filter(user=self.request.user)
-
-
-        def perform_create(self, serializer):
-            serializer.save(user=self.request.user)
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
 
 class SendTextView(View):
+
+    # 1
     def post(self, request, **kwargs):
-        #phone_number is key in the dictionary of POST recievd back from http"
+        # phone_number is key in the dictionary of POST recieved back from http"
         phone_number = request.POST["phone"]
         call_id = self.kwargs.get("dispatch_call_id")
+        phone_number = phone_number.replace("-", "")
         print(phone_number)
         print(call_id)
 
+        URL = "https://efficient-emergency.herokuapp.com"
+
+        account_sid = os.environ['TWILIO_ACCOUNT_SID']
+        auth_token = os.environ['TWILIO_AUTH_TOKEN']
+        client = TwilioClient(account_sid, auth_token)
+
+        # I have the call id in my api for each call record,
+        # I need to extract the call record id number and concatenate into a link to
+        # populate in here. use requests for api.
+        # format phone number to +8884446666
+        message = client.messages.create(
+            body=URL + reverse("api:urlToSend", kwargs={"dispatch_call_id": call_id}),
+            from_='+18646893583',
+            to="=" + phone_number
+        )
+
+        print(message.sid)
+
         return HttpResponse('Sent!')
 
+# 2 twilio api request / requesting twilio, data(link) self.post['phone']
+# new url
+# use reverse
+# link dispatchcall/#/scene
+
+# Download the helper library from https://www.twilio.com/docs/python/install
 
 
-
-    #***********  example **********
-    # def post(self, request, **kwargs):
-    #     my_data = request.POST
-    #     # do something with your data
-    #     context = {}  # set your context
-    #     return super(View, self).render_to_response(context)
-
-    # new url
-    #use reverse
-    # link dispatchcall/#/scene
-    # request(twilio url, data, which is the link)
-    #send twilio response back as a response
+# 3 send twilio response back
 
 
-    # api endpoint has value catpuring, points to sendTextView
+# api endpoint has value catpuring, points to sendTextView

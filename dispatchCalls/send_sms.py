@@ -5,10 +5,8 @@ import os
 
 
 
+URL = "https://efficient-emergency.herokuapp.com/api/dispatchcall/"
 
-
-URL = "http://maps.googleapis.com/maps/api/geocode/json"
-# Your Account Sid and Auth Token from twilio.com/console
 account_sid = os.environ['TWILIO_ACCOUNT_SID']
 auth_token = os.environ['TWILIO_AUTH_TOKEN']
 client = Client(account_sid, auth_token)
@@ -16,7 +14,7 @@ client = Client(account_sid, auth_token)
 message = client.messages \
                 .create(
                         # I have the call id in my api for each call record,
-                        # I need to extract the call record id number and concatanate into a link to
+                        # I need to extract the call record id number and concatenate into a link to
                         # populate in here. use requests for api.
                      body="Twillow API Test",
                      from_='+18646893583',

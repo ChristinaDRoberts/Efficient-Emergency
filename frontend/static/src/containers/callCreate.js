@@ -69,7 +69,7 @@ class DispatchCurrentCallContainer extends Component {
            let link =  `${this.state.baseURL + json.id}/scene`;
            //calling the method to sent the link inside this method since i now have the dispatch id in json object and
             // can use iot to make link
-           this.sendTextMessage(link);
+           // this.sendTextMessage(link);
            console.log('link', link);
 
             setInterval(() => this.updateDispatchImages(), 10000);
@@ -79,9 +79,9 @@ class DispatchCurrentCallContainer extends Component {
         });
     };
 
-    sendTextMessage = (link) => {
-        // send to twilio in this method
-    }
+    // sendTextMessage = (link) => {
+    //     // send to twilio in this method
+    // }
 
     handlePhoneNumber(e) {
         console.log(e.target.name, e.target.value);

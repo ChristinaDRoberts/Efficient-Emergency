@@ -70,7 +70,8 @@ class SendTextView(View):
         message = client.messages.create(
             body=URL + reverse("frontend:scene", kwargs={"dispatch_call_id": call_id}),
             from_='+18646893583',
-            to="=" + phone_number
+            #changed equal to plus
+            to="+"+phone_number
         )
 
         print(message.sid)

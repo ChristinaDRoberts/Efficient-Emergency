@@ -70,7 +70,7 @@ class Card extends Component {
                     {/*<p>Date:{call.date}</p>*/}
                     <Button onClick={this.handleToggle}>Show Images</Button>
 
-                    <ul className={this.state.active ? '' : 'd-none'}>
+                    <ul className={this.state.active ? '' : 'd-none'} id="image-drop-down">
                         <li>
                             {call.scene_images.map((image, index) =>
                                 <Image className="img-thumbnail" key={index} src={image.image}/>

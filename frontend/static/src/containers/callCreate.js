@@ -133,14 +133,14 @@ class DispatchCurrentCallContainer extends Component {
                     <input type="tel"
                            id="phone"
                            name="phone"
-                           placeholder="Enter Phone Number Here"
+                           placeholder="Format: 123-456-7890"
                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                            required
 
                            value={this.state.phone}
                            onChange={this.handlePhoneNumber}/>
 
-                    <span className="note">Format: 123-456-7890</span>
+                    {/*<span className="note">Format: 123-456-7890</span>*/}
                     <br/>
 
 

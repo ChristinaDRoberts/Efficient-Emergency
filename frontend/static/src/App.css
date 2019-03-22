@@ -61,6 +61,12 @@ li {
     text-align: center;
 }
 
+#image-drop-down{
+    margin: 0 auto;
+    padding: 0;
+
+}
+
 /*.image-toggle{*/
     /*display: flex;*/
     /*align-items: start;*/

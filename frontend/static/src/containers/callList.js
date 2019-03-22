@@ -73,7 +73,7 @@ class OpenImagesOnCallList extends Component{
 
                     <li>
                     {call.scene_images.map((image, index) =>
-                             <img className="list_image" key={index} src={image.image}/>
+                             <img className='img-thumbnail' alt="thumbnail" key={index} src={image.image}/>
 
 
                     )}
@@ -92,9 +92,9 @@ class OpenImagesOnCallList extends Component{
 
                 </div>
 
-                <div>
+                <div className="card-deck">
 
-                    <ul className="image-toggle">
+                    <ul className="card-body">
                         {calls}
                     </ul>
 

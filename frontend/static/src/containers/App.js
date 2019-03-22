@@ -38,7 +38,7 @@ class App extends Component {
     return(
 
         <div>
-             <Container className="MainCont">
+             <Container className="Fluid">
                             {(() => {
                                 switch (this.state.currentScreen.pathname) {
                                     case '/dispatchcall/':

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Image} from 'react-bootstrap';
+import {Button, Image, Row} from 'react-bootstrap';
 import divWithClassName from "react-bootstrap/es/utils/divWithClassName";
 
 
@@ -61,8 +61,10 @@ class Card extends Component {
     };
 
     render() {
+        // does this props call come from the claqss below, in the mqp function?
         var call = this.props.call;
         return (
+
             <div className="card">
                 <div className="card-body">
                     <p>Call #:{call.id}</p>
@@ -76,11 +78,12 @@ class Card extends Component {
                                 <Image className="img-thumbnail" key={index} src={image.image}/>
                             )}
                             <Button onClick={(e) => {
-                                this.props.route("dispatcherCallsDetail")
+                                this.props.route("dispatcherCallsDetail", call)
                             }}>See/Send Call Detail Page</Button>
                         </li>
                     </ul>
                 </div>
+
             </div>
         )
     }
@@ -94,7 +97,6 @@ class OpenImagesOnCallList extends Component {
     }
 
 
-
     render() {
         // <img src={call.image} alt=""/>
 
@@ -102,23 +104,23 @@ class OpenImagesOnCallList extends Component {
             <Card key={call.id} call={call} route={this.props.route}/>);
 
 
-                return(
-                <div>
-                    <div className="topDispatch">
-                        <h2>Welcome Dispatcher ! Create A New Call, Or Revisit Previous Calls</h2>
+        return (
+            <div>
+                <div className="topDispatch">
+                    <h2>Welcome Dispatcher ! Create A New Call, Or Revisit Previous Calls</h2>
 
-                        <Button variant="danger" className="switch" onClick={(e) => {
-                            this.props.route("callCreate")
-                        }}>Start A Call</Button>
-
-                    </div>
-
-                    <div className="card-deck">
-                        {calls}
-                    </div>
+                    <Button variant="danger" className="switch" onClick={(e) => {
+                        this.props.route("callCreate")
+                    }}>Start A Call</Button>
 
                 </div>
-                )
-                }
-            }
+
+                <div className="card-columns">
+                    {calls}
+                </div>
+
+            </div>
+        )
+    }
+}
 

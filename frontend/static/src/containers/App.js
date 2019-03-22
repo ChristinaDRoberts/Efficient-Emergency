@@ -17,16 +17,16 @@ class App extends Component {
 
         this.state = {
             currentScreen: window.location,
-
+            data : {}
         };
     }
 
 
 
-     route = (currentScreen) => {
-        console.log("is it setting", currentScreen);
+     route = (currentScreen, data) => {
+        // console.log("is it setting", currentScreen);
         //setting it tp oan object instead of string
-        this.setState({currentScreen: {pathname: currentScreen}});
+        this.setState({currentScreen: {pathname: currentScreen}, data:data});
         // console.log("is it setting", currentScreen)
 
     };
@@ -46,7 +46,7 @@ class App extends Component {
 
                                     case 'dispatcherCallsDetail':
                                         // let specificCall = props
-                                        return <DispatcherCallsDetailContainer route={this.route}/>;
+                                        return <DispatcherCallsDetailContainer route={this.route} data={this.state.data}/>;
 
                                     case 'callCreate':
                                         return <DispatchCurrentCallContainer route={this.route}

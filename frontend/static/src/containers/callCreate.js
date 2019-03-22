@@ -149,7 +149,7 @@ class DispatchCurrentCallContainer extends Component {
                 </Form>
 
                 <p> {this.state.phone}</p>
-                <a href="#"> https://dashboard.heroku.com/apps/efficient-emergency/dispatchcall/{this.state.dispatchInfo.id}/scene</a>
+                <a href="#"> https://efficient-emergency.herokuapp.com/dispatchcall/{this.state.dispatchInfo.id}/scene</a>
 
 
                 <Button className="sendText" type="submit" variant="secondary" onClick={this.sendTextMessage}>

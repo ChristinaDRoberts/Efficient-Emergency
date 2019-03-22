@@ -14,6 +14,6 @@ urlpatterns = [
   path('dispatchcall/<int:dispatch_call_id>/scene/', ClientImageViewSet.as_view({'get': 'list'}), name="urlToSend"),
   path('dispatchcall/', DispatchViewSet.as_view({'get': 'list', 'post': 'create'})),
   path('sendtext/<int:dispatch_call_id>/', csrf_exempt(SendTextToClientView.as_view())),
-#   path('sendtext/<int:dispatch_call_id>/er/', csrf_exempt(SendTextToERView.as_view())),
+  # path('sendtext/<int:dispatch_call_id>/er/', csrf_exempt(SendTextToERView.as_view())),
 ]
 

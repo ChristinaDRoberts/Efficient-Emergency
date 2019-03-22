@@ -7,9 +7,11 @@ class DispatchCallsDetailContainer extends Component {
         super(props);
 
         this.state = {
+            //im going to need to get the whole list of calls, then im going to need to match the call id with the
+            //button i pressed to get info for correct call
             calls : [],
             specificCall: {},
-            dispatchCall: 118,
+            dispatchCall: 119,
         };
 
     }
@@ -42,7 +44,7 @@ class DispatchCallsDetailContainer extends Component {
 
     render() {
 
-        let specificCall = this.state.specificCall;
+        let specificCall = this.props.data;
 
         return (
 
@@ -54,11 +56,11 @@ class DispatchCallsDetailContainer extends Component {
                         <p>{specificCall.phone} call phone</p>
                         <p>{specificCall.date} call date</p>
 
-                        {/*<p>*/}
-                            {/*{specificCall.scene_images.map((image) =>*/}
-                                {/*<Image src={image.image}/>*/}
-                            {/*)}*/}
-                        {/*</p>*/}
+                        <p>
+                            {specificCall.scene_images.map((image) =>
+                                <Image src={image.image}/>
+                            )}
+                        </p>
 
                          </li>
                 </ul>

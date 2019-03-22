@@ -48,6 +48,8 @@ class DispatchCurrentCallContainer extends Component {
     createCall = (event) => {
         event.preventDefault();
 
+
+
         let phone = {phone: this.state.phone};
 
         const conf = {
@@ -66,11 +68,10 @@ class DispatchCurrentCallContainer extends Component {
             console.log('json', json);
             this.setState({dispatchInfo: json});
 
-            setInterval(() => this.updateDispatchImages(), 10000);
+            this.intervalId = setInterval(() => this.updateDispatchImages(), 10000);
             this.updateDispatchImages();
-
-
         });
+
     };
 
     sendTextMessage = (e) => {
@@ -97,9 +98,11 @@ class DispatchCurrentCallContainer extends Component {
     };
 
 
+    componentWillUnmount = (e) =>{
+        clearInterval(this.intervalId);
+    };
 
-
-    handlePhoneNumber(e) {
+    handlePhoneNumber= (e) => {
         console.log(e.target.name, e.target.value);
         this.setState({[e.target.name]: e.target.value});
     };

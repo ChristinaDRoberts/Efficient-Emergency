@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import DispatchCallLogContainer from "./callList"
 import ClientContainer from "./callDetail"
 import DispatchCurrentCallContainer from "./callCreate"
-// import DispatcherCallsDetailContainer from "./dispatcherCallsDetail.js"
+import DispatcherCallsDetailContainer from "./dispatcherCallsDetail.js"
 
 
 import '../App.css';
@@ -42,11 +42,11 @@ class App extends Component {
                             {(() => {
                                 switch (this.state.currentScreen.pathname) {
                                     case '/dispatchcall/':
-                                        return <DispatchCallLogContainer route={this.route}/>;
+                                        return <DispatchCallLogContainer route={this.route} />;
 
-                                    // case 'dispatcherCallsDetail':
-                                    //     // let specificCall = props
-                                    //     return <DispatcherCallsDetailContainer route={this.route}/>;
+                                    case 'dispatcherCallsDetail':
+                                        // let specificCall = props
+                                        return <DispatcherCallsDetailContainer route={this.route}/>;
 
                                     case 'callCreate':
                                         return <DispatchCurrentCallContainer route={this.route}

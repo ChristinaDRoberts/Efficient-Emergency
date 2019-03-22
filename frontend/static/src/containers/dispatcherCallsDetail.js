@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {Button, Image} from 'react-bootstrap';
 
 
 class DispatchCallsDetailContainer extends Component {
@@ -7,17 +7,19 @@ class DispatchCallsDetailContainer extends Component {
         super(props);
 
         this.state = {
-            //i dont want a list of calls, i want details for individual call
-            // dispatchCalls: []
-            specificCall: {}
-        }
+            calls : [],
+            specificCall: {},
+            dispatchCall: 118,
+        };
 
     }
 
     componentDidMount() {
         //my queryset is alredy set up to only get info filtered to this user
-        fetch(`/api/dispatchcall/${this.props.dispatchInfo.id}/scene/`).then((response) => {
-        // fetch(`/api/dispatchCall/`).then((response) => {
+        // cant use this bc dispatchInfo.id is not available as props
+        // fetch(`/api/dispatchcall/${this.props.dispatchInfo.id}/scene/`).then((response) => {
+        fetch(`/api/dispatchcall/`).then((response) => {
+            // fetch(`/api/dispatchCall/`).then((response) => {
             if (response.status !== 200) {
                 console.log("problem")
             }
@@ -26,38 +28,43 @@ class DispatchCallsDetailContainer extends Component {
 
             return response.json();
         }).then(json => {
-            this.setState({specificCall: json});
-            console.log('json', json);
+            this.setState({calls: json});
+            // currently this is just displaying the info from dispatchCall hard coded
+            console.log('Calls available', json);
 
         });
+        // i want to write something that will get the specific call id from the call i clicked on. i
+        // am not requesting from the specific api of that call bc i need all the info for that call
 
 
     }
 
 
     render() {
-        // this wont work bc dipatchInfo is on child component not parent component
-        // let call = this.props.dispatchInfo.id
-        //dont map, i want to print this info out for a specific call
-        let call = this.state.dispatchCalls.map((dispatchCall) =>
-            <li key={dispatchCall.id}><img src={dispatchCall.image} alt=""/>
-                <p>{dispatchCall.id}</p>
-                <p>{dispatchCall.phone}</p>
-                <p>{dispatchCall.date}</p>
-                <p>{dispatchCall.user}</p>
-                <p>
-                    {dispatchCall.scene_images.map((image) =>
-                        <img src={image.image}/>
-                    )}
-                </p>
-            </li>
-        );
 
+        let specificCall = this.state.specificCall;
 
         return (
 
             <div>
-                {call}
+                <ul>
+
+                    <li key={specificCall.id}><img src={specificCall.image} alt=""/>
+                        <p>{specificCall.id} call id</p>
+                        <p>{specificCall.phone} call phone</p>
+                        <p>{specificCall.date} call date</p>
+
+                        {/*<p>*/}
+                            {/*{specificCall.scene_images.map((image) =>*/}
+                                {/*<Image src={image.image}/>*/}
+                            {/*)}*/}
+                        {/*</p>*/}
+
+                         </li>
+                </ul>
+
+                        <TextMedical route={this.props.route}/>
+
             </div>
 
 
@@ -70,3 +77,30 @@ class DispatchCallsDetailContainer extends Component {
 
 export default DispatchCallsDetailContainer;
 
+class TextMedical extends Component {
+    constructor(props) {
+        super(props)
+    };
+
+
+    render() {
+        return (
+            <div>
+
+
+                <div>
+                    <Button>Send Detail Page To Prisma Trauma <p>864-111-2222</p></Button>
+                    <Button>Send Call Detail Page To GC EMS <p>864-333-4444</p></Button>
+                    <Button>Send Call Detail Page To Thorne Ambulance <p>864-555-7777</p></Button>
+                </div>
+
+                 <Button onClick={(e) => {
+                    this.props.route("/dispatchcall/")
+                }}>Return To Call List Page </Button>
+
+            </div>
+
+
+        )
+    }
+}

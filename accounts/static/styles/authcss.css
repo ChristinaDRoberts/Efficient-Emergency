@@ -1,8 +1,14 @@
  .brochure{
      text-align: center;
      margin: 0 auto;
-     /*background-image: linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5),*/
-     background-image: url("./frontend/static/src/backgroundImages/med.png");
-     font-size: 50px;
+     color:whitesmoke;
+
  }
 
+body{
+    background: url('../signin.jpeg') no-repeat center center fixed;
+     -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

@@ -52,9 +52,9 @@ class DispatchCallsDetailContainer extends Component {
                 <ul>
 
                     <li key={specificCall.id}><img src={specificCall.image} alt=""/>
-                        <p>{specificCall.id} call id</p>
-                        <p>{specificCall.phone} call phone</p>
-                        <p>{specificCall.date} call date</p>
+                        <p>Call ID #{specificCall.id} </p>
+                        <p>Caller Phone # {specificCall.phone}</p>
+                        <p>Call Date{specificCall.date}</p>
 
                         <p>
                             {specificCall.scene_images.map((image) =>

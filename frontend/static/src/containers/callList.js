@@ -58,6 +58,7 @@ class Card extends Component {
         //this removes the class name of "d-none" off of the images
         // e.target.nextSibling.classList.toggle('d-none');
         this.setState({active: !this.state.active});
+
     };
 
     render() {
@@ -69,8 +70,10 @@ class Card extends Component {
                 <div className="card-body">
                     <p>Call #:{call.id}</p>
                     <p>Phone:{call.phone}</p>
-                    {/*<p>Date:{call.date}</p>*/}
+
                     <Button onClick={this.handleToggle}>Show Images</Button>
+
+
 
                     <ul className={this.state.active ? '' : 'd-none'} id="image-drop-down">
                         <li>

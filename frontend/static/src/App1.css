@@ -52,11 +52,11 @@ transition: .5s ease-in-out;
 
 }
 
-/*.imagesFromClient {*/
-    /*border: greenyellow solid 2px;*/
-    /*margin: 50px 30px;*/
+.imagesFromClient {
+    background-image: url("./backgroundImages/box.jpg");
+    margin: 50px 30px;
 
-/*}*/
+}
 
 button {
     margin: 10px;
@@ -103,30 +103,28 @@ li {
 
 }
 
-.card-columns {
-  @include media-breakpoint-only(lg) {
-    column-count: 4;
-  }
-  @include media-breakpoint-only(xl) {
-    column-count: 5;
-  }
-}
+/*.card-columns {*/
+  /*@include media-breakpoint-only(lg) {*/
+    /*column-count: 4;*/
+  /*}*/
+  /*@include media-breakpoint-only(xl) {*/
+    /*column-count: 5;*/
+  /*}*/
+/*}*/
 
-.transbox{
-
-    /*background-color: #79fbff;*/
-    /*background-color: rgba(255, 255, 255, 0.6);*/
-    /*background-color: #ffffff;*/
-  /*border: 1px solid black;*/
-  /*opacity: 0.6;*/
-
-
+.card-body{
+    background-image: url("/backgroundImages/box.jpg");
+    z-index: 1;
 
 }
 
 .btn{
-    background-color: #62b3ff;
+    background-color: #1b37d4;
 
+}
+
+a{
+    color: #18225c;
 }
 
 /*ecg animation*/
@@ -146,6 +144,8 @@ li {
   width: 100%;
 }
 
+
+
 .block {
   background: #29F900;
   width: 10px;
@@ -154,9 +154,16 @@ li {
   float: left;
   border-radius: 5px;
   transition: all 2s;
-
   animation: ecg 5s linear infinite;
+    /*-webkit-animation: colorchange 2s;*/
 }
+
+/*@keyframes ecg {*/
+  /*0%   {background: red;}*/
+  /*25%  {background: yellow;}*/
+  /*50%  {background: blue;}*/
+  /*100% {background: green;}*/
+/*}*/
 
 .block:nth-child(1) {
   animation-delay: 232ms;

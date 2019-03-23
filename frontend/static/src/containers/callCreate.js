@@ -156,7 +156,7 @@ class DispatchCurrentCallContainer extends Component {
                     SEND LINK THROUGH TEXT</Button>
 
                 <div className="imagesFromClient">
-                    <ul>
+                    <ul >
                         {images}
                     </ul>
 

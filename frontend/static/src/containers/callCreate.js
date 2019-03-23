@@ -124,11 +124,11 @@ class DispatchCurrentCallContainer extends Component {
 
             <div>
 
-                <h2>Dispatch Current Create Call Page</h2>
+                <h2 className="wecome-dispatcher">Create an active call and send emergency link to citizen </h2>
 
                 <Form onSubmit={this.createCall}>
 
-                    <label htmlFor="phone">Enter callers phone number:</label>
+                    <label className="label" htmlFor="phone">Enter callers phone number:</label>
 
                     <input type="tel"
                            id="phone"

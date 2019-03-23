@@ -14,13 +14,17 @@ transition: .5s ease-in-out;
 .main{
     /*background-color: dimgrey;*/
     height: 100%;
-    background: url("./backgroundImages/med.png") no-repeat center center fixed;
+    background: url("./backgroundImages/clientbackground.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
+.label{
+    color:whitesmoke;
+    margin: 20px;
+}
 .wecome-dispatcher{
     color: whitesmoke;
     display: inline-block;
@@ -72,12 +76,14 @@ li {
 
 .scene-photo-ul {
     margin: 0 auto;
-    background-color: lavenderblush;
+    /*background-color: lavenderblush;*/
     display: inline-block;
 }
 
 .scene-div {
-    background-color: lightcyan;
+    /*background-color: lightcyan;*/
+    height: 100vh;
+    background-image: url("./backgroundImages/clientbackground.jpg");
 }
 
 .please-submit-photo {
@@ -106,19 +112,29 @@ li {
   }
 }
 
-.card-body{
-    background-color: #5ffff7;
+.transbox{
+
+    /*background-color: #79fbff;*/
+    /*background-color: rgba(255, 255, 255, 0.6);*/
+    /*background-color: #ffffff;*/
+  /*border: 1px solid black;*/
+  /*opacity: 0.6;*/
+
+
+
 }
 
 .btn{
     background-color: #62b3ff;
+
 }
 
 /*ecg animation*/
 
 .wrapper {
   position: relative;
-  background: #000;
+  /*background: #000;*/
+    /*background-image: url("./backgroundImages/heartbeat .jpg")  no-repeat center center fixed;*/
   width: 100%;
   height: 150px;
   overflow: hidden;
@@ -131,13 +147,14 @@ li {
 }
 
 .block {
-  background: #62ff5f;
+  background: #29F900;
   width: 10px;
   height: 10px;
   position: absolute;
   float: left;
   border-radius: 5px;
   transition: all 2s;
+
   animation: ecg 5s linear infinite;
 }
 

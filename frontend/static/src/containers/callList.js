@@ -67,7 +67,7 @@ class Card extends Component {
         return (
 
             <div className="card">
-                <div className="card-body">
+                <div className="card-body transbox">
                     <p>Call #:{call.id}</p>
                     <p>Phone:{call.phone}</p>
 

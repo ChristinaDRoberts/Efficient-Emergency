@@ -53,7 +53,7 @@ transition: .5s ease-in-out;
 }
 
 .imagesFromClient {
-    background-image: url("./backgroundImages/box.jpg");
+    /*background-image: url("./backgroundImages/box.jpg");*/
     margin: 50px 30px;
 
 }
@@ -83,7 +83,7 @@ li {
 .scene-div {
     /*background-color: lightcyan;*/
     height: 100vh;
-    background-image: url("./backgroundImages/clientbackground.jpg");
+    /*background-image: url("./backgroundImages/clientbackground.jpg");*/
 }
 
 .please-submit-photo {

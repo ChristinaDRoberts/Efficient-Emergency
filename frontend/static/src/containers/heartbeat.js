@@ -51,3 +51,5 @@ class HeartbeatComponent extends Component {
 }
 
 export default HeartbeatComponent
+
+// see https://codepen.io/webstuff/pen/WxRxBB , modified

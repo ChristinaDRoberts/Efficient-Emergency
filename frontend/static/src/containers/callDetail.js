@@ -1,7 +1,5 @@
-import {Button, Form} from "react-bootstrap";
+import {Button, Form, Card} from "react-bootstrap";
 import React, {Component} from 'react';
-import divWithClassName from "react-bootstrap/es/utils/divWithClassName";
-
 
 // this is going to be the screen the client is pn when submitting images
 
@@ -93,11 +91,13 @@ class ClientContainer extends Component {
                     <Button className="submitImageButtonScene" type="submit" variant="secondary">Submit This Image !</Button>
                 </Form>
 
-                <div>
-                    <ul className="scene-photo-ul">
-                        {images}
-                    </ul>
-                </div>
+                {/*<div className="card">*/}
+                    {/*<div className="card-body">*/}
+                        <ul className="scene-photo-ul card-columns">
+                            {images}
+                        </ul>
+                    {/*</div>*/}
+                {/*</div>*/}
 
 
 

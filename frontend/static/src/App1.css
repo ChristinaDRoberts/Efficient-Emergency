@@ -152,9 +152,9 @@ li {
 
 .card-body:hover{
     background-image: linear-gradient(to right, rgba(25,56, 214), rgba(214,25,28));
-    border: 5px solid whitesmoke;
+    border: 1px solid whitesmoke;
     font-style: oblique;
-    transform: scale(1);
+    transform: scale(1.1);
 
 }
 

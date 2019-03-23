@@ -11,6 +11,8 @@ box-sizing: border-box;
 transition: .5s ease-in-out;
 }
 
+
+
 .main{
     /*background-color: dimgrey;*/
     height: 100%;
@@ -82,6 +84,11 @@ li {
 
     /*flex-grow: 1;*/
 
+}
+
+.scene-photos{
+    height: 35%;
+    width:35%;
 }
 
 .scene-photo-ul {
@@ -165,7 +172,7 @@ a{
 
 
 .block {
-  background: #29F900;
+  background: whitesmoke;
   width: 10px;
   height: 10px;
   position: absolute;

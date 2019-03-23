@@ -20,5 +20,6 @@ dj-database-url = "*"
 django-phone-field = "*"
 requests = "*"
 
+
 [requires]
 python_version = "3.7"

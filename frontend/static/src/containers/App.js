@@ -3,6 +3,7 @@ import DispatchCallLogContainer from "./callList"
 import ClientContainer from "./callDetail"
 import DispatchCurrentCallContainer from "./callCreate"
 import DispatcherCallsDetailContainer from "./dispatcherCallsDetail.js"
+import HeartbeatComponent from "./heartbeat.js"
 
 
 import '../App.css';
@@ -39,6 +40,7 @@ class App extends Component {
 
         <div>
              <Container className="Fluid">
+                 <div className="mainheart"><HeartbeatComponent/></div>
                             {(() => {
                                 switch (this.state.currentScreen.pathname) {
                                     case '/dispatchcall/':
@@ -84,6 +86,44 @@ class App extends Component {
 export default App;
 
 
+// class ModalImages extends Component {
+//     constructor(props) {
+// 		this.state = {item : null}
+// 	}
+// 	passItemToModal(item){
+// 		this.setState({
+// 			detailModal: true,
+// 			item: item
+// 		})
+// 	}
+// 	closeDetailModal() {
+// 		this.setState({
+// 			detailModal: false
+// 		})
+// 	}
+// 	openDetailModal() {
+// 		this.setState({
+// 			detailModal: true
+// 		})
+// 	}
+// 	render(){
+// 		return(
+// 		<Grid passItemToModal={this.passItemToModal.bind(this)}></Grid>
+// 		<Modal
+// 			overlayClassName="detail-modal-overlay"
+// 			className="detail-modal"
+// 			isOpen={this.state.detailModal}
+// 			onRequestClose={this.closeDetailModal.bind(this)}>
+// 			{  this.state.item ? this.renderContent(this.state.item) : null };
+// 		</Modal>
+//     )
+// 	}
+//
+// }
+//
+// export default ModalIMages
+//
+//
 
 
 

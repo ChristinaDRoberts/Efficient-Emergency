@@ -14,8 +14,8 @@ class DispatchCallsDetailContainer extends Component {
         return (
 
             <div>
-            <div className="card">
-                <div className="card-body">
+            <div className="card detail-card">
+                <div className="card-body detail-body">
                     <ul>
                         <li key={specificCall.id}>
                             <p className="detail-detail">Call ID #: {specificCall.id} </p>

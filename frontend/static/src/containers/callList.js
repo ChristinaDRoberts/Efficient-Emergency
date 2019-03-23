@@ -110,7 +110,7 @@ class OpenImagesOnCallList extends Component {
         return (
             <div>
                 <div className="topDispatch">
-                    <h2>Welcome Dispatcher ! Create A New Call, Or Revisit Previous Calls</h2>
+                    <h2 className="wecome-dispatcher">Create A New Call, Or Revisit Previous Calls</h2>
 
                     <Button variant="danger" className="switch" onClick={(e) => {
                         this.props.route("callCreate")

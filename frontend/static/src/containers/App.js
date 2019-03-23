@@ -6,7 +6,7 @@ import DispatcherCallsDetailContainer from "./dispatcherCallsDetail.js"
 import HeartbeatComponent from "./heartbeat.js"
 
 
-import '../App.css';
+import '../App1.css';
 import {Container} from 'react-bootstrap';
 
 
@@ -38,7 +38,7 @@ class App extends Component {
 
     return(
 
-        <div>
+        <div className="main">
              <Container className="Fluid">
                  <div className="mainheart"><HeartbeatComponent/></div>
                             {(() => {

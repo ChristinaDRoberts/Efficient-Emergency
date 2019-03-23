@@ -11,10 +11,21 @@ box-sizing: border-box;
 transition: .5s ease-in-out;
 }
 
-
-.welcome-dispatcher{
-
+.main{
+    /*background-color: dimgrey;*/
+    height: 100%;
+    background: url("./backgroundImages/med.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
+.wecome-dispatcher{
+    color: whitesmoke;
+    display: inline-block;
+}
+
 .detail-images{
     width: 35%;
     height: 35%;
@@ -27,13 +38,14 @@ transition: .5s ease-in-out;
 }
 
 .topDispatch {
-    border: 2px red solid;
+    /*border: 2px red solid;*/
 }
 
 .switch {
     text-align: center;
-    margin-left: 80%;
-    display: inline-block;
+    /*float: right;*/
+    margin-left: 200px;
+
 }
 
 /*.imagesFromClient {*/
@@ -94,10 +106,15 @@ li {
   }
 }
 
-/*.card-body{*/
-    /*width: 300px;*/
-/*}*/
+.card-body{
+    background-color: #5ffff7;
+}
 
+.btn{
+    background-color: #62b3ff;
+}
+
+/*ecg animation*/
 
 .wrapper {
   position: relative;
@@ -114,7 +131,7 @@ li {
 }
 
 .block {
-  background: #29f900;
+  background: #62ff5f;
   width: 10px;
   height: 10px;
   position: absolute;
@@ -291,4 +308,3 @@ li {
     left: 100%;
   }
 }
-    

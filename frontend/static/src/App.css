@@ -92,11 +92,16 @@ li {
   @include media-breakpoint-only(xl) {
     column-count: 5;
   }
-}
 
-/*.card-body{*/
-    /*width: 300px;*/
-/*}*/
+
+.card-body{
+    &:hover
+    background: darken(coral, 8%)
+    color: #111
+    span
+      transform: scale(1)
+      color: lighten(coral, 50%)
+}
 
 
 .wrapper {

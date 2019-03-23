@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import {Button, Image, Row} from 'react-bootstrap';
-import divWithClassName from "react-bootstrap/es/utils/divWithClassName";
+import {Button, Image, Row, Modal } from 'react-bootstrap';
+import ModalImage from 'react-modal-image'
+
+
 
 
 class DispatchCallLogContainer extends Component {
@@ -62,7 +64,7 @@ class Card extends Component {
     };
 
     render() {
-        // does this props call come from the claqss below, in the mqp function?
+
         var call = this.props.call;
         return (
 
@@ -80,11 +82,26 @@ class Card extends Component {
                         <li>
                             {call.scene_images.map((image, index) =>
                                 <Image className="img-thumbnail" key={index} src={image.image}/>
+
                             )}
                             <Button onClick={(e) => {
                                 this.props.route("dispatcherCallsDetail", call)
                             }}>See/Send Call Detail Page</Button>
                         </li>
+                            {/*<Modal.Dialog>*/}
+                              {/*<Modal.Header closeButton>*/}
+                                {/*<Modal.Title>Modal title</Modal.Title>*/}
+                              {/*</Modal.Header>*/}
+
+                              {/*<Modal.Body>*/}
+                                {/*<p>Modal body text goes here.</p>*/}
+                              {/*</Modal.Body>*/}
+
+                              {/*<Modal.Footer>*/}
+                                {/*<Button variant="secondary">Close</Button>*/}
+                                {/*<Button variant="primary">Save changes</Button>*/}
+                              {/*</Modal.Footer>*/}
+                            {/*</Modal.Dialog>;*/}
                     </ul>
                 </div>
 
@@ -122,6 +139,7 @@ class OpenImagesOnCallList extends Component {
                 <div className="card-columns">
                     {calls}
                 </div>
+
 
             </div>
         )

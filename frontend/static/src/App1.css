@@ -21,6 +21,16 @@ transition: .5s ease-in-out;
   background-size: cover;
 }
 
+p{
+    color: whitesmoke;
+}
+
+h2{
+    color: whitesmoke;
+    text-align: center;
+    margin: 10px;
+}
+
 .label{
     color:whitesmoke;
     margin: 20px;
@@ -38,7 +48,7 @@ transition: .5s ease-in-out;
 
 .detail-detail{
     font-size: 25px;
-    color: red;
+    color: whitesmoke;
 }
 
 .topDispatch {
@@ -81,9 +91,9 @@ li {
 }
 
 .scene-div {
-    /*background-color: lightcyan;*/
+
     height: 100vh;
-    /*background-image: url("./backgroundImages/clientbackground.jpg");*/
+
 }
 
 .please-submit-photo {

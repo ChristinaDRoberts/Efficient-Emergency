@@ -124,7 +124,7 @@ class DispatchCurrentCallContainer extends Component {
 
             <div>
 
-                <h2>Dispatch Current Create Call Page</h2>
+                <h2>Create Active Call and Send Text Message With Link To Submit Photos</h2>
 
                 <Form onSubmit={this.createCall}>
 

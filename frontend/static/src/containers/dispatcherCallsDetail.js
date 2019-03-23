@@ -18,9 +18,10 @@ class DispatchCallsDetailContainer extends Component {
                 <div className="card-body">
                     <ul>
                         <li key={specificCall.id}>
-                            <p>Call ID #{specificCall.id} </p>
-                            <p>Caller Phone # {specificCall.phone}</p>
-                            <p>Call Date{specificCall.date}</p>
+                            <p>Call ID #: {specificCall.id} </p>
+                            <p>Caller Phone # : {specificCall.phone}</p>
+                            <p>Call Date: {specificCall.date}</p>
+                            <p>Dispatcher: {specificCall.user.username}</p>
 
                             <p>
                                 {specificCall.scene_images.map((image) =>

@@ -23,7 +23,7 @@ class DispatchCallsDetailContainer extends Component {
                             <p className="detail-detail">Call Date: {specificCall.date}</p>
                             <p className="detail-detail">Dispatcher: {specificCall.user.username}</p>
 
-                            <p>
+                            <p className="images-provider-detail-page">
                                 {specificCall.scene_images.map((image) =>
                                     <Image className='img-thumbnail detail-images'  src={image.image}/>
                                 )}

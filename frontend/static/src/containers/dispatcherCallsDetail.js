@@ -59,9 +59,9 @@ class TextMedical extends Component {
 
 
                 <div>
-                <Button>Send Detail Page To Prisma Trauma <p>864-111-2222</p></Button>
-                <Button>Send Call Detail Page To GC EMS <p>864-333-4444</p></Button>
-                <Button>Send Call Detail Page To Thorne Ambulance <p>864-555-7777</p></Button>
+                <Button className="send-to-field" >Send Detail Page To Prisma Trauma <p>864-111-2222</p></Button>
+                <Button className="send-to-field" >Send Call Detail Page To GC EMS <p>864-333-4444</p></Button>
+                <Button className="send-to-field" >Send Call Detail Page To Thorne Ambulance <p>864-555-7777</p></Button>
                 </div>
 
                 <Button onClick={(e) => {

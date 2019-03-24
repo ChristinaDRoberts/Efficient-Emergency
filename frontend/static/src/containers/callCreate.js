@@ -122,7 +122,7 @@ class DispatchCurrentCallContainer extends Component {
         return (
 
 
-            <div>
+            <div className="callCreateMain">
 
                 <h2>Create Active Call and Send Text Message With Link To Submit Photos</h2>
 
@@ -149,13 +149,13 @@ class DispatchCurrentCallContainer extends Component {
                 </Form>
 
                 <p> {this.state.phone}</p>
-                <a href="#"> https://efficient-emergency.herokuapp.com/dispatchcall/{this.state.dispatchInfo.id}/scene</a>
+                <a className="link-to-text" href="#"> https://efficient-emergency.herokuapp.com/dispatchcall/{this.state.dispatchInfo.id}/scene</a>
 
 
                 <Button className="sendText" type="submit" variant="secondary" onClick={this.sendTextMessage}>
                     SEND LINK THROUGH TEXT</Button>
 
-                <div className="imagesFromClient">
+                <div className="imagesFromClient card-columns">
                     <ul>
                         {images}
                     </ul>

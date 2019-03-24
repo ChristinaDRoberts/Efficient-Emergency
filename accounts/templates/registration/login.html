@@ -2,14 +2,14 @@
 
 {% block content %}
 
-<h2>Login</h2>
+<h2 class="login-title">Login</h2>
   <form method="post">
     {% csrf_token %}
        {{ form.as_p }}
-{#     <a href="{% url 'frontend:index' %}"></a>#}
 
-    <button  type="submit"><a href="{% url 'frontend:dispatchcall' %}"></a>CLick To Login</button>
-     <a href="{% url 'accounts:signup' %}">Click To Signup </a>
+
+    <button  class="btn btn-light login-link" type="submit"><a href="{% url 'frontend:dispatchcall' %}"></a>CLick To Login</button>
+      <button class="btn btn-light"> <a href="{% url 'accounts:signup' %}">Click To Signup </a></button>
 
 
   </form>

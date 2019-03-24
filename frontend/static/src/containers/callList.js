@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Image, Row, Modal } from 'react-bootstrap';
+import {Button, Image, Row, Modal, } from 'react-bootstrap';
 import ModalImage from 'react-modal-image'
 
 

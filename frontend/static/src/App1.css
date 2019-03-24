@@ -112,6 +112,7 @@ li {
 
 
 
+
 .index {
     text-align: center;
 }
@@ -155,7 +156,6 @@ li {
     border: 1px solid whitesmoke;
     font-style: oblique;
     transform: scale(1.1);
-
 }
 
 .btn{
@@ -167,10 +167,6 @@ a{
     color: #18225c;
 }
 
-.please-submit-photo{
-    color: whitesmoke;
-
-}
 
 /*ecg animation modified , */
 
@@ -212,18 +208,22 @@ a{
 
 .block:nth-child(1) {
   animation-delay: 232ms;
+
 }
 
 .block:nth-child(2) {
   animation-delay: 224ms;
+
 }
 
 .block:nth-child(3) {
   animation-delay: 216ms;
+
 }
 
 .block:nth-child(4) {
   animation-delay: 208ms;
+
 }
 
 .block:nth-child(5) {
@@ -232,6 +232,7 @@ a{
 
 .block:nth-child(6) {
   animation-delay: 192ms;
+
 }
 
 .block:nth-child(7) {
@@ -332,48 +333,59 @@ a{
 @keyframes ecg {
   0% {
     left: 0;
+      background: red;
   }
 
   25% {
     left: 25%;
     transform: translate(0,0);
+      background: red;
   }
 
   50% {
     left: 50%;
     transform: translate(0,0);
+      background: red;
   }
 
   26%,51%,76% {
     transform: translate(0,-30px);
+      background: red;
   }
 
   27%,52%,77% {
     transform: translate(0,0);
+      background: blue;
   }
 
   28%,53%,78% {
     transform: translate(0,30px);
+      background: blue;
   }
 
   29%,54%,79% {
     transform: translate(0,0);
+      background: blue;
   }
 
   30%,55%,80% {
     transform: translate(0,10px);
+      background: blue;
   }
 
   31%,56%,81% {
     transform: translate(0,0);
+      background: blue;
   }
 
   75% {
     left: 75%;
     transform:translate(0,0);
+      background: blue;
   }
 
   100% {
     left: 100%;
+      background: blue;
   }
 }

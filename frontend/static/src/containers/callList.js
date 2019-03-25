@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {Button, Image, Row, Modal, } from 'react-bootstrap';
-import ModalImage from 'react-modal-image'
+import {Button, Image, Row, Modal,} from 'react-bootstrap';
 
-
+// import ModalImage from 'react-modal-image'
 
 
 class DispatchCallLogContainer extends Component {
@@ -55,6 +54,10 @@ class Card extends Component {
         }
     }
 
+    handleClose = (e) => {
+    this.setState({ active: false });
+  };
+
     handleToggle = (e) => {
         // https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling
         //this removes the class name of "d-none" off of the images
@@ -75,38 +78,37 @@ class Card extends Component {
                     <p>Phone:{call.phone}</p>
 
                     <Button onClick={this.handleToggle}>Show Images</Button>
+                    <Modal show={this.state.active} onHide={this.handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Modal title</Modal.Title>
+                        </Modal.Header>
+
+                        <Modal.Body>
+                            <ul  id="image-drop-down">
+                                <li className="lightbox">
+                                    {call.scene_images.map((image, index) =>
+                                        <Image className="img-thumbnail" key={index} src={image.image}/>
+                                    )}
+                                    <Button onClick={(e) => {
+                                        this.props.route("dispatcherCallsDetail", call)
+                                    }}>See/Send Call Detail Page</Button>
+                                </li>
+                            </ul>
+
+                        </Modal.Body>
+
+                        <Modal.Footer>
+                            <Button variant="secondary">Close</Button>
+
+                        </Modal.Footer>
+                    </Modal>
 
 
-
-                    <ul className={this.state.active ? '' : 'd-none'} id="image-drop-down">
-                        <li>
-                            {call.scene_images.map((image, index) =>
-                                <Image className="img-thumbnail" key={index} src={image.image}/>
-
-                            )}
-                            <Button onClick={(e) => {
-                                this.props.route("dispatcherCallsDetail", call)
-                            }}>See/Send Call Detail Page</Button>
-                        </li>
-                            {/*<Modal.Dialog>*/}
-                              {/*<Modal.Header closeButton>*/}
-                                {/*<Modal.Title>Modal title</Modal.Title>*/}
-                              {/*</Modal.Header>*/}
-
-                              {/*<Modal.Body>*/}
-                                {/*<p>Modal body text goes here.</p>*/}
-                              {/*</Modal.Body>*/}
-
-                              {/*<Modal.Footer>*/}
-                                {/*<Button variant="secondary">Close</Button>*/}
-                                {/*<Button variant="primary">Save changes</Button>*/}
-                              {/*</Modal.Footer>*/}
-                            {/*</Modal.Dialog>;*/}
-                    </ul>
-                </div>
 
             </div>
-        )
+
+    </div>
+    )
     }
 }
 

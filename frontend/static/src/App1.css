@@ -67,7 +67,18 @@ h2{
 .imagesFromClient {
     margin: 50px 30px;
     height: 100%;
+}
 
+.create-title{
+    margin-bottom: 10%;
+}
+.label-phone{
+    text-align: center;
+    margin: 10px;
+}
+
+.input-phone{
+    background-color: #c5c5c5;
 }
 
 .link-to-text{
@@ -75,6 +86,9 @@ h2{
     font-weight: bold;
     /*text-shadow: 2px 2px whitesmoke;*/
     font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 button {
@@ -88,9 +102,6 @@ li {
     margin: 10px;
     padding:7px;
     text-align: center;
-
-    /*flex-grow: 1;*/
-
 }
 
 .scene-input{
@@ -121,6 +132,10 @@ li {
     font-weight: bold;
 
     text-align: center;
+}
+
+.sendText{
+   display: block;
 }
 
 .send-to-field{

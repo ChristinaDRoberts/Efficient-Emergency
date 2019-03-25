@@ -124,13 +124,14 @@ class DispatchCurrentCallContainer extends Component {
 
             <div className="callCreateMain">
 
-                <h2>Create Active Call and Send Text Message With Link To Submit Photos</h2>
+                <h2 className="create-title">Create Active Call and Send Text Message With Link To Submit Photos</h2>
 
                 <Form onSubmit={this.createCall}>
 
-                    <label htmlFor="phone">Enter callers phone number:</label>
+                    <label className="label-phone" htmlFor="phone">Enter callers phone number:</label>
 
-                    <input type="tel"
+                    <input className="input-phone"
+                           type="tel"
                            id="phone"
                            name="phone"
                            placeholder="Format: 123-456-7890"
@@ -148,8 +149,8 @@ class DispatchCurrentCallContainer extends Component {
                         Create This Call Record</Button>
                 </Form>
 
-                <p> {this.state.phone}</p>
-                <a className="link-to-text" href="#"> https://efficient-emergency.herokuapp.com/dispatchcall/{this.state.dispatchInfo.id}/scene</a>
+                {/*<p className="success"> Record Created For : {this.state.phone}</p>*/}
+                <p className="link-to-text" href="#"> https://efficient-emergency.herokuapp.com/dispatchcall/{this.state.dispatchInfo.id}/scene</p>
 
 
                 <Button className="sendText" type="submit" variant="secondary" onClick={this.sendTextMessage}>
@@ -162,7 +163,7 @@ class DispatchCurrentCallContainer extends Component {
 
                 </div>
 
-                <Button className="endCall" onClick={(e) =>{
+                <Button className="endCall btn btn-secondary" onClick={(e) =>{
                     this.props.route("/dispatchcall/")
                 }}>End Call</Button>
 

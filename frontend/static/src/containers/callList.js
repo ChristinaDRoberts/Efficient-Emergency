@@ -86,15 +86,19 @@ class Card extends Component {
                                     {call.scene_images.map((image, index) =>
                                         <Image className="img-thumbnail" key={index} src={image.image}/>
                                     )}
-                                    <Button className="btn btn-outline-dark" onClick={(e) => {
-                                        this.props.route("dispatcherCallsDetail", call)
-                                    }}>See/Send Call Detail Page</Button>
+                                    {/*<Button className="btn btn-outline-dark" onClick={(e) => {*/}
+                                        {/*this.props.route("dispatcherCallsDetail", call)*/}
+                                    {/*}}>See/Send Call Detail Page</Button>*/}
                                 </li>
                             </ul>
 
                         </Modal.Body>
 
                     </Modal>
+
+                    <Button className="btn btn-outline-dark" onClick={(e) => {
+                                        this.props.route("dispatcherCallsDetail", call)
+                                    }}>See/Send Call Detail Page</Button>
 
 
 

@@ -22,13 +22,15 @@ class DispatchCallsDetailContainer extends Component {
 
                     <ul>
                         <li key={specificCall.id} className="detail-li">
-                            <h3 className="detail-detail"><strong>Call ID #: </strong>{specificCall.id} </h3>
+                             <h3 className="detail-detail"><strong>Call ID #: </strong>{specificCall.id} </h3>
                             <h3 className="detail-detail"><strong>Caller Phone # : </strong>{specificCall.phone}</h3>
 
                             <h3 className="detail-detail"><strong>Call Date: </strong>{specificCall.date}</h3>
                             <h3 className="detail-detail"><strong>Dispatcher: </strong>{specificCall.user.username}</h3>
 
-
+                             <Button className="btn btn-secondary return-to-call-list"  onClick={(e) => {
+                    this.props.route("/dispatchcall/")
+                }}>Return To Call List Page </Button>
 
                             <h3 className="images-provider-detail-page" >
 
@@ -64,9 +66,9 @@ class TextMedical extends Component {
     render() {
         return (
             <div className="er-buttons">
-                 <Button className="btn btn-secondary return-to-call-list"  onClick={(e) => {
-                    this.props.route("/dispatchcall/")
-                }}>Return To Call List Page </Button>
+                 {/*<Button className="btn btn-secondary return-to-call-list"  onClick={(e) => {*/}
+                    {/*this.props.route("/dispatchcall/")*/}
+                {/*}}>Return To Call List Page </Button>*/}
 
                 <div className="er-buttons">
                 <Button className="send-to-field btn btn-secondary" >Send To Prisma Trauma <p className="er-phone">864-111-2222</p></Button>

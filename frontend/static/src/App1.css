@@ -16,7 +16,7 @@ transition: .5s ease-in-out;
 }
 
 .app-body{
-    background-image: linear-gradient(to right, rgba(122,157,150, 0.8),rgba(202,228, 219, 0.8));
+    background-image: linear-gradient(to right, rgba(122,157,150) ,rgba(255,255, 255));
 }
 
 
@@ -49,18 +49,31 @@ h2{
 
 .er-buttons{
     text-align: center;
+    width: 100%;
 }
 
 .return-to-call-list{
     text-align: center;
-    width: 35%;
+    width: 40%;
 }
 
+.detail-div{
+    background-color: whitesmoke;
+}
+
+.images-provider-detail-page{
+    text-align: center;
+}
 .detail-modal-main{
     height: 100vh;
     width: 100vw;
 
 }
+/*detail-modal{*/
+    /*width: 30vw;*/
+    /*height: 30vh;*/
+/*}*/
+
 
 /*.modal-body{*/
     /*height: 65vh;*/
@@ -69,6 +82,8 @@ h2{
 /*}*/
 
 /*.modal-header{*/
+    /*height: 65vh;*/
+    /*width: 65vw;*/
 
 /*}*/
 
@@ -87,6 +102,7 @@ h2{
     width: 35%;
     height: 35%;
     margin:0 auto;
+    display: inline-block;
 }
 
 .detail-detail{

@@ -73,14 +73,14 @@ class Card extends Component {
 
             <div className="card">
 
-                <div className="card-body">
+                <div className="card-body call-list-card">
                     <p>Call #:{call.id}</p>
                     <p>Phone:{call.phone}</p>
 
-                    <Button onClick={this.handleToggle}>Show Images</Button>
+                    <Button className="btn btn-light" onClick={this.handleToggle}>Show Images</Button>
                     <Modal show={this.state.active} onHide={this.handleClose}>
                         <Modal.Header closeButton>
-                            <Modal.Title>Modal title</Modal.Title>
+                            <Modal.Title>Scene Images</Modal.Title>
                         </Modal.Header>
 
                         <Modal.Body>
@@ -97,10 +97,10 @@ class Card extends Component {
 
                         </Modal.Body>
 
-                        <Modal.Footer>
-                            <Button variant="secondary">Close</Button>
+                        {/*<Modal.Footer>*/}
+                            {/*<Button variant="secondary">Close</Button>*/}
 
-                        </Modal.Footer>
+                        {/*</Modal.Footer>*/}
                     </Modal>
 
 
@@ -132,7 +132,7 @@ class OpenImagesOnCallList extends Component {
                 <div className="topDispatch">
                     <h2 className="wecome-dispatcher">Create A New Call, Or Revisit Previous Calls</h2>
 
-                    <Button variant="danger" className="switch" onClick={(e) => {
+                    <Button variant="danger" className="switch btn btn-light" onClick={(e) => {
                         this.props.route("callCreate")
                     }}>Start A Call</Button>
 

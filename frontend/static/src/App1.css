@@ -15,15 +15,17 @@ transition: .5s ease-in-out;
     padding: 0;
 }
 
-.main{
-    /*background-color: dimgrey;*/
-    /*height: 100%;*/
-    /*background: url("./backgroundImages/clientbackground.jpg") no-repeat center center fixed;*/
+.app-body{
+    background-color: #cdcdcdcd;
+}
+/*.main{*/
+    /*background-color: #cdcdcdcd;*/
+    /*!*background: url("./backgroundImages/clientbackground.jpg") no-repeat center center fixed;*!*/
     /*-webkit-background-size: cover;*/
   /*-moz-background-size: cover;*/
   /*-o-background-size: cover;*/
   /*background-size: cover;*/
-}
+/*}*/
 
 p{
     color: #000000;
@@ -44,6 +46,11 @@ h2{
     display: inline-block;
 }
 
+.detail-body{
+    background-image: linear-gradient(to right, rgba(122,157,150, 0.5),rgba(202,228, 219, 0.5));
+    height: 50%;
+
+}
 
 .detail-images{
     width: 35%;
@@ -97,9 +104,14 @@ li {
 
 }
 
+.scene-input{
+    margin-left: 35%;
+}
+
 .scene-photos{
     height: 35%;
     width:35%;
+    margin-left: 32%;
 }
 
 .scene-photo-ul {
@@ -109,11 +121,13 @@ li {
 }
 
 .scene-div {
-
+    background-image: linear-gradient(to right, rgba(122,157,150, 0.5),rgba(202,228, 219, 0.5));
     height: 100vh;
-
 }
 
+.submitImageButtonScene{
+    margin-left: 28%;
+}
 .please-submit-photo {
     color: #000000;
     font-weight: bold;
@@ -158,9 +172,13 @@ li {
 
     background-image: linear-gradient(to right, rgba(122,157,150, 0.8),rgba(202,228, 219, 0.8));
     border: 1px solid whitesmoke;
-    transition: 0.5s ease-in-out all;
     padding: 5%;
+}
 
+.call-list-card{
+    transition: 0.5s ease-in-out all;
+    background-image: linear-gradient(to right, rgba(122,157,150, 0.8),rgba(202,228, 219, 0.8));
+    border: 1px solid whitesmoke;
 
 }
 
@@ -173,6 +191,7 @@ li {
 
 .btn{
     background-color: #00303F;
+    color: whitesmoke;
 
 }
 

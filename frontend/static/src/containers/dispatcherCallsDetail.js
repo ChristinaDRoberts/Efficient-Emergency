@@ -14,8 +14,8 @@ class DispatchCallsDetailContainer extends Component {
         return (
 
             <div>
-            <div className="card detail-card">
-                <div className="card-body detail-body">
+            <div className="detail-card">
+                <div className="detail-body">
                     <ul>
                         <li key={specificCall.id}>
                             <p className="detail-detail">Call ID #: {specificCall.id} </p>
@@ -59,12 +59,12 @@ class TextMedical extends Component {
 
 
                 <div>
-                <Button className="send-to-field" >Send Detail Page To Prisma Trauma <p>864-111-2222</p></Button>
-                <Button className="send-to-field" >Send Call Detail Page To GC EMS <p>864-333-4444</p></Button>
-                <Button className="send-to-field" >Send Call Detail Page To Thorne Ambulance <p>864-555-7777</p></Button>
+                <Button className="send-to-field btn btn-light" >Send Detail Page To Prisma Trauma <p>864-111-2222</p></Button>
+                <Button className="send-to-field btn btn-light" >Send Call Detail Page To GC EMS <p>864-333-4444</p></Button>
+                <Button className="send-to-field btn btn-light" >Send Call Detail Page To Thorne Ambulance <p>864-555-7777</p></Button>
                 </div>
 
-                <Button onClick={(e) => {
+                <Button className="btn btn-light"  onClick={(e) => {
                     this.props.route("/dispatchcall/")
                 }}>Return To Call List Page </Button>
 

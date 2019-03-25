@@ -37,7 +37,7 @@ class App extends Component {
 
     return(
 
-        <div className="main">
+
              <Container className="Fluid">
                  <div className="mainheart"><HeartbeatComponent/></div>
                             {(() => {
@@ -75,7 +75,6 @@ class App extends Component {
 
 
              </Container>
-        </div>
     )
   };
 

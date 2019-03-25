@@ -77,7 +77,7 @@ class Card extends Component {
                     <p>Call #:{call.id}</p>
                     <p>Phone:{call.phone}</p>
 
-                    <Button className="btn btn-light" onClick={this.handleToggle}>Show Images</Button>
+                    <Button className="btn btn-secondary" onClick={this.handleToggle}>Show Images</Button>
                     <Modal show={this.state.active} onHide={this.handleClose}>
                         <Modal.Header closeButton>
                             <Modal.Title>Scene Images</Modal.Title>
@@ -89,7 +89,7 @@ class Card extends Component {
                                     {call.scene_images.map((image, index) =>
                                         <Image className="img-thumbnail" key={index} src={image.image}/>
                                     )}
-                                    <Button onClick={(e) => {
+                                    <Button className="btn btn-outline-dark" onClick={(e) => {
                                         this.props.route("dispatcherCallsDetail", call)
                                     }}>See/Send Call Detail Page</Button>
                                 </li>
@@ -132,7 +132,7 @@ class OpenImagesOnCallList extends Component {
                 <div className="topDispatch">
                     <h2 className="wecome-dispatcher">Create A New Call, Or Revisit Previous Calls</h2>
 
-                    <Button variant="danger" className="switch btn btn-light" onClick={(e) => {
+                    <Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
                         this.props.route("callCreate")
                     }}>Start A Call</Button>
 

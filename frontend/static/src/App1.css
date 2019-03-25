@@ -3,7 +3,7 @@ img {
     width: 100%;
     padding: 2%;
     border: 3px solid white;
-box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+box-shadow: 0px 0px 8px rgba(0,0,0,.5);
 box-sizing: border-box;
 -webkit-transition: .5s ease-in-out;
 -moz-transition: .5s ease-in-out;
@@ -16,16 +16,9 @@ transition: .5s ease-in-out;
 }
 
 .app-body{
-    background-color: #cdcdcdcd;
+    background-image: linear-gradient(to right, rgba(122,157,150, 0.8),rgba(202,228, 219, 0.8));
 }
-/*.main{*/
-    /*background-color: #cdcdcdcd;*/
-    /*!*background: url("./backgroundImages/clientbackground.jpg") no-repeat center center fixed;*!*/
-    /*-webkit-background-size: cover;*/
-  /*-moz-background-size: cover;*/
-  /*-o-background-size: cover;*/
-  /*background-size: cover;*/
-/*}*/
+
 
 p{
     color: #000000;
@@ -63,19 +56,15 @@ h2{
     color: whitesmoke;
 }
 
-.topDispatch {
-    /*border: 2px red solid;*/
-}
+
 
 .switch {
     text-align: center;
     /*float: right;*/
     margin-left: 200px;
-
 }
 
 .imagesFromClient {
-    /*background-image: url("./backgroundImages/box.jpg");*/
     margin: 50px 30px;
     height: 100%;
 
@@ -95,7 +84,7 @@ button {
 li {
     list-style: none;
     display: inline-block;
-    border: 1px grey solid;
+    /*border: 1px grey solid;*/
     margin: 10px;
     padding:7px;
     text-align: center;
@@ -116,7 +105,6 @@ li {
 
 .scene-photo-ul {
     margin: 0 auto;
-    /*background-color: lavenderblush;*/
     display: inline-block;
 }
 
@@ -150,43 +138,23 @@ li {
 
 }
 
-/*.try{*/
-    /*display: flex;*/
-/*}*/
-
-/*.try2{*/
-    /*flex:auto;*/
-/*}*/
-/*.card-columns {*/
-  /*@include media-breakpoint-only(lg) {*/
-    /*column-count: 4;*/
-  /*}*/
-  /*@include media-breakpoint-only(xl) {*/
-    /*column-count: 5;*/
-  /*}*/
-/*}*/
 
 .card-body{
-    /*background-image: url("/backgroundImages/box.jpg");*/
-    /*z-index: 1;*/
-
-    background-image: linear-gradient(to right, rgba(122,157,150, 0.8),rgba(202,228, 219, 0.8));
+    background-color: #cdcdcdcd;
     border: 1px solid whitesmoke;
     padding: 5%;
 }
 
 .call-list-card{
     transition: 0.5s ease-in-out all;
-    background-image: linear-gradient(to right, rgba(122,157,150, 0.8),rgba(202,228, 219, 0.8));
     border: 1px solid whitesmoke;
-
 }
 
 .card-body:hover{
-    background-image: linear-gradient(to right, rgba(122,157,150), rgba(202,228, 219));
+    background-color: #e9e9e9e9;
     border: 1px solid whitesmoke;
-    /*font-style: oblique;*/
     transform: scale(1.1);
+    font-weight: bold;
 }
 
 .btn{

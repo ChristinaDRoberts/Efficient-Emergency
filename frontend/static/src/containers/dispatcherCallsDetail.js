@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Button, Image, Modal} from 'react-bootstrap';
+import divWithClassName from "react-bootstrap/es/utils/divWithClassName";
 
 
 class DispatchCallsDetailContainer extends Component {
@@ -31,30 +32,28 @@ class DispatchCallsDetailContainer extends Component {
 
                     <ul>
                         <li key={specificCall.id}>
-                            <p className="detail-detail">Call ID #: {specificCall.id} </p>
-                            <p className="detail-detail">Caller Phone # : {specificCall.phone}</p>
-                            <p className="detail-detail">Call Date: {specificCall.date}</p>
-                            <p className="detail-detail">Dispatcher: {specificCall.user.username}</p>
+                            <p className="detail-detail"><strong>Call ID #: </strong>{specificCall.id} </p>
+                            <p className="detail-detail"><strong>Caller Phone # : </strong>{specificCall.phone}</p>
+                            <p className="detail-detail"><strong>Call Date: </strong>{specificCall.date}</p>
+                            <p className="detail-detail"><strong>Dispatcher: </strong>{specificCall.user.username}</p>
 
 
 
                             <p className="images-provider-detail-page">
                                 {specificCall.scene_images.map((image) =>
+                                    <div>
                                     <Image className='img-thumbnail detail-images'  src={image.image} onClick={this.handleToggle}/>
 
-                                    // <Modal show={this.state.active} onHide={this.handleClose}>
-                                    //     <Modal.Header closeButton>
-                                    //         <Modal.Title>Scene Images</Modal.Title>
-                                    //     </Modal.Header>
-                                    //
-                                    //     <Modal.Body>
-                                    //         <p className="images-provider-detail-page">
-                                    //             {specificCall.scene_images.map((image) =>
-                                    //             <Image className='img-thumbnail detail-images'  src={image.image}/>
-                                    //     </p>
-                                    //
-                                    //     </Modal.Body>
-                                    // </Modal>
+
+                                            <Modal  className="detail-modal-main" show={this.state.active} onHide={this.handleClose}>
+                                                <Modal.Header closeButton>
+                                                </Modal.Header>
+
+                                                <Modal.Body>
+                                                    <Image className='detail-modal'  src={image.image}/>
+                                                </Modal.Body>
+                                            </Modal>
+                                    </div>
 
                                 )}
                             </p>

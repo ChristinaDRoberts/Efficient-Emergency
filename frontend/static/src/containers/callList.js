@@ -94,10 +94,6 @@ class Card extends Component {
 
                         </Modal.Body>
 
-                        {/*<Modal.Footer>*/}
-                            {/*<Button variant="secondary">Close</Button>*/}
-
-                        {/*</Modal.Footer>*/}
                     </Modal>
 
 

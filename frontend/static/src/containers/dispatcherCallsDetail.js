@@ -1,11 +1,25 @@
 import React, {Component} from 'react';
-import {Button, Image} from 'react-bootstrap';
+import {Button, Image, Modal} from 'react-bootstrap';
 
 
 class DispatchCallsDetailContainer extends Component {
     constructor(props) {
         super(props);
+
+         this.state = {
+            active: false
+        }
     }
+
+     handleClose = (e) => {
+    this.setState({ active: false });
+  };
+
+    handleToggle = (e) => {
+        this.setState({active: !this.state.active});
+
+    };
+
 
     render() {
 
@@ -26,8 +40,22 @@ class DispatchCallsDetailContainer extends Component {
 
                             <p className="images-provider-detail-page">
                                 {specificCall.scene_images.map((image) =>
-                                    
-                                    <Image className='img-thumbnail detail-images'  src={image.image}/>
+                                    <Image className='img-thumbnail detail-images'  src={image.image} onClick={this.handleToggle}/>
+
+                                    // <Modal show={this.state.active} onHide={this.handleClose}>
+                                    //     <Modal.Header closeButton>
+                                    //         <Modal.Title>Scene Images</Modal.Title>
+                                    //     </Modal.Header>
+                                    //
+                                    //     <Modal.Body>
+                                    //         <p className="images-provider-detail-page">
+                                    //             {specificCall.scene_images.map((image) =>
+                                    //             <Image className='img-thumbnail detail-images'  src={image.image}/>
+                                    //     </p>
+                                    //
+                                    //     </Modal.Body>
+                                    // </Modal>
+
                                 )}
                             </p>
 

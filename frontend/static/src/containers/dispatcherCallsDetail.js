@@ -7,19 +7,9 @@ class DispatchCallsDetailContainer extends Component {
     constructor(props) {
         super(props);
 
-         this.state = {
-            active: false
-        }
+
     }
 
-     handleClose = (e) => {
-    this.setState({ active: false });
-  };
-
-    handleToggle = (e) => {
-        this.setState({active: !this.state.active});
-
-    };
 
 
     render() {
@@ -31,32 +21,22 @@ class DispatchCallsDetailContainer extends Component {
             <div>
 
                     <ul>
-                        <li key={specificCall.id}>
-                            <p className="detail-detail"><strong>Call ID #: </strong>{specificCall.id} </p>
-                            <p className="detail-detail"><strong>Caller Phone # : </strong>{specificCall.phone}</p>
-                            <p className="detail-detail"><strong>Call Date: </strong>{specificCall.date}</p>
-                            <p className="detail-detail"><strong>Dispatcher: </strong>{specificCall.user.username}</p>
+                        <li key={specificCall.id} className="detail-li">
+                            <h3 className="detail-detail"><strong>Call ID #: </strong>{specificCall.id} </h3>
+                            <h3 className="detail-detail"><strong>Caller Phone # : </strong>{specificCall.phone}</h3>
+
+                            <h3 className="detail-detail"><strong>Call Date: </strong>{specificCall.date}</h3>
+                            <h3 className="detail-detail"><strong>Dispatcher: </strong>{specificCall.user.username}</h3>
 
 
 
-                            <p className="images-provider-detail-page">
+                            <h3 className="images-provider-detail-page" >
+
                                 {specificCall.scene_images.map((image) =>
-                                    <div>
-                                    <Image className='img-thumbnail detail-images'  src={image.image} onClick={this.handleToggle}/>
-
-
-                                            <Modal  className="detail-modal-main" show={this.state.active} onHide={this.handleClose}>
-                                                <Modal.Header closeButton>
-                                                </Modal.Header>
-
-                                                <Modal.Body>
-                                                    <Image className='detail-modal'  src={image.image}/>
-                                                </Modal.Body>
-                                            </Modal>
-                                    </div>
+                                     <ModalDetailComponent specificCall={this.props.data} image={image}/>
 
                                 )}
-                            </p>
+                            </h3>
 
                         </li>
                     </ul>
@@ -102,3 +82,46 @@ class TextMedical extends Component {
                 )
             }
             }
+
+
+class ModalDetailComponent extends Component{
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            active: false
+        }
+    }
+
+    handleClose = (e) => {
+        this.setState({ active: false });
+      };
+
+    handleToggle = (e) => {
+        this.setState({active: !this.state.active});
+
+    };
+
+    render(){
+        let specificCall = this.props.specificCall;
+        let image = this.props.image;
+
+
+
+    return(
+        <div>
+
+            <Image  className='img-thumbnail detail-images'  src={image.image} onClick={this.handleToggle}/>
+
+
+                <Modal className="detail-modal-main" show={this.state.active} onHide={this.handleClose}>
+                    <Modal.Header closeButton> </Modal.Header>
+                        <Modal.Body>
+                            <Image className='detail-modal'  src={image.image}/>
+                        </Modal.Body>
+                </Modal>
+        </div>
+
+    )
+    }
+}

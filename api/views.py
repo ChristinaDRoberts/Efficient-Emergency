@@ -78,37 +78,34 @@ class SendTextToClientView(View):
 
         return HttpResponse('Sent!')
 
-# class SendTextToERView(View):
-#
-#     # 1
-#     def post(self, request, **kwargs):
-#         # phone_number is key in the dictionary of POST recieved back from http"
-#         phone_number = request.POST["phone"]
-#         call_id = self.kwargs.get("dispatch_call_id")
-#         phone_number = phone_number.replace("-", "")
-#         print(phone_number)
-#         print(call_id)
-#
-#         URL = "https://efficient-emergency.herokuapp.com"
-#
-#         account_sid = os.environ['TWILIO_ACCOUNT_SID']
-#         auth_token = os.environ['TWILIO_AUTH_TOKEN']
-#         client = TwilioClient(account_sid, auth_token)
-#
-#         # I have the call id in my api for each call record,
-#         # I need to extract the call record id number and concatenate into a link to
-#         # populate in here. use requests for api.
-#         # format phone number to +8884446666
-#         message = client.messages.create(
-#             body=URL + reverse("frontend:scene", kwargs={"dispatch_call_id": call_id}),
-#             from_='+18646893583',
-#             # changed equal to plus
-#             to=phone_number
-#         )
-#
-#         print(message.sid)
-#
-#         return HttpResponse('Sent!')
+class SendTextToERView(View):
+
+    # 1
+    def post(self, request, **kwargs):
+        # phone_number is key in the dictionary of POST recieved back from http"
+        phone_number = "+8438021417"
+
+
+        URL = "https://efficient-emergency.herokuapp.com"
+
+        account_sid = os.environ['TWILIO_ACCOUNT_SID']
+        auth_token = os.environ['TWILIO_AUTH_TOKEN']
+        client = TwilioClient(account_sid, auth_token)
+
+        # I have the call id in my api for each call record,
+        # I need to extract the call record id number and concatenate into a link to
+        # populate in here. use requests for api.
+        # format phone number to +8884446666
+        message = client.messages.create(
+            body=URL + reverse("frontend:scene", kwargs={"dispatch_call_id": call_id}),
+            from_='+18646893583',
+            # changed equal to plus
+            to=phone_number
+        )
+
+        print(message.sid)
+
+        return HttpResponse('Sent!')
 
 # 2 twilio api request / requesting twilio, data(link) self.post['phone']
 # new url

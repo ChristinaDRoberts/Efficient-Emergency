@@ -27,6 +27,7 @@ class App extends Component {
      route = (currentScreen, data) => {
         //setting it tp oan object instead of string
         this.setState({currentScreen: {pathname: currentScreen}, data:data});
+        console.log("data", data)
 
 
     };

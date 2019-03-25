@@ -78,10 +78,15 @@ h2{
 
 }
 
+.detail-li{
+    margin: 0 auto;
+    justify-content: center;
+}
+
 .detail-images{
     width: 35%;
     height: 35%;
-    margin:10px;
+    margin:0 auto;
 }
 
 .detail-detail{

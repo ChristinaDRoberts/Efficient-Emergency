@@ -74,7 +74,8 @@ class App extends Component {
                                 }
                             })()}
 
-
+                 <button className="btn btn-light login-link" type="submit"><a href="{% url 'accounts:logout' %}"></a>CLick To Logout
+                 </button>
              </Container>
     )
   };

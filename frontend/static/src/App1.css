@@ -17,30 +17,30 @@ transition: .5s ease-in-out;
 
 .main{
     /*background-color: dimgrey;*/
-    height: 100%;
-    background: url("./backgroundImages/clientbackground.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    /*height: 100%;*/
+    /*background: url("./backgroundImages/clientbackground.jpg") no-repeat center center fixed;*/
+    /*-webkit-background-size: cover;*/
+  /*-moz-background-size: cover;*/
+  /*-o-background-size: cover;*/
+  /*background-size: cover;*/
 }
 
 p{
-    color: whitesmoke;
+    color: #000000;
 }
 
 h2{
-    color: whitesmoke;
+    color: #000000;
     text-align: center;
     margin: 10px;
 }
 
 .label{
-    color:whitesmoke;
+    color:#000000;
     margin: 20px;
 }
 .wecome-dispatcher{
-    color: whitesmoke;
+    color: #000000;
     display: inline-block;
 }
 
@@ -75,7 +75,7 @@ h2{
 }
 
 .link-to-text{
-    color: blue;
+    color: #00303F;
     font-weight: bold;
     /*text-shadow: 2px 2px whitesmoke;*/
     font-size: 20px;
@@ -115,7 +115,7 @@ li {
 }
 
 .please-submit-photo {
-    color: whitesmoke;
+    color: #000000;
     font-weight: bold;
 
     text-align: center;
@@ -156,7 +156,7 @@ li {
     /*background-image: url("/backgroundImages/box.jpg");*/
     /*z-index: 1;*/
 
-    background-image: linear-gradient(to right, rgba(214,25,28, 0.8),rgba(25,56, 214, 0.8));
+    background-image: linear-gradient(to right, rgba(122,157,150, 0.8),rgba(202,228, 219, 0.8));
     border: 1px solid whitesmoke;
     transition: 0.5s ease-in-out all;
     padding: 5%;
@@ -165,14 +165,14 @@ li {
 }
 
 .card-body:hover{
-    background-image: linear-gradient(to right, rgba(25,56, 214), rgba(214,25,28));
+    background-image: linear-gradient(to right, rgba(122,157,150), rgba(202,228, 219));
     border: 1px solid whitesmoke;
-    font-style: oblique;
+    /*font-style: oblique;*/
     transform: scale(1.1);
 }
 
 .btn{
-    background-color: #1b37d4;
+    background-color: #00303F;
 
 }
 
@@ -201,7 +201,7 @@ a{
 
 
 .block {
-  background: whitesmoke;
+  background: #00303F;
   width: 10px;
   height: 10px;
   position: absolute;
@@ -343,95 +343,69 @@ a{
 @keyframes ecg {
   0% {
     left: 0;
-      background: red;
+
   }
 
   25% {
     left: 25%;
     transform: translate(0,0);
-      background: red;
+
   }
 
   50% {
     left: 50%;
     transform: translate(0,0);
-      background: red;
+
   }
 
   26%,51%,76% {
     transform: translate(0,-30px);
-      background: red;
+
   }
 
   27%,52%,77% {
     transform: translate(0,0);
-      background: blue;
+
   }
 
   28%,53%,78% {
     transform: translate(0,30px);
-      background: blue;
+
   }
 
   29%,54%,79% {
     transform: translate(0,0);
-      background: blue;
+
   }
 
   30%,55%,80% {
     transform: translate(0,10px);
-      background: blue;
+
   }
 
   31%,56%,81% {
     transform: translate(0,0);
-      background: blue;
+
   }
 
   75% {
     left: 75%;
     transform:translate(0,0);
-      background: blue;
+
   }
 
   100% {
     left: 100%;
-      background: blue;
+
   }
 }
 
 
 
-.lightbox-target {
-position: fixed;
-top: -100%;
-width: 100%;
-background: rgba(0,0,0,.7);
+/*absolute, */
+/*: before */
+/*top : 0*/
+/*etc for all sides*/
+/*background color using rgba */
 
-opacity: 0;
--webkit-transition: opacity .5s ease-in-out;
--moz-transition: opacity .5s ease-in-out;
--o-transition: opacity .5s ease-in-out;
-transition: opacity .5s ease-in-out;
-overflow: hidden;
-}
 
-/* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
-
-.lightbox-target img {
-margin: auto;
-position: absolute;
-top: 0;
-left:0;
-right:0;
-bottom: 0;
-max-height: 0%;
-max-width: 0%;
-border: 3px solid white;
-box-shadow: 0px 0px 8px rgba(0,0,0,.3);
-box-sizing: border-box;
--webkit-transition: .5s ease-in-out;
--moz-transition: .5s ease-in-out;
--o-transition: .5s ease-in-out;
-transition: .5s ease-in-out;
-}

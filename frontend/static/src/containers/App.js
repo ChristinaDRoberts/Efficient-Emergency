@@ -25,10 +25,9 @@ class App extends Component {
 
 
      route = (currentScreen, data) => {
-        // console.log("is it setting", currentScreen);
         //setting it tp oan object instead of string
         this.setState({currentScreen: {pathname: currentScreen}, data:data});
-        // console.log("is it setting", currentScreen)
+
 
     };
 
@@ -85,45 +84,6 @@ class App extends Component {
 
 export default App;
 
-
-// class ModalImages extends Component {
-//     constructor(props) {
-// 		this.state = {item : null}
-// 	}
-// 	passItemToModal(item){
-// 		this.setState({
-// 			detailModal: true,
-// 			item: item
-// 		})
-// 	}
-// 	closeDetailModal() {
-// 		this.setState({
-// 			detailModal: false
-// 		})
-// 	}
-// 	openDetailModal() {
-// 		this.setState({
-// 			detailModal: true
-// 		})
-// 	}
-// 	render(){
-// 		return(
-// 		<Grid passItemToModal={this.passItemToModal.bind(this)}></Grid>
-// 		<Modal
-// 			overlayClassName="detail-modal-overlay"
-// 			className="detail-modal"
-// 			isOpen={this.state.detailModal}
-// 			onRequestClose={this.closeDetailModal.bind(this)}>
-// 			{  this.state.item ? this.renderContent(this.state.item) : null };
-// 		</Modal>
-//     )
-// 	}
-//
-// }
-//
-// export default ModalIMages
-//
-//
 
 
 

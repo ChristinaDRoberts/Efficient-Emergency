@@ -59,9 +59,6 @@ class Card extends Component {
   };
 
     handleToggle = (e) => {
-        // https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling
-        //this removes the class name of "d-none" off of the images
-        // e.target.nextSibling.classList.toggle('d-none');
         this.setState({active: !this.state.active});
 
     };

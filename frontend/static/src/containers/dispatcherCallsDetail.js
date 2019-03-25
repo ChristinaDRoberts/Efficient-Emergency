@@ -14,8 +14,7 @@ class DispatchCallsDetailContainer extends Component {
         return (
 
             <div>
-            <div className="detail-card">
-                <div className="detail-body">
+
                     <ul>
                         <li key={specificCall.id}>
                             <p className="detail-detail">Call ID #: {specificCall.id} </p>
@@ -23,16 +22,18 @@ class DispatchCallsDetailContainer extends Component {
                             <p className="detail-detail">Call Date: {specificCall.date}</p>
                             <p className="detail-detail">Dispatcher: {specificCall.user.username}</p>
 
+
+
                             <p className="images-provider-detail-page">
                                 {specificCall.scene_images.map((image) =>
+                                    
                                     <Image className='img-thumbnail detail-images'  src={image.image}/>
                                 )}
                             </p>
 
                         </li>
                     </ul>
-                </div>
-            </div>
+
 
 
             <section>
@@ -55,20 +56,20 @@ class TextMedical extends Component {
 
     render() {
         return (
-                <div>
-
-
-                <div>
-                <Button className="send-to-field btn btn-light" >Send Detail Page To Prisma Trauma <p>864-111-2222</p></Button>
-                <Button className="send-to-field btn btn-light" >Send Call Detail Page To GC EMS <p>864-333-4444</p></Button>
-                <Button className="send-to-field btn btn-light" >Send Call Detail Page To Thorne Ambulance <p>864-555-7777</p></Button>
-                </div>
-
-                <Button className="btn btn-light"  onClick={(e) => {
+            <div className="er-buttons">
+                 <Button className="btn btn-secondary return-to-call-list"  onClick={(e) => {
                     this.props.route("/dispatchcall/")
                 }}>Return To Call List Page </Button>
 
+                <div className="er-buttons">
+                <Button className="send-to-field btn btn-secondary" >Send To Prisma Trauma <p className="er-phone">864-111-2222</p></Button>
+                <Button className="send-to-field btn btn-secondary" >Send To GC EMS <p className="er-phone">864-802-1417</p></Button>
+                <Button className="send-to-field btn btn-secondary" >Send To Thorne Ambulance <p className="er-phone">864-555-7777</p></Button>
                 </div>
+
+
+
+            </div>
 
 
                 )

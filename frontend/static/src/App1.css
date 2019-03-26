@@ -189,7 +189,7 @@ li {
 /*}*/
 
 .scene-div {
-    /*background-image: linear-gradient(to right, rgba(122,157,150,.9),rgba(202,228, 219, .9));*/
+
     margin: 0 auto;
 
     height: 100vh;
@@ -297,6 +297,7 @@ a{
 
 .block:nth-child(1) {
   animation-delay: 232ms;
+    background: whitesmoke;
 
 }
 
@@ -422,23 +423,31 @@ a{
 @keyframes ecg {
   0% {
     left: 0;
+      background: whitesmoke;
 
   }
 
   25% {
     left: 25%;
     transform: translate(0,0);
+      background: whitesmoke;
 
   }
 
   50% {
     left: 50%;
     transform: translate(0,0);
+      background: #4a7987;
+
+
+
 
   }
 
   26%,51%,76% {
     transform: translate(0,-30px);
+
+
 
   }
 

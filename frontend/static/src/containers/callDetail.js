@@ -79,25 +79,39 @@ class ClientContainer extends Component {
 
         return (
 
-            <div className="scene-div">
-                <h1 className="please-submit-photo">Please Submit A Photo To Emergency Services</h1>
+             <div className="scene-div col-xs-12 col-sm-10 col-lg-8 align-self-center">
+                 <row class="align-items-center">
 
-                <Form onSubmit={this.submitImage}>
+                    <div className="col">
+                    <h1 className="please-submit-photo">Please Submit A Photo To Emergency Services</h1>
+                    </div>
+                  </row>
 
-                    <img className="scene-photos" src={this.state.image_preview} alt="..."/>
-                    <input className="scene-input" type="file" onChange={this.handleImage} name="image"/>
+            <div className="row align-items-start image-box-div">
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 imagebox">
+                    <Form className="client-form" onSubmit={this.submitImage}>
+
+                        <div className="row align-items-center">
+                            <div className="col-12">
+                            <img className="scene-photos " src={this.state.image_preview} alt="..."/>
+                            <input className="scene-input" type="file" onChange={this.handleImage} name="image"/>
+                            </div>
+                        </div>
 
 
-                    <Button className="submitImageButtonScene" type="submit" variant="secondary">Submit This Image !</Button>
-                </Form>
+                        <Button className="submitImageButtonScene" type="submit" variant="secondary">Submit Image</Button>
+                    </Form>
+                </div>
+             </div>
 
-                {/*<div className="card">*/}
-                    {/*<div className="card-body">*/}
+            <div class=" row align-items-center">
+                <div className="col">
                         <ul className="scene-photo-ul card-columns">
                             {images}
                         </ul>
-                    {/*</div>*/}
-                {/*</div>*/}
+                </div>
+            </div>
+
 
 
 

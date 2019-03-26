@@ -74,8 +74,7 @@ class App extends Component {
                                 }
                             })()}
 
-                 <button className="btn btn-light logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
-                 </button>
+
              </Container>
     )
   };

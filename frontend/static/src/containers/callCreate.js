@@ -169,6 +169,9 @@ class DispatchCurrentCallContainer extends Component {
                     this.props.route("/dispatchcall/")
                 }}>End Call</Button>
 
+                <button className="btn btn-light logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
+                 </button>
+
             </div>
 
 

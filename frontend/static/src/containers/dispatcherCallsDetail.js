@@ -48,6 +48,9 @@ class DispatchCallsDetailContainer extends Component {
             <section>
                 <TextMedical route={this.props.route}/>
             </section>
+
+                <button className="btn btn-light logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
+                 </button>
             </div>
 
                 )

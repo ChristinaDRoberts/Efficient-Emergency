@@ -86,9 +86,7 @@ class Card extends Component {
                                     {call.scene_images.map((image, index) =>
                                         <Image className="img-thumbnail" key={index} src={image.image}/>
                                     )}
-                                    {/*<Button className="btn btn-outline-dark" onClick={(e) => {*/}
-                                        {/*this.props.route("dispatcherCallsDetail", call)*/}
-                                    {/*}}>See/Send Call Detail Page</Button>*/}
+
                                 </li>
                             </ul>
 
@@ -127,7 +125,7 @@ class OpenImagesOnCallList extends Component {
         return (
             <div>
                 <div className="topDispatch">
-                    <h2 className="wecome-dispatcher">Create A New Call, Or Revisit Previous Calls</h2>
+                    <h2 className="wecome-dispatcher">Create A New Call Or Revisit Previous Calls</h2>
 
                     <Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
                         this.props.route("callCreate")
@@ -138,6 +136,9 @@ class OpenImagesOnCallList extends Component {
                 <div className="card-columns">
                     {calls}
                 </div>
+
+                <button className="btn btn-light logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
+                 </button>
 
 
             </div>

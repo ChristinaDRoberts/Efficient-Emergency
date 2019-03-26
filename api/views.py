@@ -82,9 +82,8 @@ class SendTextToERView(View):
 
     # 1
     def post(self, request, **kwargs):
-        phone_number = "+8438021417"
+        phone_number = "+8644488487"
         call_id = self.kwargs.get("dispatch_call_id")
-
 
         URL = "https://efficient-emergency.herokuapp.com"
 

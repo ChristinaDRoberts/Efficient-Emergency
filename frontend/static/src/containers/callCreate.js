@@ -48,8 +48,6 @@ class DispatchCurrentCallContainer extends Component {
     createCall = (event) => {
         event.preventDefault();
 
-
-
         let phone = {phone: this.state.phone};
 
         const conf = {

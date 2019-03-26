@@ -7,9 +7,7 @@ class DispatchCallsDetailContainer extends Component {
     constructor(props) {
         super(props);
 
-
     }
-
 
 
     render() {
@@ -29,8 +27,8 @@ class DispatchCallsDetailContainer extends Component {
                             <h3 className="detail-detail"><strong>Dispatcher: </strong>{specificCall.user.username}</h3>
 
                              <Button className="btn btn-secondary return-to-call-list"  onClick={(e) => {
-                    this.props.route("/dispatchcall/")
-                }}>Return To Call List Page </Button>
+                                     this.props.route("/dispatchcall/")
+                                        }}>Return To Call List Page </Button>
 
                             <h3 className="images-provider-detail-page" >
 
@@ -46,7 +44,7 @@ class DispatchCallsDetailContainer extends Component {
 
 
             <section>
-                <TextMedical route={this.props.route}/>
+                <TextMedical route={this.props.route} dipatchId={this.props.dispatchInfo.id}/>
             </section>
 
                 <button className="btn btn-light logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
@@ -63,7 +61,20 @@ export default DispatchCallsDetailContainer;
 class TextMedical extends Component {
     constructor(props) {
     super(props)
+    }
+    sendTextMessage = (e) => {
+        e.preventDefault();
+
+
+        fetch(`/api/sendtext/${this.props.dispatchInfo.id}/er`)
+            .then(response => {
+                return response.text();
+            }).then(function(response){
+                console.log(response);
+        });
     };
+
+
 
 
     render() {
@@ -75,7 +86,7 @@ class TextMedical extends Component {
 
                 <div className="er-buttons">
                 <Button className="send-to-field btn btn-secondary" >Send To Prisma Trauma <p className="er-phone">864-111-2222</p></Button>
-                <Button className="send-to-field btn btn-secondary" >Send To GC EMS <p className="er-phone">864-802-1417</p></Button>
+                <Button className="send-to-field btn btn-secondary" onClick={this.sendTextMessage} >Send To GC EMS <p className="er-phone">864-802-1417</p></Button>
                 <Button className="send-to-field btn btn-secondary" >Send To Thorne Ambulance <p className="er-phone">864-555-7777</p></Button>
                 </div>
 

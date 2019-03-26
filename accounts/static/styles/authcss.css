@@ -1,4 +1,6 @@
-
+.smaller{
+    height:60vh;
+}
 
 .hero{
     position: relative;
@@ -19,7 +21,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(255 , 255, 255, .5);
+    background-color: rgba(96 , 102, 102, .5);
     content: "";
 
 
@@ -105,7 +107,7 @@
 
 
 .signup{
-    color: whitesmoke;
+    color: #cdcdcdcd;
     text-shadow: 2px 2px lightslategrey;
     /*text-weight: bold;*/
     position: relative;
@@ -124,7 +126,12 @@ a{
 .login-title{
     font-weight: bold;
     font-size: 30px;
-    color: whitesmoke;
+    color: #cdcdcdcd;
     margin-left: 5%;
     text-shadow: 2px 2px lightslategrey;
+    /*background-color: #c5c5c5;*/
 }
+
+/*.whole{*/
+    /*background-color: #c5c5c5;*/
+/*}*/

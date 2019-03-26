@@ -113,7 +113,9 @@ h2{
     margin: 10px;
 }
 
-
+.create-call-button{
+    display: inline-block;
+}
 
 .switch {
     text-align: center;
@@ -141,6 +143,7 @@ h2{
 .link-to-text{
     color: #00303F;
     font-weight: bold;
+
     /*text-shadow: 2px 2px whitesmoke;*/
     font-size: 20px;
     margin-top: 10px;
@@ -193,7 +196,7 @@ li {
 }
 
 .sendText{
-   display: block;
+   display: inline-block;
 }
 
 .send-to-field{
@@ -258,6 +261,9 @@ a{
   width: 100%;
 }
 
+.logout-button{
+    color: whitesmoke;
+}
 
 
 .block {
@@ -272,9 +278,7 @@ a{
     /*-webkit-animation: colorchange 2s;*/
 }
 
-/*.callCreateMain{*/
-    /*height: 100vh;*/
-/*}*/
+
 
 .block:nth-child(1) {
   animation-delay: 232ms;

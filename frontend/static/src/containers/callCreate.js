@@ -141,7 +141,7 @@ class DispatchCurrentCallContainer extends Component {
                            value={this.state.phone}
                            onChange={this.handlePhoneNumber}/>
 
-                    {/*<span className="note">Format: 123-456-7890</span>*/}
+
                     <br/>
 
 
@@ -150,11 +150,13 @@ class DispatchCurrentCallContainer extends Component {
                 </Form>
 
                 {/*<p className="success"> Record Created For : {this.state.phone}</p>*/}
-                <p className="link-to-text" href="#"> https://efficient-emergency.herokuapp.com/dispatchcall/{this.state.dispatchInfo.id}/scene</p>
+
 
 
                 <Button className="sendText" type="submit" variant="secondary" onClick={this.sendTextMessage}>
                     SEND LINK THROUGH TEXT</Button>
+
+                <p className="link-to-text" href="#"> https://efficient-emergency.herokuapp.com/dispatchcall/{this.state.dispatchInfo.id}/scene</p>
 
                 <div className="imagesFromClient card-columns">
                     <ul>

@@ -66,13 +66,10 @@ class TextMedical extends Component {
         e.preventDefault();
 
         const conf = {
-
-            
             method: "POST",
-            body: JSON.stringify(phone),
+            body: JSON.stringify(data),
             headers: new Headers({"Content-Type": "application/json"})
         };
-
 
         fetch(`/api/sendtext/${this.props.dispatchInfo.id}/er`, conf)
             .then(response => {

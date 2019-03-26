@@ -11,29 +11,6 @@ class DispatchCallsDetailContainer extends Component {
 
     }
 
-    componentDidMount() {
-
-        let data = this.props.data;
-         const conf = {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: new Headers({"Content-Type": "application/json"})
-        };
-
-
-        fetch(`api/dispatchcall/${this.props.data.id}/er/scene`).then((response) => {
-            if (response.status !== 200) {
-                console.log("problem")
-            }
-
-            return response.json();
-            }).then(json => {
-            console.log('json', json);
-
-        });
-
-    }
-
 
 
     render() {
@@ -87,21 +64,58 @@ export default DispatchCallsDetailContainer;
 
 class TextMedical extends Component {
     constructor(props) {
-    super(props)
+    super(props);
+
+
     }
+
+
+
+    // tryApiEMS = (e) => {
+    //     e.preventDefault();
+    //     console.log("try ems fire");
+    //     console.log("try props", this.props);
+    //
+    //     let data = this.props.data;
+    //     // let BASE_PATH = 'http://localhost:8000/api/';
+    //
+    //      const conf = {
+    //         method: "POST",
+    //         body: JSON.stringify(data),
+    //         headers: new Headers({"Content-Type": "application/json"})
+    //     };
+    //
+    //
+    //     fetch(`api/dispatchcall/${this.props.dispatchId}/er/scene`, conf).then((response) => {
+    //         if (response.status !== 200) {
+    //             console.log("problem")
+    //         }
+    //
+    //         // return response.json(data);
+    //         // }).then(json => {
+    //         // console.log('json', json);
+    //     })
+    //
+    //
+    // };
 
 
     sendTextMessage = (e) => {
         e.preventDefault();
         console.log('debug', this.props);
+        // let BASE_PATH = 'http://localhost:8000/api';
 
 
-        fetch(`/api/sendtext/${this.props.dispatchId}/er/`)
+        fetch(`api/sendtext/${this.props.dispatchId}/er/`)
             .then(response => {
                 return response.text();
             }).then(function(response){
                 console.log(response);
-        });
+
+
+    }
+
+);
     };
 
 
@@ -117,6 +131,7 @@ class TextMedical extends Component {
                 <div className="er-buttons">
                 <Button className="send-to-field btn btn-secondary" >Send To Prisma Trauma <p className="er-phone">864-111-2222</p></Button>
                 <Button className="send-to-field btn btn-secondary" onClick={this.sendTextMessage} >Send To GC EMS <p className="er-phone">864-802-1417</p></Button>
+                <Button className="send-to-field btn btn-secondary" onClick={this.tryApiEMS} >TRY EMS <p className="er-phone">864-802-1417</p></Button>
                 <Button className="send-to-field btn btn-secondary" >Send To Thorne Ambulance <p className="er-phone">864-555-7777</p></Button>
                 </div>
 

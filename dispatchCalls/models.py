@@ -21,3 +21,8 @@ class Client(models.Model):
     image = models.ImageField(blank=True, upload_to='media/')
     #should have been underscore
     dispatchCall = models.ForeignKey(DispatchCall,  on_delete=models.CASCADE, null=True, related_name="scene_images")
+
+
+class ER(models.Model):
+    name = models.CharField(max_length=255)
+    # dispatchCall = models.ForeignKey(DispatchCall, on_delete=models.CASCADE, null=True, related_name="scene_images")

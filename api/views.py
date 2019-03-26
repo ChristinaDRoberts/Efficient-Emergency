@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from django.views import View
 from rest_framework import viewsets
 from .serializers import ClientSerializer, DispatchSerializer, ERSerializer
-from dispatchCalls.models import Client, DispatchCall
+from dispatchCalls.models import Client, DispatchCall, ER
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework import mixins
 
@@ -46,18 +46,14 @@ class DispatchViewSet(viewsets.ModelViewSet, mixins.RetrieveModelMixin, ):
         serializer.save(user=self.request.user)
 
 
-class EREMSViewset(viewsets.ModelViewset):
-    authentication_classes = (CsrfExemptSessionAuthentication, SessionAuthentication, BasicAuthentication)
-    serializer_class = ClientSerializer
+# class EREMSViewSet(viewsets.ModelViewSet):
+#     authentication_classes = (CsrfExemptSessionAuthentication, SessionAuthentication, BasicAuthentication)
+#     serializer_class = ClientSerializer
+#     queryset = ER.objects.all()
+#
+#     def post(self):
+#         pass
 
-    # queryset = Client.objects.all()
-
-    # change this query set to get only items for this scene #
-    def get_queryset(self):
-        return ER.objects.filter(all)
-
-    # Authentication is the mechanism of associating an incoming request with a set of identifying credentials,
-    # such as the user the request came from
 
 
 class SendTextToClientView(View):

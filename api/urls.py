@@ -12,11 +12,15 @@ urlpatterns = [
  # use the
 
   path('scene/', ClientImageViewSet.as_view({'get': 'list', 'post': 'create'})),
-  path('dispatchcall/<int:dispatch_call_id>/er/scene/', ERViewSet.as_view({'get': 'list'}), name="urlToSend"),
+
+  # //this is supposed to be the api viewset that holds the data for that call
+  # path('dispatchcall/<int:dispatch_call_id>/er/scene/', EREMSViewSet.as_view({'get': 'list'}), name="urlToSendToER"),
+  #
   path('dispatchcall/<int:dispatch_call_id>/scene/', ClientImageViewSet.as_view({'get': 'list'}), name="urlToSend"),
   path('dispatchcall/', DispatchViewSet.as_view({'get': 'list', 'post': 'create'})),
+  path('sendtext/<int:dispatch_call_id>/er/', csrf_exempt(SendTextToERView.as_view())),
   path('sendtext/<int:dispatch_call_id>/', csrf_exempt(SendTextToClientView.as_view())),
   #path to send text to er
-  path('sendtext/<int:dispatch_call_id>/er/', csrf_exempt(SendTextToERView.as_view())),
+
 ]
 

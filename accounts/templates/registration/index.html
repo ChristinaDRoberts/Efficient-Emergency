@@ -7,14 +7,42 @@
 
     <h1 class="index second-title">Receieve Critical Lifesaving Information Quickly and Accurately.</h1>
 
-    <button class="index index-login btn btn-light"><a href="{% url 'accounts:login' %}"> Login </a></button>
-    <button class="index index-signup btn btn-light"><a href="{% url 'accounts:signup' %}"> Signup </a></button>
+        <div class="row align-items-center">
+            <div class="col">
+              <button class="index index-login btn btn-light"><a href="{% url 'accounts:login' %}"> Login </a></button>
+            </div>
+            <div class="col">
 
-     <div class="index first-paragraph"> Avoid mis-information from callers by directing them to a unique text - link allowing them to  upload images of victims at
-        the scene.</div>
-    <div class="index second-paragraph"> Makes getting critical information about injury severity and injury location more streamlined, while still
-        maintaining
-        verbal contact with the caller. </div>
+            </div>
+            <div class="col">
+              <button class="index index-signup btn btn-light"><a href="{% url 'accounts:signup' %}"> Create Account </a></button>
+            </div>
+        </div>
+
+{#    <button class="index index-login btn btn-light"><a href="{% url 'accounts:login' %}"> Login </a></button>#}
+{#    <button class="index index-signup btn btn-light"><a href="{% url 'accounts:signup' %}"> Create An Account </a></button>#}
+
+
+
+    <div class="row align-items-end">
+
+    <div class="col index first-paragraph">
+         Avoid mis-information from callers by directing them to a unique text - link allowing them to  upload images of victims at
+            the scene.
+    </div>
+
+    <div class="col index second-paragraph">
+        Makes getting critical information about injury severity and injury location more streamlined, while still
+            maintaining verbal contact with the caller.
+    </div>
+
+{#    <div class="col">#}
+{#      One of three columns#}
+{#    </div>#}
+  </div>
+
+
+
 
 </div>
 

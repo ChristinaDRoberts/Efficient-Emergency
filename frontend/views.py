@@ -32,3 +32,5 @@ class IndexView(View):
 class DispatcherView(LoginRequiredMixin, IndexView):
     pass
 
+class ERView(DispatcherView):
+    pass

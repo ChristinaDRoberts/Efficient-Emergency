@@ -12,7 +12,10 @@ class ClientSerializer(serializers.ModelSerializer):
 
 
 
-
+class ERSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ER
+        fields = '__all__'
 
 
 class DispatchSerializer (serializers.ModelSerializer):

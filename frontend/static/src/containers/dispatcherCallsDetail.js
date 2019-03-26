@@ -6,13 +6,40 @@ import divWithClassName from "react-bootstrap/es/utils/divWithClassName";
 class DispatchCallsDetailContainer extends Component {
     constructor(props) {
         super(props);
+        console.log("props available to DispcallsDetcont", this.props)
+        //props is data
 
     }
+
+    componentDidMount() {
+
+        let data = this.props.data;
+         const conf = {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: new Headers({"Content-Type": "application/json"})
+        };
+
+
+        fetch(`api/dispatchcall/${this.props.data.id}/er/scene`).then((response) => {
+            if (response.status !== 200) {
+                console.log("problem")
+            }
+
+            return response.json();
+            }).then(json => {
+            console.log('json', json);
+
+        });
+
+    }
+
 
 
     render() {
 
         let specificCall = this.props.data;
+        console.log('this props here', this.props);
 
         return (
 
@@ -33,7 +60,7 @@ class DispatchCallsDetailContainer extends Component {
                             <h3 className="images-provider-detail-page" >
 
                                 {specificCall.scene_images.map((image) =>
-                                     <ModalDetailComponent specificCall={this.props.data} image={image}/>
+                                     <ModalDetailComponent key={image.id} specificCall={this.props.data} image={image}/>
 
                                 )}
                             </h3>
@@ -44,7 +71,7 @@ class DispatchCallsDetailContainer extends Component {
 
 
             <section>
-                <TextMedical route={this.props.route} dipatchId={this.props.dispatchInfo.id}/>
+                <TextMedical route={this.props.route} dispatchId={this.props.data.id}/>
             </section>
 
                 <button className="btn btn-light logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
@@ -62,16 +89,14 @@ class TextMedical extends Component {
     constructor(props) {
     super(props)
     }
+
+
     sendTextMessage = (e) => {
         e.preventDefault();
+        console.log('debug', this.props);
 
-        const conf = {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: new Headers({"Content-Type": "application/json"})
-        };
 
-        fetch(`/api/sendtext/${this.props.dispatchInfo.id}/er`, conf)
+        fetch(`/api/sendtext/${this.props.dispatchId}/er/`)
             .then(response => {
                 return response.text();
             }).then(function(response){

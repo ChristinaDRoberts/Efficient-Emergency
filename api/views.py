@@ -6,7 +6,7 @@ import os
 from django.http import HttpResponse
 from django.views import View
 from rest_framework import viewsets
-from .serializers import ClientSerializer, DispatchSerializer
+from .serializers import ClientSerializer, DispatchSerializer, ERSerializer
 from dispatchCalls.models import Client, DispatchCall
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework import mixins
@@ -46,6 +46,20 @@ class DispatchViewSet(viewsets.ModelViewSet, mixins.RetrieveModelMixin, ):
         serializer.save(user=self.request.user)
 
 
+class EREMSViewset(viewsets.ModelViewset):
+    authentication_classes = (CsrfExemptSessionAuthentication, SessionAuthentication, BasicAuthentication)
+    serializer_class = ClientSerializer
+
+    # queryset = Client.objects.all()
+
+    # change this query set to get only items for this scene #
+    def get_queryset(self):
+        return ER.objects.filter(all)
+
+    # Authentication is the mechanism of associating an incoming request with a set of identifying credentials,
+    # such as the user the request came from
+
+
 class SendTextToClientView(View):
 
     # 1
@@ -81,9 +95,12 @@ class SendTextToClientView(View):
 class SendTextToERView(View):
 
     # 1
-    def post(self, request, **kwargs):
-        phone_number = "+8644488487"
+    def get(self, request, **kwargs):
+        phone_number = "8644488487"
         call_id = self.kwargs.get("dispatch_call_id")
+        phone_number = phone_number.replace("-", "")
+        print(phone_number)
+        print(call_id)
 
         URL = "https://efficient-emergency.herokuapp.com"
 
@@ -106,15 +123,3 @@ class SendTextToERView(View):
 
         return HttpResponse('Sent!')
 
-# 2 twilio api request / requesting twilio, data(link) self.post['phone']
-# new url
-# use reverse
-# link dispatchcall/#/scene
-
-# Download the helper library from https://www.twilio.com/docs/python/install
-
-
-# 3 send twilio response back
-
-
-# api endpoint has value catpuring, points to sendTextView

@@ -65,8 +65,16 @@ class TextMedical extends Component {
     sendTextMessage = (e) => {
         e.preventDefault();
 
+        const conf = {
 
-        fetch(`/api/sendtext/${this.props.dispatchInfo.id}/er`)
+            
+            method: "POST",
+            body: JSON.stringify(phone),
+            headers: new Headers({"Content-Type": "application/json"})
+        };
+
+
+        fetch(`/api/sendtext/${this.props.dispatchInfo.id}/er`, conf)
             .then(response => {
                 return response.text();
             }).then(function(response){

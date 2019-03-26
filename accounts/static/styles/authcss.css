@@ -1,7 +1,8 @@
 #smaller{
-    height:60vh;
+
      position: relative;
-    background: url('../stretcher.jpg') no-repeat center center fixed;
+    background: url('../1.jpg') no-repeat center center fixed;
+    height:100vh;
 
 
 
@@ -10,6 +11,16 @@
   -o-background-size: cover;
   background-size: cover;
 
+}
+
+#smaller:before{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(96 , 102, 102, .4);
+    content: "";
 }
 
 .hero{
@@ -127,11 +138,14 @@
 
 a{
     color: lightslategrey;
+    position: relative;
+
 
 }
 
 .login-link{
     color: lightslategrey;
+    position: relative;
 }
 
 .login-title{
@@ -140,9 +154,26 @@ a{
     color: #cdcdcdcd;
     margin-left: 5%;
     text-shadow: 2px 2px lightslategrey;
+    position: relative;
     /*background-color: #c5c5c5;*/
 }
 
 /*.whole{*/
     /*background-color: #c5c5c5;*/
 /*}*/
+
+.login-div{
+    position: relative;
+    /*background-color: none;*/
+}
+
+.login-button-login{
+    position: relative;
+
+}
+
+.signup-button-login{
+    position: relative;
+
+
+}

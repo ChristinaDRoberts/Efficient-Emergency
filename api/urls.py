@@ -1,5 +1,5 @@
 from django.urls import path
-from api.views import DispatchViewSet, ClientImageViewSet, SendTextToClientView
+from api.views import DispatchViewSet, ClientImageViewSet, SendTextToClientView, SendTextToERView
 # from api.views import SendTextToERView
 from django.views.decorators.csrf import csrf_exempt
 
@@ -14,6 +14,7 @@ urlpatterns = [
   path('dispatchcall/<int:dispatch_call_id>/scene/', ClientImageViewSet.as_view({'get': 'list'}), name="urlToSend"),
   path('dispatchcall/', DispatchViewSet.as_view({'get': 'list', 'post': 'create'})),
   path('sendtext/<int:dispatch_call_id>/', csrf_exempt(SendTextToClientView.as_view())),
-  # path('sendtext/<int:dispatch_call_id>/er/', csrf_exempt(SendTextToERView.as_view())),
+  #path to send text to er
+  path('sendtext/<int:dispatch_call_id>/er/', csrf_exempt(SendTextToERView.as_view())),
 ]
 

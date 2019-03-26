@@ -105,6 +105,11 @@ h2{
     display: inline-block;
 }
 
+.detail-images:hover{
+    transform: scale(1.05);
+
+}
+
 .detail-detail{
     font-size: 20px;
     font-weight: bold;

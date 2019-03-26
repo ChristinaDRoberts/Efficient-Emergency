@@ -82,8 +82,8 @@ class SendTextToERView(View):
 
     # 1
     def post(self, request, **kwargs):
-        # phone_number is key in the dictionary of POST recieved back from http"
         phone_number = "+8438021417"
+        call_id = self.kwargs.get("dispatch_call_id")
 
 
         URL = "https://efficient-emergency.herokuapp.com"
@@ -97,7 +97,7 @@ class SendTextToERView(View):
         # populate in here. use requests for api.
         # format phone number to +8884446666
         message = client.messages.create(
-            body=URL + reverse("frontend:scene", kwargs={"dispatch_call_id": call_id}),
+            body=URL + reverse("frontend:sceneER", kwargs={"dispatch_call_id": call_id}),
             from_='+18646893583',
             # changed equal to plus
             to=phone_number

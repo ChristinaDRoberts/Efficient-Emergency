@@ -112,6 +112,8 @@ class ClientContainer extends Component {
                 </div>
             </div>
 
+                 <button className="btn btn-light logout"><a className="logout-button" href="https://ucc.nd.edu/self-help/disaster-trauma/taking-care-of-yourself/">Close Call</a>
+                 </button>
 
 
 

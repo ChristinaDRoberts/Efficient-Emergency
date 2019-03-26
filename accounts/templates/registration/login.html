@@ -2,18 +2,22 @@
 
 {% block content %}
 <div class="hero" id="smaller"></div>
+    <div class="login-div">
 <h2 class="login-title">Login</h2>
-  <form method="post">
+
+    <form class="login-form" method="post">
     {% csrf_token %}
+
        {{ form.as_p }}
 
 
 
 
-     <button  class="btn btn-light login-link" type="submit"><a href="{% url 'frontend:dispatchcall' %}"></a> Login</button>
-      <button class="btn btn-light"> <a href="{% url 'accounts:signup' %}"> Create an Account </a></button>
+     <button  class="btn btn-light login-link login-button-login" type="submit"><a href="{% url 'frontend:dispatchcall' %}"></a> Login</button>
+      <button class="btn btn-light signup-button-login"> <a href="{% url 'accounts:signup' %}"> Create an Account </a></button>
 
 
   </form>
+    </div>
 
 {% endblock %}

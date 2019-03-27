@@ -128,9 +128,15 @@ class OpenImagesOnCallList extends Component {
                 <div className="topDispatch">
                     <h2 className="wecome-dispatcher">Create A New Call Or Revisit Previous Calls</h2>
 
-                    <Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
-                        this.props.route("callCreate")
-                    }}>Start A Call</Button>
+                   <div className="faux-nav row">
+
+                        <Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
+                            this.props.route("callCreate")
+                        }}>Start A Call</Button>
+
+                        <button className="btn btn-light logout logout-calllist"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
+                     </button>
+                </div>
 
                 </div>
 
@@ -138,8 +144,8 @@ class OpenImagesOnCallList extends Component {
                     {calls}
                 </div>
 
-                <button className="btn btn-light logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
-                 </button>
+                {/*<button className="btn btn-light logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>*/}
+                 {/*</button>*/}
 
 
             </div>

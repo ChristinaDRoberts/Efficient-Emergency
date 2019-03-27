@@ -123,6 +123,13 @@ class DispatchCurrentCallContainer extends Component {
             <div className="callCreateMain">
 
                 <h2 className="create-title">Create Active Call and Send Text Message With Link To Submit Photos</h2>
+                <div className="faux-nav2">
+                    <Button className="endCall btn btn-secondary endCallCreate" onClick={(e) =>{
+                        this.props.route("/dispatchcall/")
+                    }}>End Call</Button>
+                    <button className="btn btn-light logout create-call-logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
+                     </button>
+                </div>
 
                 <Form onSubmit={this.createCall}>
 
@@ -147,8 +154,6 @@ class DispatchCurrentCallContainer extends Component {
                         Create This Call Record</Button>
                 </Form>
 
-                {/*<p className="success"> Record Created For : {this.state.phone}</p>*/}
-
 
 
                 <Button className="sendText" type="submit" variant="secondary" onClick={this.sendTextMessage}>
@@ -163,12 +168,6 @@ class DispatchCurrentCallContainer extends Component {
 
                 </div>
 
-                <Button className="endCall btn btn-secondary" onClick={(e) =>{
-                    this.props.route("/dispatchcall/")
-                }}>End Call</Button>
-
-                <button className="btn btn-light logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
-                 </button>
 
             </div>
 

@@ -126,9 +126,35 @@ h2{
 
 .switch {
     text-align: center;
-    /*float: right;*/
-    margin-left: 200px;
+    float: right;
+    margin-right: 5%;
+    margin-left: 70%;
+
 }
+@media screen and (max-width: 412px){
+  .switch{
+
+      margin-left:2%;
+      margin-right: 0%;
+  }
+}
+
+@media screen and (max-width: 900px){
+  .switch{
+
+      margin-left: 30%;
+      margin-right: 0%;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .switch{
+
+      margin-left: 40%;
+      margin-right: 0%;
+  }
+}
+
 
 .imagesFromClient {
     margin: 50px 30px;
@@ -307,6 +333,34 @@ a{
     color: whitesmoke;
 }
 
+.logout-calllist{
+    float: right;
+}
+
+.create-call-logout{
+    /*margin-left: 70%;*/
+    display: inline-block;
+}
+
+@media screen and (max-width: 600px){
+  .create-call-logout{
+      width: 40%;
+      margin-left: 5%;
+  }
+}
+
+
+
+.endCallCreate{
+    margin-left: 70%;
+}
+
+@media screen and (max-width: 1000px){
+  .endCallCreate{
+
+      margin-left: 20%;
+  }
+}
 
 .block {
   background: #00303F;

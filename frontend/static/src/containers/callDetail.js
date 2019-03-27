@@ -124,8 +124,7 @@ class ClientContainer extends Component {
                     </div>
                 </div>
 
-                <button className="btn btn-light logout">End
-                    Session
+                <button className="btn btn-light logout"><a className="logout-button" href="https://thiswayup.org.au/how-do-you-feel/traumatised/">Resources To Help Cope</a>
                 </button>
 
 

@@ -66,56 +66,66 @@ class ClientContainer extends Component {
     };
 
 
-
-
     render() {
 
-
+        console.log(this.state.image_preview);
         let images = this.state.imageCollection.map(image => {
             return (
                 <li className="scene-photo-li" key={image.id}><img src={image.image} alt=""/></li>
             )
         });
 
+        let image;
+
+        if(this.state.image_preview) {
+            image = <img className="scene-photos " src={this.state.image_preview} alt="..."/>
+        } else {
+                // find grey plus sign
+            image = <img className="scene-photos " src='https://image.flaticon.com/icons/svg/54/54908.svg' alt="..."/>
+        }
+
         return (
 
-             <div className="scene-div col-xs-12 col-sm-10 col-lg-8 align-self-center">
-                 <row class="align-items-center">
+            <div className="scene-div col-xs-12 col-sm-10 col-lg-8 align-self-center">
+                <row class="align-items-center">
 
                     <div className="col">
-                    <h1 className="please-submit-photo">Please Submit A Photo To Emergency Services</h1>
+                        <h1 className="please-submit-photo">Please Submit A Photo To Emergency Services</h1>
                     </div>
-                  </row>
+                </row>
 
-            <div className="row align-items-start image-box-div">
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 imagebox">
-                    <Form className="client-form" onSubmit={this.submitImage}>
+                <div className="row align-items-start image-box-div">
+                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 imagebox">
+                        <Form className="client-form" onSubmit={this.submitImage}>
 
-                        <div className="row align-items-center">
-                            <div className="col-12">
-                            <img className="scene-photos " src={this.state.image_preview} alt="..."/>
-                            <input className="scene-input" type="file" onChange={this.handleImage} name="image"/>
+                            <div className="row align-items-center">
+                                <div className="col-12">
+                                    {image}
+
+                                    <input className="scene-input" type="file" onChange={this.handleImage}
+                                           name="image"/>
+                                </div>
                             </div>
-                        </div>
 
 
-                        <Button className="submitImageButtonScene" type="submit" variant="secondary">Submit Image</Button>
-                    </Form>
+                            <Button className="submitImageButtonScene" type="submit" variant="secondary">Submit
+                                Image</Button>
+                        </Form>
+                    </div>
                 </div>
-             </div>
 
-            <div class=" row align-items-center">
-                <div className="col">
+                <div class=" row align-items-center">
+                    <div className="col">
                         <ul className="scene-photo-ul card-columns">
                             {images}
                         </ul>
+                    </div>
                 </div>
-            </div>
 
-                 <button className="btn btn-light logout"><a className="logout-button" href="https://ucc.nd.edu/self-help/disaster-trauma/taking-care-of-yourself/">Close Call</a>
-                 </button>
-
-
+                <button className="btn btn-light logout"><a className="logout-button"
+                                                            href="https://ucc.nd.edu/self-help/disaster-trauma/taking-care-of-yourself/">End
+                    Session</a>
+                </button>
 
 
             </div>)

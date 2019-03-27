@@ -95,8 +95,8 @@ class Card extends Component {
                     </Modal>
 
                     <Button className="btn btn-outline-dark" onClick={(e) => {
-                                        // this.props.route("dispatcherCallsDetail", call)
-                                        this.props.route("/dispatchcall/er/", call)
+                                        this.props.route("dispatcherCallsDetail", call)
+                                        // this.props.route("/dispatchcall/er/", call)
                                     }}>See/Send Call Detail Page</Button>
 
 

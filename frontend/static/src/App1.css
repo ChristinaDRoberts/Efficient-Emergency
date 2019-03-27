@@ -197,6 +197,19 @@ li {
 
 }
 
+@media screen and (min-width: 600px) {
+  .scene-photos {
+      height: 50%;
+      width: 50%;
+      display: block;
+      margin: 0 auto;
+
+  }
+}
+
+
+
+
 /*.scene-photo-ul {*/
     /*margin: 0 auto;*/
     /*display: inline-block;*/

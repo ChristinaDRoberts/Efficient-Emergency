@@ -46,8 +46,8 @@ class App extends Component {
                                     case '/dispatchcall/':
                                         return <DispatchCallLogContainer route={this.route} />;
 
-                                    // case 'dispatcherCallsDetail':
-                                    case '/dispatchcall/er/':
+                                    case 'dispatcherCallsDetail':
+                                    // case '/dispatchcall/er/':
                                         // let specificCall = props
                                         return <DispatcherCallsDetailContainer route={this.route} data={this.state.data}/>;
 

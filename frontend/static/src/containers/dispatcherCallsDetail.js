@@ -103,12 +103,12 @@ class TextMedical extends Component {
     sendTextMessage = (e) => {
         e.preventDefault();
         console.log('debug', this.props);
+        console.log("dispatchid", this.props.dispatchId);
+
+        let BASE_URL = "https://efficient-emergency.herokuapp.com/";
 
 
-
-
-
-        fetch(`api/sendtext/${this.props.dispatchId}/er/`)
+        fetch( `${BASE_URL}api/sendtext/${this.props.dispatchId}/er/`)
             .then(response => {
                 return response.text();
             }).then(function(response){

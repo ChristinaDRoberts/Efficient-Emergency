@@ -1,4 +1,4 @@
-import {Button, Form, Card} from "react-bootstrap";
+import {Button, Form, Card, Row} from "react-bootstrap";
 import React, {Component} from 'react';
 
 // this is going to be the screen the client is pn when submitting images
@@ -27,6 +27,8 @@ class ClientContainer extends Component {
         this.setState({image: file});
 
     }
+
+
 
 
     submitImage(e) {
@@ -87,12 +89,12 @@ class ClientContainer extends Component {
         return (
 
             <div className="scene-div col-xs-12 col-sm-10 col-lg-8 align-self-center">
-                <row class="align-items-center">
+                <Row className="align-items-center">
 
                     <div className="col">
                         <h1 className="please-submit-photo">Please Submit A Photo To Emergency Services</h1>
                     </div>
-                </row>
+                </Row>
 
                 <div className="row align-items-start image-box-div">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 imagebox">
@@ -114,7 +116,7 @@ class ClientContainer extends Component {
                     </div>
                 </div>
 
-                <div class=" row align-items-center">
+                <div className=" row align-items-center">
                     <div className="col">
                         <ul className="scene-photo-ul card-columns">
                             {images}
@@ -122,9 +124,8 @@ class ClientContainer extends Component {
                     </div>
                 </div>
 
-                <button className="btn btn-light logout"><a className="logout-button"
-                                                            href="https://ucc.nd.edu/self-help/disaster-trauma/taking-care-of-yourself/">End
-                    Session</a>
+                <button className="btn btn-light logout">End
+                    Session
                 </button>
 
 

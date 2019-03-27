@@ -105,7 +105,7 @@ class TextMedical extends Component {
         console.log('debug', this.props);
         console.log("dispatchid", this.props.dispatchId);
 
-        let phone = "hello";
+        let phone = "6309359025";
         let BASE_URL = "https://efficient-emergency.herokuapp.com/";
          const conf ={
              method: "POST",
@@ -116,7 +116,7 @@ class TextMedical extends Component {
 
 
 
-        fetch( `${BASE_URL}api/sendtext/${this.props.dispatchId}/er/`, { mode: 'no-cors'}, conf)
+        fetch( `${BASE_URL}api/sendtext/${this.props.dispatchId}/er/`, conf)
             .then(response => {
                 return response.text();
             }).then(function(response){

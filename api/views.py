@@ -85,7 +85,8 @@ class SendTextToERView(View):
 
     # 1
     def post(self, request, **kwargs):
-        phone_number = "6309359025"
+        phone_number = request.POST["phone"]
+        # phone_number = "6309359025"
         call_id = self.kwargs.get("dispatch_call_id")
         phone_number = phone_number.replace("-", "")
         print("sending to er", phone_number)
@@ -97,12 +98,9 @@ class SendTextToERView(View):
         auth_token = os.environ['TWILIO_AUTH_TOKEN']
         client = TwilioClient(account_sid, auth_token)
 
-        # I have the call id in my api for each call record,
-        # I need to extract the call record id number and concatenate into a link to
-        # populate in here. use requests for api.
-        # format phone number to +8884446666
+
         message = client.messages.create(
-            body=URL + reverse("frontend:sceneER", kwargs={"dispatch_call_id": call_id}),
+            body=URL + reverse("frontend:scene", kwargs={"dispatch_call_id": call_id}),
             from_='+18646893583',
 
             to=phone_number

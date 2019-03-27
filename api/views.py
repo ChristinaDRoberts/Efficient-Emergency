@@ -100,9 +100,10 @@ class SendTextToERView(View):
 
 
         message = client.messages.create(
-            body=URL + reverse("frontend:scene", kwargs={"dispatch_call_id": call_id}),
+            # body=URL + reverse("frontend:scene", kwargs={"dispatch_call_id": call_id}),
             # body=URL + reverse("dispatchCalls:sceneER", kwargs={"dispatch_call_id": call_id}),
-            # body=trial,
+            #
+            body=URL + reverse("frontend:sceneER", kwargs={"dispatch_call_id": call_id}),
             from_='+18646893583',
 
             to=phone_number

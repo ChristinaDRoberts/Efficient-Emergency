@@ -154,8 +154,20 @@
 }
 
 .submit-signup{
-    margin-bottom: 2%;
+
 }
+
+@media screen and (max-width: 1000px) {
+  .submit-signup {
+
+      bottom: 5%;
+      right: 0%;
+      width: 30%;
+      display: block;
+      margin-bottom: 2%;
+  }
+}
+
 
 .signup{
     color: whitesmoke;

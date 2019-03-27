@@ -1,8 +1,9 @@
 from django.conf.urls import url
 
-from . import views
+from .views import EREMSView
+from django.urls import path
 
 
-# urlpatterns = [
-#     url(r'^$', views.sms_response, name='dispatchCalls'),
-# ]
+urlpatterns = [
+    path('dispatchcall/er/<int:dispatch_call_id>/', EREMSView.as_view(), name='sceneER'),
+]

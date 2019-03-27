@@ -33,6 +33,4 @@ class DispatcherView(LoginRequiredMixin, IndexView):
     pass
 
 
-# is this supposed to be a different kind of view?
-# class ERView(DispatcherView):
-#     pass
+

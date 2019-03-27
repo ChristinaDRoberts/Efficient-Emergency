@@ -46,13 +46,6 @@ class DispatchViewSet(viewsets.ModelViewSet, mixins.RetrieveModelMixin, ):
         serializer.save(user=self.request.user)
 
 
-# class EREMSViewSet(viewsets.ModelViewSet):
-#     authentication_classes = (CsrfExemptSessionAuthentication, SessionAuthentication, BasicAuthentication)
-#     serializer_class = ClientSerializer
-#     queryset = ER.objects.all()
-#
-#     def post(self):
-#         pass
 
 
 
@@ -91,11 +84,11 @@ class SendTextToClientView(View):
 class SendTextToERView(View):
 
     # 1
-    def get(self, request, **kwargs):
-        phone_number = "8644488487"
+    def post(self, request, **kwargs):
+        phone_number = "6309359025"
         call_id = self.kwargs.get("dispatch_call_id")
         phone_number = phone_number.replace("-", "")
-        print(phone_number)
+        print("sending to er", phone_number)
         print(call_id)
 
         URL = "https://efficient-emergency.herokuapp.com"
@@ -111,7 +104,7 @@ class SendTextToERView(View):
         message = client.messages.create(
             body=URL + reverse("frontend:sceneER", kwargs={"dispatch_call_id": call_id}),
             from_='+18646893583',
-            # changed equal to plus
+
             to=phone_number
         )
 

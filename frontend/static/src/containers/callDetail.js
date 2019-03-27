@@ -83,7 +83,7 @@ class ClientContainer extends Component {
             image = <img className="scene-photos " src={this.state.image_preview} alt="..."/>
         } else {
                 // find grey plus sign
-            image = <img className="scene-photos " src='https://image.flaticon.com/icons/svg/54/54908.svg' alt="..."/>
+            image = <img className="scene-photos " src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxJTbMY80oe9BRR3ykDS7V3L_IUZT-1ZTVzTyptew3F4N2UCYseA' alt="..."/>
         }
 
         return (

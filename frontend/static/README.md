@@ -1,3 +1,33 @@
+
+
+
+Efficient Emergency is a Web Application meant to make visual data available to dipatchers, ambulance drivers
+and trauma units including surgeons, doctors and nurses. The dispatcher can enter a phone number of caller, and send
+a text link to the client. The client can click the link and the web browser will open to the client side of web app 
+immediately. The client can take a photo with their camera or a chose a picture already on their phone, and send
+it to the dispatcher immediately. The images populate on the dispatchers screen in almost real time. ALl of the call
+information is stored in its own call record and can then be sent to the ambulance drivers or the hospital. The image 
+upload is currently only available on android devices. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

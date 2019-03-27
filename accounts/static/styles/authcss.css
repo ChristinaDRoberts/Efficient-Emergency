@@ -121,7 +121,11 @@
 @media screen and (max-width: 600px) {
   .first-paragraph {
       font-size: 15px;
-      margin: 6%;
+      margin-top: 40%;
+      margin-right: 6%;
+      border: 1px solid whitesmoke;
+      /*margin-bottom: 1%;*/
+      padding-bottom: 5%;
   }
 }
 
@@ -142,8 +146,9 @@
 
 @media screen and (max-width: 600px) {
   .second-paragraph {
+      border: 1px solid whitesmoke;
     font-size: 15px;
-      margin: 6%;
+      margin-top: 75%;
 
   }
 }

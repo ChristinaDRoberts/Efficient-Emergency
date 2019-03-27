@@ -86,7 +86,7 @@ class SendTextToERView(View):
     # 1
     def post(self, request, **kwargs):
         phone_number = request.POST["phone"]
-        # phone_number = "6309359025"
+
         call_id = self.kwargs.get("dispatch_call_id")
         phone_number = phone_number.replace("-", "")
         print("sending to er", phone_number)

@@ -79,7 +79,7 @@ class SendTextToClientView(View):
 
         print(message.sid)
 
-        return HttpResponse('Sent!')d
+        return HttpResponse('Sent!')
 
 class SendTextToERView(View):
 

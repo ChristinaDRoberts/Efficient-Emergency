@@ -121,7 +121,7 @@ class TextMedical extends Component {
 
 
 
-        fetch( `${BASE_URL}api/sendtext/er/${this.props.dispatchId}`, conf)
+        fetch( `${BASE_URL}api/sendtext/${this.props.dispatchId}/er/`, conf)
             .then(response => {
                 return response.text();
             }).then(function(response){

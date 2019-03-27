@@ -82,7 +82,7 @@ class Card extends Component {
 
                         <Modal.Body>
                             <ul  id="image-drop-down">
-                                <li className="lightbox">
+                                <li >
                                     {call.scene_images.map((image, index) =>
                                         <Image className="img-thumbnail" key={index} src={image.image}/>
                                     )}

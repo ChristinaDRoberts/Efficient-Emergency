@@ -58,6 +58,15 @@
     position: relative;
 }
 
+@media screen and (max-width: 600px) {
+  .index-signup {
+      font-size: 15px;
+      margin: 6%;
+      width:150%;
+
+  }
+}
+
 .index-login{
     background-color: whitesmoke;
     color: whitesmoke;
@@ -69,6 +78,13 @@
     padding-left: 3%;
     padding-right: 3%;
     position: relative;
+}
+
+@media screen and (max-width: 600px) {
+  .index-login {
+      font-size: 15px;
+      margin: 6%;
+  }
 }
 
 
@@ -98,6 +114,15 @@
     margin-top: 20%;
 }
 
+@media screen and (max-width: 600px) {
+  .first-paragraph {
+      font-size: 15px;
+      margin: 6%;
+  }
+}
+
+
+
 
 .second-paragraph{
     color: whitesmoke;
@@ -110,6 +135,15 @@
     margin-right: 5%;
     margin-top: 20%;
 }
+
+@media screen and (max-width: 600px) {
+  .second-paragraph {
+    font-size: 15px;
+      margin: 6%;
+
+  }
+}
+
 
 
 .signup{

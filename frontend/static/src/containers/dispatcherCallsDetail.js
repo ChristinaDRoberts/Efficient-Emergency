@@ -103,15 +103,17 @@ class TextMedical extends Component {
     sendTextMessage = (e) => {
         e.preventDefault();
         console.log('debug', this.props);
-        // let BASE_PATH = 'http://localhost:8000/api';
+
+
+
 
 
         fetch(`api/sendtext/${this.props.dispatchId}/er/`)
             .then(response => {
                 return response.text();
             }).then(function(response){
-                console.log(response);
-
+                // console.log(response);
+                console.log("fetch response completed")
 
     }
 
@@ -124,14 +126,10 @@ class TextMedical extends Component {
     render() {
         return (
             <div className="er-buttons">
-                 {/*<Button className="btn btn-secondary return-to-call-list"  onClick={(e) => {*/}
-                    {/*this.props.route("/dispatchcall/")*/}
-                {/*}}>Return To Call List Page </Button>*/}
 
                 <div className="er-buttons">
                 <Button className="send-to-field btn btn-secondary" >Send To Prisma Trauma <p className="er-phone">864-111-2222</p></Button>
                 <Button className="send-to-field btn btn-secondary" onClick={this.sendTextMessage} >Send To GC EMS <p className="er-phone">864-802-1417</p></Button>
-                <Button className="send-to-field btn btn-secondary" onClick={this.tryApiEMS} >TRY EMS <p className="er-phone">864-802-1417</p></Button>
                 <Button className="send-to-field btn btn-secondary" >Send To Thorne Ambulance <p className="er-phone">864-555-7777</p></Button>
                 </div>
 

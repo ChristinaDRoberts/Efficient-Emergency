@@ -14,6 +14,6 @@ urlpatterns = [
 
     #this will be the scene the ems or trauma unit will be able to pull up
     # pulls up frontend er view
-    path('dispatchcall/er/<int:dispatch_call_id>/', DispatcherView.as_view(), name='sceneER'),
+    path('dispatchcall/er/<int:dispatch_call_id>/', IndexView.as_view(), name='sceneER'),
 
 ]

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Image, Modal} from 'react-bootstrap';
+import {Button, Image, Modal, Nav} from 'react-bootstrap';
 import divWithClassName from "react-bootstrap/es/utils/divWithClassName";
 
 
@@ -23,6 +23,7 @@ class DispatchCallsDetailContainer extends Component {
             <div>
 
                     <ul>
+
                         <li key={specificCall.id} className="detail-li">
                              <h3 className="detail-detail"><strong>Call ID #: </strong>{specificCall.id} </h3>
                             <h3 className="detail-detail"><strong>Caller Phone # : </strong>{specificCall.phone}</h3>
@@ -105,12 +106,16 @@ class TextMedical extends Component {
         console.log('debug', this.props);
         console.log("dispatchid", this.props.dispatchId);
 
-        let phone = "6309359025";
+
         let BASE_URL = "https://efficient-emergency.herokuapp.com/";
+
+        let phone = "6309359025";
+        var formData = new FormData();
+        formData.append('phone', phone);
          const conf ={
              method: "POST",
-            body: JSON.stringify(phone),
-            headers: new Headers({"Content-Type": "application/json"})
+            body: formData,
+
         };
 
 

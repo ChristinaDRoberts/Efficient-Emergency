@@ -93,7 +93,7 @@ class SendTextToERView(View):
         print(call_id)
 
         URL = "https://efficient-emergency.herokuapp.com"
-
+        trial = "https://www.google.com/"
         account_sid = os.environ['TWILIO_ACCOUNT_SID']
         auth_token = os.environ['TWILIO_AUTH_TOKEN']
         client = TwilioClient(account_sid, auth_token)
@@ -101,7 +101,7 @@ class SendTextToERView(View):
 
         message = client.messages.create(
             # body=URL + reverse("dispatchCalls:sceneER", kwargs={"dispatch_call_id": call_id}),
-            body = "testing if this changes instead of url",
+            body=trial,
             from_='+18646893583',
 
             to=phone_number

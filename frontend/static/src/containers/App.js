@@ -4,6 +4,7 @@ import ClientContainer from "./callDetail"
 import DispatchCurrentCallContainer from "./callCreate"
 import DispatcherCallsDetailContainer from "./dispatcherCallsDetail.js"
 import HeartbeatComponent from "./heartbeat.js"
+import EMSCallsDetailContainer from './emt.js'
 
 
 import '../App1.css';
@@ -55,6 +56,9 @@ class App extends Component {
                                         return <DispatchCurrentCallContainer route={this.route}
                                                                              imageCollection={this.state.imageCollection}
                                                                              image_preview={this.state.image_preview}/>;
+
+                                    case 'EmtView':
+                                        return <EMSCallsDetailContainer  route={this.route}  data={this.state.data}/>;
 
                                     default :
 

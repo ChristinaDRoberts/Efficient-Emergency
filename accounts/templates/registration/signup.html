@@ -3,6 +3,7 @@
 
 {% block content %}
     <div class="hero" id="smaller"></div>
+    <div class="signup-div">
   <h2 class="signup">Sign up</h2>
   <form method="post">
     {% csrf_token %}
@@ -10,4 +11,5 @@
     <button class="submit-signup btn btn-light" type="submit">Sign up</button>
       <button class="btn btn-light "><a class="login" href="{% url 'accounts:login' %}">Already have an account? Click to Login</a></button>
   </form>
+    </div>
 {% endblock content %}

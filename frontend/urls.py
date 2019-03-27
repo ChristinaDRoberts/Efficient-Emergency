@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from .views import IndexView, DispatcherView
+from .views import IndexView, DispatcherView, EMTView
 
 
 app_name='frontend'
@@ -18,6 +18,6 @@ urlpatterns = [
 
     #this will be the scene the ems or trauma unit will be able to pull up
     # pulls up frontend er view
-    path('dispatchcall/er/<int:dispatch_call_id>/', IndexView.as_view(), name='sceneER'),
+    path('dispatchcall/er/<int:dispatch_call_id>/', EMTView.as_view(), name='sceneER'),
 
 ]

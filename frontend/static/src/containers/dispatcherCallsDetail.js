@@ -54,6 +54,10 @@ class DispatchCallsDetailContainer extends Component {
 
                 <button className="btn btn-light logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
                  </button>
+
+                <button className="btn btn-light emt-view-button" onClick={(e) => {
+                                     this.props.route("EmtView")
+                                        }}>Click to see emt view</button>
             </div>
 
                 )
@@ -70,35 +74,6 @@ class TextMedical extends Component {
 
     }
 
-
-
-    // tryApiEMS = (e) => {
-    //     e.preventDefault();
-    //     console.log("try ems fire");
-    //     console.log("try props", this.props);
-    //
-    //     let data = this.props.data;
-    //     // let BASE_PATH = 'http://localhost:8000/api/';
-    //
-    //      const conf = {
-    //         method: "POST",
-    //         body: JSON.stringify(data),
-    //         headers: new Headers({"Content-Type": "application/json"})
-    //     };
-    //
-    //
-    //     fetch(`api/dispatchcall/${this.props.dispatchId}/er/scene`, conf).then((response) => {
-    //         if (response.status !== 200) {
-    //             console.log("problem")
-    //         }
-    //
-    //         // return response.json(data);
-    //         // }).then(json => {
-    //         // console.log('json', json);
-    //     })
-    //
-    //
-    // };
 
 
     sendTextMessage = (e) => {

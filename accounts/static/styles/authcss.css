@@ -151,7 +151,7 @@
 
 
 .signup{
-    color: #cdcdcdcd;
+    color: whitesmoke;
     text-shadow: 2px 2px lightslategrey;
     position: relative;
 }
@@ -169,7 +169,7 @@ a{
 .login-title{
     font-weight: bold;
     font-size: 30px;
-    color: #cdcdcdcd;
+    color: whitesmoke;
     margin-left: 5%;
     text-shadow: 2px 2px lightslategrey;
     position: relative;
@@ -179,10 +179,28 @@ a{
 
 .login-div{
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 18%;
+    right: 20%;
     /*play around for correct positioning */
 
+}
+
+.signup-div{
+    width: 40%;
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    /*play around for correct positioning */
+
+}
+
+@media screen and (max-width: 600px) {
+  .signup-div {
+      font-size: 10px;
+      bottom: 5%;
+      right: 0%;
+      width: 90%;
+  }
 }
 
 
@@ -192,4 +210,16 @@ a{
 
 .signup-button-login{
     position: relative;
+}
+
+.label{
+    color: whitesmoke;
+}
+
+p{
+    color: whitesmoke;
+}
+
+li{
+    color: whitesmoke;
 }

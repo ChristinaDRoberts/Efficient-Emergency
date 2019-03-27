@@ -1,8 +1,6 @@
 import {Button, Form, Card, Row} from "react-bootstrap";
 import React, {Component} from 'react';
 
-// this is going to be the screen the client is pn when submitting images
-
 
 class ClientContainer extends Component {
     constructor(props) {

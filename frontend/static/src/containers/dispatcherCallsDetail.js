@@ -47,10 +47,10 @@ class DispatchCallsDetailContainer extends Component {
 
 
     render() {
-        console.log('here navDisplay', this.state.displayNav);
+        // console.log('here navDisplay', this.state.displayNav);
 
         let specificCall = this.state.callData;
-        console.log('this props here', this.state.callData);
+        console.log('this props here state call data', this.state.callData);
 
         if (!this.state.callData.id) {
             return <div>Loading...</div>

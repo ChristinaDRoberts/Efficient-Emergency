@@ -36,8 +36,8 @@ class DispatchViewSet(viewsets.ModelViewSet, mixins.RetrieveModelMixin, ):
     authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
     serializer_class = DispatchSerializer
 
-    def retrieve(self, request, *args, **kwargs):
-        pass
+    # def retrieve(self, request, *args, **kwargs):
+    #     return HttpResponse('Sent!')
 
     def get_queryset(self):
         return DispatchCall.objects.filter(user=self.request.user)

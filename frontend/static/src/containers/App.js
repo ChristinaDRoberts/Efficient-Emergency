@@ -62,13 +62,13 @@ class App extends Component {
                                                             dispatchCallId={path[1]}/>;
                                 }
 
-                                //dispTCHER DETAIL VIEW
+                                //DISPATCHER DETAIL VIEW
                                 path = /\/dispatchcall\/(\d+)\//.exec(pathname);
                                 if(path){
                                     return <DispatcherCallsDetailContainer route={this.route} pk={path[1]} data={this.state.data}/>;
                                 }
 
-                                //DISPATCHET LIST VIEW
+                                //DISPATCHER LIST VIEW
                                 path = /\/dispatchcall\//.exec(pathname);
                                 if(path){
                                     return <DispatchCallLogContainer route={this.route} />;

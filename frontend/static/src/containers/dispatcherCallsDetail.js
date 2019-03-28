@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Button, Image, Modal, Nav} from 'react-bootstrap';
+import {Button, Container, Image, Modal, Nav} from 'react-bootstrap';
 import divWithClassName from "react-bootstrap/es/utils/divWithClassName";
-
+const $ = window.$;
 
 class DispatchCallsDetailContainer extends Component {
     constructor(props) {
@@ -10,6 +10,17 @@ class DispatchCallsDetailContainer extends Component {
         //props is data
 
     }
+
+    componentDidMount =(e) => {
+        // see https://bootstrapious.com/p/bootstrap-sidebar
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    };
+
 
 
 
@@ -21,6 +32,31 @@ class DispatchCallsDetailContainer extends Component {
         return (
 
             <div>
+                 <div className="wrapper2">
+
+                     <nav id="sidebar" className="Row">
+
+                       <ul className="list-unstyled components">
+                            <li className="active"><Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
+                                this.props.route("/dispatchcall/")
+                                }}>Call List</Button></li>
+                            <li className="nav-start-call"><Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
+                                this.props.route("callCreate")
+                                }}>Start A Call</Button></li>
+                            <li className="nav-logout"><button className="btn btn-light logout logout-calllist"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
+                            </button></li>
+                        </ul>
+                    </nav>
+
+
+                    <div id="content">
+                        <button type="button" id="sidebarCollapse" className="navbar-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
 
                     <ul>
 
@@ -52,12 +88,12 @@ class DispatchCallsDetailContainer extends Component {
                 <TextMedical route={this.props.route} dispatchId={this.props.data.id}/>
             </section>
 
-                <button className="btn btn-light logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
-                 </button>
+                {/*<button className="btn btn-light logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>*/}
+                 {/*</button>*/}
 
-                <button className="btn btn-light emt-view-button" onClick={(e) => {
-                                     this.props.route("EmtView")
-                                        }}>Click to see emt view</button>
+                {/*<button className="btn btn-light emt-view-button" onClick={(e) => {*/}
+                                     {/*this.props.route("EmtView")*/}
+                                        {/*}}>Click to see emt view</button>*/}
             </div>
 
                 )

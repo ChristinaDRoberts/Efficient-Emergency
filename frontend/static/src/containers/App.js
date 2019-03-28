@@ -10,7 +10,7 @@ import EMSCallsDetailContainer from './emt.js'
 import '../App1.css';
 import {Container} from 'react-bootstrap';
 
-
+const $ = window.$;
 
 
 class App extends Component {
@@ -24,8 +24,7 @@ class App extends Component {
     }
 
 
-
-     route = (currentScreen, data) => {
+    route = (currentScreen, data) => {
         //setting it tp oan object instead of string
         this.setState({currentScreen: {pathname: currentScreen}, data:data});
         console.log("data", data)
@@ -41,6 +40,9 @@ class App extends Component {
 
 
              <Container className="Fluid">
+
+
+
                  <div className="mainheart"><HeartbeatComponent/></div>
                             {(() => {
                                 switch (this.state.currentScreen.pathname) {

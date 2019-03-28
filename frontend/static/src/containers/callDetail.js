@@ -1,6 +1,6 @@
-import {Button, Form, Card, Row} from "react-bootstrap";
+import {Button, Form, Card, Row, Container} from "react-bootstrap";
 import React, {Component} from 'react';
-
+const $ = window.$;
 
 class ClientContainer extends Component {
     constructor(props) {
@@ -13,6 +13,18 @@ class ClientContainer extends Component {
         this.handleImage = this.handleImage.bind(this);
         this.submitImage = this.submitImage.bind(this);
     }
+
+
+    componentDidMount =(e) => {
+        // see https://bootstrapious.com/p/bootstrap-sidebar
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    };
+
 
     handleImage(event) {
         //sets the preview box of image in react element
@@ -93,6 +105,31 @@ class ClientContainer extends Component {
                         <h1 className="please-submit-photo">Please Submit A Photo To Emergency Services</h1>
                     </div>
                 </Row>
+
+                 <div className="wrapper2">
+
+                     <nav id="sidebar" className="Row">
+                         <ul className="list-unstyled components">
+                            <li className="active"><Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
+                                this.props.route("/dispatchcall/")
+                                }}>Call List</Button></li>
+                            <li className="nav-start-call"><Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
+                                this.props.route("callCreate")
+                                }}>Start A Call</Button></li>
+                            <li className="nav-logout"><button className="btn btn-light logout logout-calllist"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
+                            </button></li>
+                        </ul>
+                    </nav>
+
+
+                    <div id="content">
+                        <button type="button" id="sidebarCollapse" className="navbar-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
 
                 <div className="row align-items-start image-box-div">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 imagebox">

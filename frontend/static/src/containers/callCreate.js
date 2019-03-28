@@ -1,7 +1,7 @@
-import {Button, Form} from "react-bootstrap";
+import {Button, Container, Form} from "react-bootstrap";
 import React, {Component} from 'react';
 
-
+const $ = window.$;
 class DispatchCurrentCallContainer extends Component {
     constructor(props) {
         super(props);
@@ -105,6 +105,15 @@ class DispatchCurrentCallContainer extends Component {
         this.setState({[e.target.name]: e.target.value});
     };
 
+    componentDidMount =(e) => {
+            // see https://bootstrapious.com/p/bootstrap-sidebar
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                    $(this).toggleClass('active');
+                });
+            });
+        };
 
 
 
@@ -123,13 +132,38 @@ class DispatchCurrentCallContainer extends Component {
             <div className="callCreateMain">
 
                 <h2 className="create-title">Create Active Call and Send Text Message With Link To Submit Photos</h2>
-                <div className="faux-nav2">
-                    <Button className="endCall btn btn-secondary endCallCreate" onClick={(e) =>{
-                        this.props.route("/dispatchcall/")
-                    }}>End Call</Button>
-                    <button className="btn btn-light logout create-call-logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
-                     </button>
+                 <div className="wrapper2">
+
+                     <nav id="sidebar" className="Row">
+
+                       <ul className="list-unstyled components">
+                            <li className="active"><Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
+                                this.props.route("/dispatchcall/")
+                                }}>Call List</Button></li>
+                            <li className="nav-start-call"><Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
+                                this.props.route("callCreate")
+                                }}>Start A Call</Button></li>
+                            <li className="nav-logout"><button className="btn btn-light logout logout-calllist"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
+                            </button></li>
+                        </ul>
+                    </nav>
+
+
+                    <div id="content">
+                        <button type="button" id="sidebarCollapse" className="navbar-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
                 </div>
+                {/*<div className="faux-nav2">*/}
+                    {/*<Button className="endCall btn btn-secondary endCallCreate" onClick={(e) =>{*/}
+                        {/*this.props.route("/dispatchcall/")*/}
+                    {/*}}>End Call</Button>*/}
+                    {/*<button className="btn btn-light logout create-call-logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>*/}
+                     {/*</button>*/}
+                {/*</div>*/}
 
                 <Form onSubmit={this.createCall}>
 

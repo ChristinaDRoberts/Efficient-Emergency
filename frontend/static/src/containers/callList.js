@@ -138,7 +138,7 @@ class OpenImagesOnCallList extends Component {
             <div>
                 <div className="topDispatch">
                     <h2 className="wecome-dispatcher">Create A New Call Or Revisit Previous Calls</h2>
-
+                <div>
                    <div className="faux-nav row wrapper2">
                     <nav id="sidebar" className="Row">
 
@@ -162,6 +162,7 @@ class OpenImagesOnCallList extends Component {
                             <span></span>
                         </button>
                     </div>
+                </div>
                 </div>
 
 

@@ -132,7 +132,8 @@ class DispatchCurrentCallContainer extends Component {
             <div className="callCreateMain">
 
                 <h2 className="create-title">Create Active Call and Send Text Message With Link To Submit Photos</h2>
-                 <div className="wrapper2">
+                <div>
+                 <div className="wrapper2 row faux-nav">
 
                      <nav id="sidebar" className="Row">
 
@@ -156,6 +157,7 @@ class DispatchCurrentCallContainer extends Component {
                             <span></span>
                         </button>
                     </div>
+                </div>
                 </div>
                 {/*<div className="faux-nav2">*/}
                     {/*<Button className="endCall btn btn-secondary endCallCreate" onClick={(e) =>{*/}

@@ -32,7 +32,8 @@ class DispatchCallsDetailContainer extends Component {
         return (
 
             <div>
-                 <div className="wrapper2">
+                <div>
+                 <div className="wrapper2 row faux-nav">
 
                      <nav id="sidebar" className="Row">
 
@@ -43,7 +44,7 @@ class DispatchCallsDetailContainer extends Component {
                             <li className="nav-start-call"><Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
                                 this.props.route("callCreate")
                                 }}>Start A Call</Button></li>
-                            <li className="nav-logout"><button className="btn btn-light logout logout-calllist"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
+                            <li className="nav-logout"><button className="btn btn-light switch logout-calllist"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
                             </button></li>
                         </ul>
                     </nav>
@@ -56,6 +57,7 @@ class DispatchCallsDetailContainer extends Component {
                             <span></span>
                         </button>
                     </div>
+                </div>
                 </div>
 
                     <ul>

@@ -71,23 +71,6 @@ h2{
     width: 100vw;
 
 }
-/*detail-modal{*/
-    /*width: 30vw;*/
-    /*height: 30vh;*/
-/*}*/
-
-
-/*.modal-body{*/
-    /*height: 65vh;*/
-    /*width: 65vw;*/
-
-/*}*/
-
-/*.modal-header{*/
-    /*height: 65vh;*/
-    /*width: 65vw;*/
-
-/*}*/
 
 .detail-body{
     background-image: linear-gradient(to right, rgba(122,157,150, 0.5),rgba(202,228, 219, 0.5));
@@ -126,34 +109,34 @@ h2{
 
 .switch {
     text-align: center;
-    /*float: right;*/
-    /*margin-right: 5%;*/
-    /*margin-left: 70%;*/
+    margin: 0;
+    pading: 0;
+
 
 }
-@media screen and (max-width: 412px){
-  .switch{
+/*@media screen and (max-width: 1200px){*/
+  /*.switch{*/
+    /*display: block;*/
+      /*!*margin-left:2%;*!*/
+      /*!*margin-right: 0%;*!*/
+  /*}*/
+/*}*/
 
-      margin-left:2%;
-      margin-right: 0%;
-  }
-}
+/*@media screen and (max-width: 900px){*/
+  /*.switch{*/
+      /*display: block;*/
+      /*margin-left: 30%;*/
+      /*margin-right: 0%;*/
+  /*}*/
+/*}*/
 
-@media screen and (max-width: 900px){
-  .switch{
-
-      margin-left: 30%;
-      margin-right: 0%;
-  }
-}
-
-@media screen and (max-width: 1200px){
-  .switch{
-
-      margin-left: 40%;
-      margin-right: 0%;
-  }
-}
+/*@media screen and (max-width: 1200px){*/
+  /*.switch{*/
+      /*display: block;*/
+      /*!*margin-left: 40%;*!*/
+      /*!*margin-right: 0%;*!*/
+  /*}*/
+/*}*/
 
 
 .imagesFromClient {
@@ -303,7 +286,6 @@ li {
 .btn{
     background-color: #00303F;
     color: whitesmoke;
-
 }
 
 
@@ -311,7 +293,20 @@ a{
     color: #18225c;
 }
 
+.nav-start-call{
+    margin:1px;
+    padding:0px;
+}
 
+.active{
+    margin:0;
+    padding: 0;
+}
+
+.nav-logout{
+    margin:0;
+    padding: 0;
+}
 /*ecg animation modified , */
 
 .wrapper {
@@ -333,9 +328,7 @@ a{
     color: whitesmoke;
 }
 
-.logout-calllist{
-    /*float: right;*/
-}
+
 
 .create-call-logout{
     /*margin-left: 70%;*/
@@ -351,16 +344,158 @@ a{
 
 
 
-.endCallCreate{
-    margin-left: 70%;
+/*.endCallCreate{*/
+    /*margin-left: 70%;*/
+/*}*/
+
+/*@media screen and (max-width: 1000px){*/
+  /*.endCallCreate{*/
+
+      /*margin-left: 20%;*/
+  /*}*/
+/*}*/
+
+
+
+/*see https://bootstrapious.com/p/bootstrap-sidebar*/
+/*modified from original*/
+
+#sidebarCollapse {
+    /*hamburger icon*/
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
 }
 
-@media screen and (max-width: 1000px){
-  .endCallCreate{
+#sidebarCollapse span {
+    /*hamburger icon*/
+    width: 80%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background: #555;
+    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+}
 
-      margin-left: 20%;
+#sidebarCollapse span:first-of-type {
+    /* rotate first one */
+    transform: rotate(45deg) translate(2px, 2px);
+}
+#sidebarCollapse span:nth-of-type(2) {
+    /* second one is not visible */
+    opacity: 0;
+}
+#sidebarCollapse span:last-of-type {
+    /* rotate third one */
+    transform: rotate(-45deg) translate(1px, -1px);
+}
+
+
+#sidebarCollapse.active span {
+    /* no rotation */
+    transform: none;
+    /* all bars are visible */
+    opacity: 1;
+    margin: 5px auto;
+}
+
+.wrapper2 {
+/*box nav is in*/
+    display: flex;
+    align-items: stretch;
+    perspective: 1500px;
+}
+.list-unstyled{
+    /*width: 80%;*/
+    height: 50px;
+}
+
+/*!*@media screen and (max-width: 1200px){*!*/
+  /*!*.list-unstyled{*!*/
+     /*!*height: 40%;*!*/
+
+  /*!*}*!*/
+/*}*/
+
+
+.nav-li{
+    margin: 0%;
+    text-align: center;
+    padding: 0;
+}
+
+
+@media screen and (max-width: 1200px){
+  .nav-li{
+      margin: 0;
+      font-size: 5px;
+      /*width: 80%;*/
+      /*display: block;*/
+
   }
 }
+
+
+
+#sidebar {
+    /*min-width: 250px;*/
+    max-width: 100%;
+    /*background: #7386D5;*/
+    color: #fff;
+    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+    transform-origin: center left; /* Set the transformed position of sidebar to center left side. */
+}
+
+#sidebar.active {
+    margin-left: -32%;
+    transform: rotateY(100deg); /* Rotate sidebar vertically by 100 degrees. */
+}
+
+
+
+@media (max-width: 900px) {
+    /* Reversing the behavior of the sidebar:
+       it'll be rotated vertically and off canvas by default,
+       collapsing in on toggle button click with removal of
+       the vertical rotation.   */
+    #sidebar {
+        margin-left: -32%;
+        transform: rotateY(100deg);
+    }
+    #sidebar.active {
+        margin-left: 0;
+        transform: none;
+    }
+
+    /* Reversing the behavior of the bars:
+       Removing the rotation from the first,
+       last bars and reappear the second bar on default state,
+       and giving them a vertical margin */
+    #sidebarCollapse span:first-of-type,
+    #sidebarCollapse span:nth-of-type(2),
+    #sidebarCollapse span:last-of-type {
+        transform: none;
+        opacity: 1;
+        margin: 5px auto;
+    }
+
+    /* Removing the vertical margin and make the first and last bars rotate again when the sidebar is open, hiding the second bar */
+    #sidebarCollapse.active span {
+        margin: 0 auto;
+    }
+    #sidebarCollapse.active span:first-of-type {
+        transform: rotate(45deg) translate(2px, 2px);
+    }
+    #sidebarCollapse.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    #sidebarCollapse.active span:last-of-type {
+        transform: rotate(-45deg) translate(1px, -1px);
+    }
+}
+
+/*//////////////////////////////////////ecg////////////////////////////////*/
+
 
 .block {
   background: #00303F;
@@ -567,135 +702,4 @@ a{
     left: 100%;
 
   }
-}
-
-
-/*see https://bootstrapious.com/p/bootstrap-sidebar*/
-/*modified from original*/
-
-#sidebarCollapse {
-    /*hamburger icon*/
-    width: 40px;
-    height: 40px;
-    background: #f5f5f5;
-}
-
-#sidebarCollapse span {
-    /*hamburger icon*/
-    width: 80%;
-    height: 2px;
-    margin: 0 auto;
-    display: block;
-    background: #555;
-    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
-}
-
-#sidebarCollapse span:first-of-type {
-    /* rotate first one */
-    transform: rotate(45deg) translate(2px, 2px);
-}
-#sidebarCollapse span:nth-of-type(2) {
-    /* second one is not visible */
-    opacity: 0;
-}
-#sidebarCollapse span:last-of-type {
-    /* rotate third one */
-    transform: rotate(-45deg) translate(1px, -1px);
-}
-
-
-#sidebarCollapse.active span {
-    /* no rotation */
-    transform: none;
-    /* all bars are visible */
-    opacity: 1;
-    margin: 5px auto;
-}
-
-/*.wrapper2 {*/
-/*box nav is in*/
-    /*display: flex;*/
-    /*align-items: stretch;*/
-    /*perspective: 1500px;*/
-/*}*/
-.list-unstyled{
-    /*width: 80%;*/
-    height: 50px;
-
-}
-
-#content{
-
-}
-
-.nav-li{
-    margin: 0%;
-    text-align: center;
-    padding: 0;
-}
-
-
-@media screen and (max-width: 1200px){
-  .nav-li{
-
-  }
-}
-
-
-
-#sidebar {
-    min-width: 250px;
-    max-width: 100%;
-    /*background: #7386D5;*/
-    color: #fff;
-    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
-    transform-origin: center left; /* Set the transformed position of sidebar to center left side. */
-}
-
-#sidebar.active {
-    margin-left: -32%;
-    transform: rotateY(100deg); /* Rotate sidebar vertically by 100 degrees. */
-}
-
-
-
-@media (max-width: 900px) {
-    /* Reversing the behavior of the sidebar:
-       it'll be rotated vertically and off canvas by default,
-       collapsing in on toggle button click with removal of
-       the vertical rotation.   */
-    #sidebar {
-        margin-left: -78%;
-        transform: rotateY(100deg);
-    }
-    #sidebar.active {
-        margin-left: 0;
-        transform: none;
-    }
-
-    /* Reversing the behavior of the bars:
-       Removing the rotation from the first,
-       last bars and reappear the second bar on default state,
-       and giving them a vertical margin */
-    #sidebarCollapse span:first-of-type,
-    #sidebarCollapse span:nth-of-type(2),
-    #sidebarCollapse span:last-of-type {
-        transform: none;
-        opacity: 1;
-        margin: 5px auto;
-    }
-
-    /* Removing the vertical margin and make the first and last bars rotate again when the sidebar is open, hiding the second bar */
-    #sidebarCollapse.active span {
-        margin: 0 auto;
-    }
-    #sidebarCollapse.active span:first-of-type {
-        transform: rotate(45deg) translate(2px, 2px);
-    }
-    #sidebarCollapse.active span:nth-of-type(2) {
-        opacity: 0;
-    }
-    #sidebarCollapse.active span:last-of-type {
-        transform: rotate(-45deg) translate(1px, -1px);
-    }
 }

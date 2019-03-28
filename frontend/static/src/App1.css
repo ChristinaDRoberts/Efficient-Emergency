@@ -334,7 +334,7 @@ a{
 }
 
 .logout-calllist{
-    float: right;
+    /*float: right;*/
 }
 
 .create-call-logout{
@@ -620,7 +620,7 @@ a{
 /*}*/
 .list-unstyled{
     /*width: 80%;*/
-    height: 100px;
+    height: 50px;
 
 }
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Button, Container, Image, Modal, Nav} from 'react-bootstrap';
-import divWithClassName from "react-bootstrap/es/utils/divWithClassName";
+
 
 const $ = window.$;
 

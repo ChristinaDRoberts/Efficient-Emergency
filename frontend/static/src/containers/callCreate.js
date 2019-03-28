@@ -10,7 +10,7 @@ class DispatchCurrentCallContainer extends Component {
             phone: '',
             dispatchInfo: {id:""},
             imageCollection : [],
-            baseURL: 'https://dashboard.heroku.com/apps/efficient-emergency/dispatchcall/'
+            // baseURL: 'https://dashboard.heroku.com/apps/efficient-emergency/dispatchcall/'
         };
 
         this.handlePhoneNumber = this.handlePhoneNumber.bind(this);

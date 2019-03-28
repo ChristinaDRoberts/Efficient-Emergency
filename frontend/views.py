@@ -34,7 +34,7 @@ class DispatcherView(LoginRequiredMixin, IndexView):
 
 
 
-class EMTView(IndexView):
+class EMTView(DispatcherView):
     pass
 
 

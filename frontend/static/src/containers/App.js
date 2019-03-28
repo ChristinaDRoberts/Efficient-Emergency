@@ -48,7 +48,7 @@ class App extends Component {
                                 //AMBULANCE DETAIL VIEW
                                 let path = /\/dispatchcall\/(\d+)\/er\//.exec(pathname);
                                 if(path){
-                                    return <DispatcherCallsDetailContainer route={this.route} pk={path[1]} data={this.state.data} />;
+                                    return <DispatcherCallsDetailContainer route={this.route} pk={path[1]} data={this.state.data}  showNav={false}/>;
                                 }
 
                                 // CLIENT ON SCENE VIEW
@@ -65,7 +65,7 @@ class App extends Component {
                                 //DISPATCHER DETAIL VIEW
                                 path = /\/dispatchcall\/(\d+)\//.exec(pathname);
                                 if(path){
-                                    return <DispatcherCallsDetailContainer route={this.route} pk={path[1]} data={this.state.data}/>;
+                                    return <DispatcherCallsDetailContainer route={this.route} pk={path[1]} data={this.state.data} showNav={true}/>;
                                 }
 
                                 //DISPATCHER LIST VIEW

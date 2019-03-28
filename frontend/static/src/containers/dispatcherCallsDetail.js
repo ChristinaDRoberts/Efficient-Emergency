@@ -8,9 +8,9 @@ class DispatchCallsDetailContainer extends Component {
     constructor(props) {
         super(props);
         console.log("props available to DispcallsDetcont", this.props);
-         this.state = {
+        this.state = {
             callData: this.props.data
-         }
+        }
 
 
     }
@@ -47,6 +47,7 @@ class DispatchCallsDetailContainer extends Component {
 
 
     render() {
+        console.log('here navDisplay', this.state.displayNav);
 
         let specificCall = this.state.callData;
         console.log('this props here', this.state.callData);
@@ -56,40 +57,12 @@ class DispatchCallsDetailContainer extends Component {
         }
 
 
-        //stringify the url and use  str.endsWith("/er/.");
 
-        //pathparts to find if index 2 of url is er, then return ....
-
-        // if (window.location.pathname) == $`(/dispatchcall\/(\d+)\/er\)` {
-        //     return <ul>
-        //
-        //                     <li key={specificCall.id} className="detail-li">
-        //                         <h3 className="detail-detail"><strong>Call ID #: </strong>{specificCall.id} </h3>
-        //                         <h3 className="detail-detail"><strong>Caller Phone # : </strong>{specificCall.phone}</h3>
-        //
-        //                         <h3 className="detail-detail"><strong>Call Date: </strong>{specificCall.date}</h3>
-        //                         <h3 className="detail-detail"><strong>Dispatcher: </strong>{specificCall.user.username}</h3>
-        //
-        //
-        //                         <h3 className="images-provider-detail-page">
-        //
-        //                             {specificCall.scene_images.map((image) =>
-        //                                 <ModalDetailComponent key={image.id} specificCall={this.state.callData} image={image}/>
-        //                             )}
-        //                         </h3>
-        //
-        //                     </li>
-        //                 </ul>
-        //
-        // }
-
-
-        // does this need to be an if else or would this automatically be an else
 
         return (
             <div>
 
-                {/*/!*if statement to hide this navbar  and send to ems buttons if the url is /dispatchcall\/(\d+)\/er\  }*/}
+                {this.props.showNav ? (
                 <div>
                     <div className="wrapper2 row faux-nav">
 
@@ -126,6 +99,7 @@ class DispatchCallsDetailContainer extends Component {
                         </div>
                     </div>
                 </div>
+                 ) : null}
 
                 <ul>
 
@@ -148,10 +122,11 @@ class DispatchCallsDetailContainer extends Component {
                 </ul>
 
 
-                <section>
-                    <TextMedical route={this.props.route} dispatchId={this.state.callData}/>
-                </section>
-
+                {this.props.showNav ? (
+                    <section>
+                        <TextMedical route={this.props.route} dispatchId={this.state.callData}/>
+                    </section>
+                ) : null}
 
             </div>
 

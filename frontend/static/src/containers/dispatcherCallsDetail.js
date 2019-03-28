@@ -55,8 +55,41 @@ class DispatchCallsDetailContainer extends Component {
             return <div>Loading...</div>
         }
 
+
+        //stringify the url and use  str.endsWith("/er/.");
+
+        //pathparts to find if index 2 of url is er, then return ....
+
+        // if (window.location.pathname) == $`(/dispatchcall\/(\d+)\/er\)` {
+        //     return <ul>
+        //
+        //                     <li key={specificCall.id} className="detail-li">
+        //                         <h3 className="detail-detail"><strong>Call ID #: </strong>{specificCall.id} </h3>
+        //                         <h3 className="detail-detail"><strong>Caller Phone # : </strong>{specificCall.phone}</h3>
+        //
+        //                         <h3 className="detail-detail"><strong>Call Date: </strong>{specificCall.date}</h3>
+        //                         <h3 className="detail-detail"><strong>Dispatcher: </strong>{specificCall.user.username}</h3>
+        //
+        //
+        //                         <h3 className="images-provider-detail-page">
+        //
+        //                             {specificCall.scene_images.map((image) =>
+        //                                 <ModalDetailComponent key={image.id} specificCall={this.state.callData} image={image}/>
+        //                             )}
+        //                         </h3>
+        //
+        //                     </li>
+        //                 </ul>
+        //
+        // }
+
+
+        // does this need to be an if else or would this automatically be an else
+
         return (
             <div>
+
+                {/*/!*if statement to hide this navbar  and send to ems buttons if the url is /dispatchcall\/(\d+)\/er\  }*/}
                 <div>
                     <div className="wrapper2 row faux-nav">
 
@@ -103,9 +136,6 @@ class DispatchCallsDetailContainer extends Component {
                         <h3 className="detail-detail"><strong>Call Date: </strong>{specificCall.date}</h3>
                         <h3 className="detail-detail"><strong>Dispatcher: </strong>{specificCall.user.username}</h3>
 
-                        {/*<Button className="btn btn-secondary return-to-call-list"  onClick={(e) => {*/}
-                        {/*this.props.route("/dispatchcall/")*/}
-                        {/*}}>Return To Call List Page </Button>*/}
 
                         <h3 className="images-provider-detail-page">
 
@@ -149,7 +179,7 @@ class TextMedical extends Component {
 
         let BASE_URL = "https://efficient-emergency.herokuapp.com/";
 
-        let phone = "6309359025";
+        let phone = "8644488487";
         var formData = new FormData();
         formData.append('phone', phone);
         const conf = {

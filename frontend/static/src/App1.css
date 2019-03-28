@@ -139,6 +139,15 @@ h2{
 /*}*/
 
 
+
+.formAndText{
+    /*background-color: #cdcdcdcd;*/
+    text-align: center;
+    width: 45%;
+    margin: 0 auto;
+    padding-top: 5%;
+}
+
 .imagesFromClient {
     margin: 50px 30px;
     height: 100%;
@@ -156,6 +165,18 @@ h2{
     background-color: #c5c5c5;
 }
 
+#overlay{
+    position: fixed; /* Sit on top of the page content */
+
+  width: 50%;
+  height: 40%;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: -80%;
+  background-color: rgba(0,0,0,0.2);
+}
+
 .link-to-text{
     color: #00303F;
     font-weight: bold;
@@ -167,9 +188,9 @@ h2{
     margin-left: 10px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .link-to-text {
-      font-size: 10px;
+      visibility: hidden;
 
   }
 }

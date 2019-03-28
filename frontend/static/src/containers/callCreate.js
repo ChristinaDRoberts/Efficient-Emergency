@@ -166,8 +166,8 @@ class DispatchCurrentCallContainer extends Component {
                     {/*<button className="btn btn-light logout create-call-logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>*/}
                      {/*</button>*/}
                 {/*</div>*/}
-
-                <Form onSubmit={this.createCall}>
+            <div className="formAndText" id="overlay">
+                <Form onSubmit={this.createCall} >
 
                     <label className="label-phone" htmlFor="phone">Enter callers phone number:</label>
 
@@ -196,6 +196,7 @@ class DispatchCurrentCallContainer extends Component {
                     SEND LINK THROUGH TEXT</Button>
 
                 <p className="link-to-text" href="#"> https://efficient-emergency.herokuapp.com/dispatchcall/{this.state.dispatchInfo.id}/scene</p>
+            </div>
 
                 <div className="imagesFromClient card-columns">
                     <ul>

@@ -16,7 +16,7 @@ class DispatchCallsDetailContainer extends Component {
     }
 
     componentDidMount = (e) => {
-        if (!this.props.data.id) {
+        if (!this.state.callData.id) {
             console.log("pk", this.props.pk);
 
 
@@ -144,12 +144,12 @@ class TextMedical extends Component {
         e.preventDefault();
         console.log('debug', this.props);
 
-        console.log("dispatchid", this.dispatchId.id);
+        console.log("dispatchid", this.props.dispatchId);
 
 
         let BASE_URL = "https://efficient-emergency.herokuapp.com/";
 
-        let phone = "8438021417";
+        let phone = "8644488487";
         var formData = new FormData();
         formData.append('phone', phone);
         const conf = {
@@ -159,7 +159,7 @@ class TextMedical extends Component {
         };
 
 
-        fetch(`${BASE_URL}api/sendtext/${this.dispatchId.id}/er/`, conf)
+        fetch(`${BASE_URL}api/sendtext/${this.props.dispatchId.id}/er/`, conf)
             .then(response => {
                 return response.text();
             }).then(function (response) {

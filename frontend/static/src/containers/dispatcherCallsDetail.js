@@ -69,9 +69,9 @@ class DispatchCallsDetailContainer extends Component {
                             <h3 className="detail-detail"><strong>Call Date: </strong>{specificCall.date}</h3>
                             <h3 className="detail-detail"><strong>Dispatcher: </strong>{specificCall.user.username}</h3>
 
-                             <Button className="btn btn-secondary return-to-call-list"  onClick={(e) => {
-                                     this.props.route("/dispatchcall/")
-                                        }}>Return To Call List Page </Button>
+                             {/*<Button className="btn btn-secondary return-to-call-list"  onClick={(e) => {*/}
+                                     {/*this.props.route("/dispatchcall/")*/}
+                                        {/*}}>Return To Call List Page </Button>*/}
 
                             <h3 className="images-provider-detail-page" >
 

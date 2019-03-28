@@ -109,7 +109,7 @@ h2{
 
 .switch {
     text-align: center;
-    margin: 0;
+    margin: 1;
     pading: 0;
 
 
@@ -447,7 +447,7 @@ a{
 }
 
 #sidebar.active {
-    margin-left: -32%;
+    margin-left: -28%;
     transform: rotateY(100deg); /* Rotate sidebar vertically by 100 degrees. */
 }
 
@@ -459,7 +459,8 @@ a{
        collapsing in on toggle button click with removal of
        the vertical rotation.   */
     #sidebar {
-        margin-left: -32%;
+        /*margin-left: -32%;*/
+        /*float: left;*/
         transform: rotateY(100deg);
     }
     #sidebar.active {

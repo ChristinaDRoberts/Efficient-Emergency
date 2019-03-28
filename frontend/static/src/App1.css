@@ -632,8 +632,17 @@ a{
     margin: 0%;
     text-align: center;
     padding: 0;
-
 }
+
+
+@media screen and (max-width: 1200px){
+  .nav-li{
+
+  }
+}
+
+
+
 #sidebar {
     min-width: 250px;
     max-width: 100%;
@@ -644,17 +653,19 @@ a{
 }
 
 #sidebar.active {
-    margin-left: -250px;
+    margin-left: -32%;
     transform: rotateY(100deg); /* Rotate sidebar vertically by 100 degrees. */
 }
 
-@media (max-width: 768px) {
+
+
+@media (max-width: 900px) {
     /* Reversing the behavior of the sidebar:
        it'll be rotated vertically and off canvas by default,
        collapsing in on toggle button click with removal of
        the vertical rotation.   */
     #sidebar {
-        margin-left: -250px;
+        margin-left: -78%;
         transform: rotateY(100deg);
     }
     #sidebar.active {

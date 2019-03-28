@@ -149,7 +149,7 @@ class OpenImagesOnCallList extends Component {
                             <li className="nav-start-call nav-li"><Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
                                 this.props.route("/callCreate\\/")
                                 }}>Start A Call</Button></li>
-                            <li className="nav-logout nav-li"><button className="btn btn-light logout logout-calllist"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
+                            <li className="nav-logout nav-li"><button className="btn btn-light logout logout-calllist"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Logout</a>
                             </button></li>
                         </ul>
                     </nav>

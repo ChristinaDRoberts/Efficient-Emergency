@@ -124,8 +124,8 @@ h2{
 
 /*@media screen and (max-width: 900px){*/
   /*.switch{*/
-      /*display: block;*/
-      /*margin-left: 30%;*/
+      /*!*display: block;*!*/
+      /*margin-left: 4%;*/
       /*margin-right: 0%;*/
   /*}*/
 /*}*/
@@ -326,6 +326,7 @@ a{
 
 .logout-button{
     color: whitesmoke;
+
 }
 
 
@@ -439,6 +440,7 @@ a{
 
 #sidebar {
     /*min-width: 250px;*/
+
     max-width: 100%;
     /*background: #7386D5;*/
     color: #fff;
@@ -447,8 +449,9 @@ a{
 }
 
 #sidebar.active {
-    margin-left: -35%;
-    transform: rotateY(100deg); /* Rotate sidebar vertically by 100 degrees. */
+    /*visibility: collapse;*/
+    margin-left: -26%;
+    transform: rotateY(180deg); /* Rotate sidebar vertically by 100 degrees. */
 }
 
 
@@ -459,7 +462,7 @@ a{
        collapsing in on toggle button click with removal of
        the vertical rotation.   */
     #sidebar {
-        /*margin-left: -32%;*/
+        margin-left: -32%;
         /*float: left;*/
         transform: rotateY(100deg);
     }

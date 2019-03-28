@@ -95,8 +95,8 @@ class Card extends Component {
                     </Modal>
 
                     <Button className="btn btn-outline-dark" onClick={(e) => {
-                                        this.props.route("dispatcherCallsDetail", call)
-                                        // this.props.route("/dispatchcall/er/", call)
+                                        this.props.route(`/dispatchcall/${call.id}/`, call)
+
                                     }}>See/Send Call Detail Page</Button>
 
 
@@ -147,7 +147,7 @@ class OpenImagesOnCallList extends Component {
                                 this.props.route("/dispatchcall/")
                                 }}>Call List</Button></li>
                             <li className="nav-start-call nav-li"><Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
-                                this.props.route("callCreate")
+                                this.props.route("/callCreate\\/")
                                 }}>Start A Call</Button></li>
                             <li className="nav-logout nav-li"><button className="btn btn-light logout logout-calllist"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
                             </button></li>

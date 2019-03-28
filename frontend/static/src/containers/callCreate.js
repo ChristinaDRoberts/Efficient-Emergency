@@ -142,7 +142,7 @@ class DispatchCurrentCallContainer extends Component {
                                 this.props.route("/dispatchcall/")
                                 }}>Call List</Button></li>
                             <li className="nav-start-call"><Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
-                                this.props.route("callCreate")
+                                this.props.route("/callCreate\\/")
                                 }}>Start A Call</Button></li>
                             <li className="nav-logout"><button className="btn btn-light logout logout-calllist"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
                             </button></li>

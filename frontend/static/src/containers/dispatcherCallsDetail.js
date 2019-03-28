@@ -12,6 +12,12 @@ class DispatchCallsDetailContainer extends Component {
     }
 
     componentDidMount =(e) => {
+        if(!this.props.data.id){
+            console.log("pk", this.props.pk)
+            // fetch
+        }
+
+
         // see https://bootstrapious.com/p/bootstrap-sidebar
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
@@ -27,10 +33,13 @@ class DispatchCallsDetailContainer extends Component {
     render() {
 
         let specificCall = this.props.data;
-        console.log('this props here', this.props);
+        console.log('this props here', this.props.data);
+
+        if (!this.props.data.id){
+            return <div>Loading...</div>
+        }
 
         return (
-
             <div>
                 <div>
                  <div className="wrapper2 row faux-nav">
@@ -41,8 +50,10 @@ class DispatchCallsDetailContainer extends Component {
                             <li className="active"><Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
                                 this.props.route("/dispatchcall/")
                                 }}>Call List</Button></li>
+
+
                             <li className="nav-start-call"><Button variant="danger" className="switch btn-outline-light" onClick={(e) => {
-                                this.props.route("callCreate")
+                                this.props.route("/callCreate\\/")
                                 }}>Start A Call</Button></li>
                             <li className="nav-logout"><button className="btn btn-light switch logout-calllist"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>
                             </button></li>

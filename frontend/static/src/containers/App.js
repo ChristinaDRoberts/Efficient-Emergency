@@ -18,7 +18,6 @@ class App extends Component {
         super(props);
 
         this.state = {
-            currentScreen: window.location,
             data : {}
         };
     }
@@ -26,7 +25,8 @@ class App extends Component {
 
     route = (currentScreen, data) => {
         //setting it tp oan object instead of string
-        this.setState({currentScreen: {pathname: currentScreen}, data:data});
+        window.history.pushState({}, '', currentScreen);
+        this.setState({data: data});
         console.log("data", data)
 
 
@@ -34,51 +34,55 @@ class App extends Component {
 
 
   render(){
-      console.log("TESTING", this.state.currentScreen.pathname);
+    var pathname = window.location.pathname;
+    console.log(pathname);
 
     return(
-
-
              <Container className="Fluid">
 
 
 
                  <div className="mainheart"><HeartbeatComponent/></div>
                             {(() => {
-                                switch (this.state.currentScreen.pathname) {
-                                    case '/dispatchcall/':
-                                        return <DispatchCallLogContainer route={this.route} />;
 
-                                    case 'dispatcherCallsDetail':
-                                    // case '/dispatchcall/er/':
-                                        // let specificCall = props
-                                        return <DispatcherCallsDetailContainer route={this.route} data={this.state.data}/>;
+                                //AMBULANCE DETAIL VIEW
+                                let path = /\/dispatchcall\/(\d+)\/er\//.exec(pathname);
+                                if(path){
+                                    return <DispatcherCallsDetailContainer route={this.route} pk={path[1]} data={this.state.data} />;
+                                }
 
-                                    case 'callCreate':
-                                        return <DispatchCurrentCallContainer route={this.route}
+                                // CLIENT ON SCENE VIEW
+                                path =  /\/dispatchcall\/(\d+)\/scene\//.exec(pathname);
+                                if(path) {
+                                    return <ClientContainer route={this.route} handleImage={this.handleImage}
+                                                            imageCollection={this.state.imageCollection}
+                                                            submitImage={this.submitImage}
+                                                            image={this.state.image}
+                                                            image_preview={this.state.image_preview}
+                                                            dispatchCallId={path[1]}/>;
+                                }
+
+                                //dispTCHER DETAIL VIEW
+                                path = /\/dispatchcall\/(\d+)\//.exec(pathname);
+                                if(path){
+                                    return <DispatcherCallsDetailContainer route={this.route} pk={path[1]} data={this.state.data}/>;
+                                }
+
+                                //DISPATCHET LIST VIEW
+                                path = /\/dispatchcall\//.exec(pathname);
+                                if(path){
+                                    return <DispatchCallLogContainer route={this.route} />;
+                                }
+
+                                //DISPATCHER CREATE CALL VIEW
+                                path = /\/callCreate\//.exec(pathname);
+                                if(path){
+                                     return <DispatchCurrentCallContainer route={this.route}
                                                                              imageCollection={this.state.imageCollection}
                                                                              image_preview={this.state.image_preview}/>;
-
-                                    case 'EmtView':
-                                        return <EMSCallsDetailContainer  route={this.route}  data={this.state.data}/>;
-
-                                    default :
-
-                                        var pathname = window.location.pathname;
-                                        var pathParts = pathname.split("/");
-                                        let dispatchCallId = parseInt(pathParts[2]);
-                                        console.log("dispatchId", dispatchCallId);
-
-
-
-                                        return <ClientContainer route={this.route} handleImage={this.handleImage}
-                                                                      imageCollection={this.state.imageCollection}
-                                                                        submitImage={this.submitImage}
-                                                                        image={this.state.image}
-                                                                        image_preview={this.state.image_preview}
-                                                                        dispatchCallId={dispatchCallId} />;
-
                                 }
+
+
                             })()}
 
 

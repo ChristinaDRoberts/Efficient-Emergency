@@ -154,7 +154,7 @@ class TextMedical extends Component {
 
         let BASE_URL = "https://efficient-emergency.herokuapp.com/";
 
-        let phone = "8644488487";
+        let phone = "8644177693";
         var formData = new FormData();
         formData.append('phone', phone);
         const conf = {

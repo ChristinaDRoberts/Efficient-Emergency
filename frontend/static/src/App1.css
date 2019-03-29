@@ -141,11 +141,13 @@ h2{
 
 
 .formAndText{
-    /*background-color: #cdcdcdcd;*/
+
     text-align: center;
-    width: 45%;
+    width: 60%;
     margin: 0 auto;
-    padding-top: 5%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    background-image: linear-gradient(to right, rgba(105,105,105,0.3), rgba(128,128,128,0.3));
 }
 
 .imagesFromClient {

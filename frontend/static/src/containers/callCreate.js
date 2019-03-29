@@ -159,14 +159,8 @@ class DispatchCurrentCallContainer extends Component {
                     </div>
                 </div>
                 </div>
-                {/*<div className="faux-nav2">*/}
-                    {/*<Button className="endCall btn btn-secondary endCallCreate" onClick={(e) =>{*/}
-                        {/*this.props.route("/dispatchcall/")*/}
-                    {/*}}>End Call</Button>*/}
-                    {/*<button className="btn btn-light logout create-call-logout"><a className="logout-button" href="https://efficient-emergency.herokuapp.com/">Click to Logout</a>*/}
-                     {/*</button>*/}
-                {/*</div>*/}
-            <div className="formAndText" id="overlay">
+
+            <div className="formAndText" >
                 <Form onSubmit={this.createCall} >
 
                     <label className="label-phone" htmlFor="phone">Enter callers phone number:</label>
